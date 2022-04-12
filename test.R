@@ -18,16 +18,25 @@ multivariate.binning <- function(data.in, kappa){
   for (col in 1:d){
     hypercube.index <- hypercube.index + (data[, col] - 1) * kappa^(d-col)
   }
-  
-  data.onehot <- matrix(0, nrow= n, ncol = kappa^d)
-  for (row in 1:n){
-    bin.number <- hypercube.index[row]
-    data.onehot[row, ][bin.number] <- 1
+  data.onehot <- .TransformOnehot(hypercube.index, kappa^d)
+  return(data.onehot)
   }
   
-  return(data.onehot)
-  #  table(hypercube.index)
-}
+
+
+  .TransformOnehot <- function(vector.indices, n.dim){
+    data.onehot <- matrix(0, nrow = n, ncol = n.dim) #initialize with 0
+    for (row.num in 1:n){
+      bin.num <- vector.indices[row.num]
+      data.onehot[row.num, bin.num] <- 1
+    }
+    return(data.onehot)
+    }
+    
+
+
+
+
 
 noise.conti <- function(n, d, kappa, alpha){
   kappa.d <- kappa^d
