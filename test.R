@@ -1,39 +1,46 @@
 library(rmutil)
-library(combinat) # for permutation
 
-
-multivariate.binning <- function(data.in, kappa) {
-  data <- data.in
+Bin <- function(data, kappa) {
   
-  # 1. for each dimension, turn the continuous data into interval format
-  data.interval <- function(data.raw = data, n.intervals = kappa)
+  d <- ncol(data)
+  # 1. for each dimension, turn the continuous data into interval
+  #   each row now indicates a hypercube in [0,1]^d
+  #  the more the data is closer to 1, the larger the interval index.
+  data.interval <- .TransformIntervalIndex(
+    data = data, 
+    n.intervals = kappa
+    )
   
-  hypercube.index <- rep(1, n)
-  for (col in 1:d) {
-    hypercube.index <-
-      hypercube.index + (data[, col] - 1) * kappa ^ (d - col)
-  }
+  # 2. for each datapoint(row),
+  #    turn the hypercube data into a multivariate data of (1, 2, ..., kappa^d)
+  #    each row now becomes an integer.
+  data.multivariate <- .TransformMultivariate(
+    data.interval = data.interval,
+    n.bin = kappa,
+    dim = d
+    )
   
   # 3. turn the indices into one-hot vectors
   data.onehot <- .TransformOnehot(
-    vector.indices = hypercube.index,
+    data.multivariate = data.multivariate,
     n.dim = kappa ^ d
     )
+  
   return(data.onehot)
 }
 
-.TransformIntervalIndex <- function(data.raw, n.intervals) {
+.TransformIntervalIndex <- function(data, n.intervals) {
   # for each dimension, transform the data in [0,1] into the interval index
   # first interval = [0, x], the others = (y z]
   
   # create designated number of intervals
-  if (is.vector(data.raw)){ d <- 1 }
-  else{ d <- ncol(data.raw) }
+  if (is.vector(data)){ d <- 1 }
+  else{ d <- ncol(data) }
   
   breaks <- seq(from = 0, to = 1, length = n.intervals + 1)
   
   # for each dimension.
-  data.indices <- cut(x = data.raw,
+  data.indices <- cut(x = data,
                       breaks = breaks,
                       include.lowest = TRUE)
   data.indices <- as.numeric(data.indices)
@@ -44,10 +51,14 @@ multivariate.binning <- function(data.in, kappa) {
   return( data.indices ) 
 }
 
-.TransformOnehot <- function(vector.indices, n.dim) {
+.TransformMultivariate <- function(data.interval, n.bin, dim){
+  return(1 + (data.interval - 1) %*% n.bin^( (dim-1) : 0 ))
+}
+
+.TransformOnehot <- function(data.multivariate, n.dim) {
   data.onehot <- matrix(0, nrow = n, ncol = n.dim) #initialize with 0
   for (row.num in 1:n) {
-    bin.num <- vector.indices[row.num]
+    bin.num <- data.multivariate[row.num]
     data.onehot[row.num, bin.num] <- 1
   }
   return(data.onehot)
@@ -72,7 +83,7 @@ noise.discrete <- function(n, d, kappa, alpha) {
   kappa.d <- kappa ^ d
   t <- 2 * sqrt(kappa.d) / alpha
   param.geom <- 1 - exp(-1 / t)
-  noise <- rgeom(n = n * kappa.d, param.geom) + 1
+  noise <- rgeom(n = n * kappa.d, param.geom) - rgeom(n = n * kappa.d, param.geom) + 1
   return(noise)
 }
 #
