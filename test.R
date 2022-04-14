@@ -20,10 +20,7 @@ Bin <- function(data, kappa) {
     )
   
   # 3. turn the indices into one-hot vectors
-  data.onehot <- .TransformOnehot(
-    data.multivariate = data.multivariate,
-    n.dim = kappa ^ d
-    )
+  data.onehot <- .TransformOnehot(data.multivariate, kappa^d)
   
   return(data.onehot)
 }
@@ -41,8 +38,8 @@ Bin <- function(data, kappa) {
   # for each dimension.
   data.indices <- cut(x = data,
                       breaks = breaks,
+                      labels = FALSE,
                       include.lowest = TRUE)
-  data.indices <- as.numeric(data.indices)
   data.indices <- matrix(data.indices,
                          ncol = d,
                          byrow = FALSE # since cut function collapsed a matrix column-wise.
@@ -54,8 +51,9 @@ Bin <- function(data, kappa) {
   return(1 + (data.interval - 1) %*% n.bin^( (dim-1) : 0 ))
 }
 
-.TransformOnehot <- function(data.multivariate, n.dim) {
-  data.onehot <- matrix(0, nrow = n, ncol = n.dim) #initialize with 0
+.TransformOnehot <- function(data.multivariate, dim) {
+  n <- nrow(data.multivariate)
+  data.onehot <- matrix(0, nrow = n, ncol = dim) #initialize with 0
   for (row.num in 1:n) {
     bin.num <- data.multivariate[row.num]
     data.onehot[row.num, bin.num] <- 1
@@ -119,7 +117,7 @@ noise.discrete <- function(n, dim, alpha) {
 }
 
 UstatTwoSample <- function(data, n.1) {
-  n2 <- nrow(data) - n.1
+  n.2 <- nrow(data) - n.1
   
   data.x <- data[1:n.1,]
   data.y <- data[(n.1 + 1):(n.1 + n.2), ]
@@ -140,8 +138,8 @@ UstatTwoSample <- function(data, n.1) {
   return(u.x + u.y - u.xy)
 }
 
-PrivatePermutationTest <-
-  function(B, data.x, data.y, kappa, alpha, discrete = FALSE) {
+PrivatePermutationTwoSampleTest <-
+  function(B, data.x, data.y, kappa, alpha, gamma, discrete = FALSE) {
     n.1 <- nrow(data.x)
     n.2 <- nrow(data.y)
     d <- ncol(data.x)
@@ -150,13 +148,18 @@ PrivatePermutationTest <-
     data.y.binned <- Bin(data.y, kappa)
     
     data.combined <- rbind(data.x.binned, data.y.binned)
-    ustat.original <- UstatTwoSample(data.combined, n.1)
-    #permutation procedure
+    data.privatized <- PrivatizeTwoSample(data.combined, alpha)
+    ustat.original <- UstatTwoSample(data.privatized, n.1)
     
-    permutation.stats <- rep(0, B)
+    #permutation procedure
+    perm.stats <- rep(0, B)
     for (rep in 1:B) {
       perm <- sample(1:(n.1 + n.2)) 
-      permu.stats[rep] <- UstatTwoSample(data.combined[perm, ], n.1)
+      perm.stats[rep] <- UstatTwoSample(data.privatized[perm, ], n.1)
     }
-    return(sum(permutation.stats > u.n.1.n.2) / (B + 1))
+    p.value.proxy <- (1 + sum(ustat.original < perm.stats)) / (B + 1)
+    
+    #test result: TRUE = 1 = reject the null, FALSE = 0 = retain the null.
+    
+    return(p.value.proxy < gamma)
   }
