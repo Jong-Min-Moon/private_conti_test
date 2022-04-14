@@ -118,23 +118,24 @@ noise.discrete <- function(n, dim, alpha) {
   return(noise)
 }
 
-UstatTwoSample <- function(data.x, data.y) {
-  n1 <- nrow(data.x)
-  n2 <- nrow(data.y)
+UstatTwoSample <- function(data, n.1) {
+  n2 <- nrow(data) - n.1
   
+  data.x <- data[1:n.1,]
+  data.y <- data[(n.1 + 1):(n.1 + n.2), ]
   # x only part
   u.x <- data.x %*% t(data.x)
   diag(u.x) <- 0
-  u.x <- sum(u.x) / (n1 * (n1 - 1))
+  u.x <- sum(u.x) / (n.1 * (n.1 - 1))
   
   # y only part
   u.y <- data.y %*% t(data.y)
   diag(u.y) <- 0
-  u.y <- sum(u.y) / (n2 * (n2 - 1))
+  u.y <- sum(u.y) / (n.2 * (n.2 - 1))
   
   # x, y part
   u.xy <- data.x %*% t(data.y)
-  u.xy <- sum(u.xy) * ( 2 / (n1 * n2) )
+  u.xy <- sum(u.xy) * ( 2 / (n.1 * n.2) )
   
   return(u.x + u.y - u.xy)
 }
@@ -148,24 +149,14 @@ PrivatePermutationTest <-
     data.x.binned <- Bin(data.x, kappa)
     data.y.binned <- Bin(data.y, kappa)
     
-  
-    
-    
-    u.n.1.n.2 <- UstatTwoSample(data.x, data.y)
-    
+    data.combined <- rbind(data.x.binned, data.y.binned)
+    ustat.original <- UstatTwoSample(data.combined, n.1)
     #permutation procedure
     
-    data.combined <- rbind(data.x, data.y)
     permutation.stats <- rep(0, B)
     for (rep in 1:B) {
-      #cat(rep, "th permutation\n")
-      perm <-
-        sample(1:(n.1 + n.2)) # Question: same permutation can appear.
-      data.permuted <- data.combined[perm, ]
-      data.permuted.x <- data.permuted[1:n.1, ]
-      data.permuted.y <- data.permuted[(n.1 + 1):(n.1 + n.2), ]
-      permutation.stats[rep] <-
-        UstatTwoSample(data.permuted.x, data.permuted.y)
+      perm <- sample(1:(n.1 + n.2)) 
+      permu.stats[rep] <- UstatTwoSample(data.combined[perm, ], n.1)
     }
     return(sum(permutation.stats > u.n.1.n.2) / (B + 1))
   }
