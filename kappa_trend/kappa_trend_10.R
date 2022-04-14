@@ -1,6 +1,8 @@
 source("~/GitHub/private_conti_test/test.R")
-n1 <- n2 <- 500
-kappa = 20
+n1 <- n2 <- 1000
+##########
+kappa = 10
+##########
 alpha = 0.5
 gamma = 0.05
 d = 1
@@ -38,5 +40,8 @@ for (rep in 1:100) {
 
 end_time <- Sys.time()
 
+filename <- paste0("~/GitHub/private_conti_test/kappa_trend/kappa_trend_",kappa, ".txt") 
+sink(filename)
+cat("kappa = ", kappa, "n1 = ", n1, "n2 = ", n2, "alpha = ", alpha, "gamma = ", gamma, "B = ", B, "\n")
 cat("power = ", sum(result.conti.h1) / 100)
 
