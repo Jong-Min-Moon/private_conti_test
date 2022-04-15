@@ -163,3 +163,19 @@ PrivatePermutationTwoSampleTest <-
     
     return(p.value.proxy < gamma)
   }
+
+
+L2distBetaUnif <- function(shape.1, shape.2){
+  return(Beta(2 * shape.1 - 1, 2 * shape.2 -1) / (Beta(shape.1, shape.2))^2 - 1)
+}
+
+L2distBetaBeta <- function(shape.1.1, shape.1.2, shape.2.1, shape.2.2){
+  first.beta.term <- Beta(2 * shape.1.1 - 1, 2 * shape.1.2 -1) / (Beta(shape.1.1, shape.1.2))^2
+  second.beta.term <- Beta(2 * shape.2.1 - 1, 2 * shape.2.2 -1) / (Beta(shape.2.1, shape.2.2))^2
+  cross.term <- Beta(shape.1.1 + shape.2.1 - 1, shape.1.2 + shape.2.2 -1) / ( (Beta(shape.1.1, shape.1.2)) * (Beta(shape.2.1, shape.2.2)) )
+  return(first.beta.term + second.beta.term - 2 * cross.term)
+}
+
+Beta <- function(shape.1, shape.2){
+  return(gamma(shape.1) * gamma(shape.2) / gamma(shape.1 + shape.2))
+}
