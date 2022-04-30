@@ -150,12 +150,13 @@ PrivatePermutationTwoSampleTest <-
     data.combined <- rbind(data.x.binned, data.y.binned)
     data.privatized <- PrivatizeTwoSample(data.combined, alpha)
     ustat.original <- UstatTwoSample(data.privatized, n.1)
-    
+    #cat("\nunpermuted statistic:", ustat.original)
     #permutation procedure
     perm.stats <- rep(0, B)
     for (rep in 1:B) {
       perm <- sample(1:(n.1 + n.2)) 
       perm.stats[rep] <- UstatTwoSample(data.privatized[perm, ], n.1)
+      #cat("\ntest statistic:", UstatTwoSample(data.privatized[perm, ], n.1))
     }
     p.value.proxy <- (1 + sum(ustat.original < perm.stats)) / (B + 1)
     
