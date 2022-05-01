@@ -109,12 +109,21 @@ noise.conti <- function(n, dim, alpha) {
 
 noise.discrete <- function(n, dim, alpha) {
   #dim = kappa^d for conti data, d for discrete data
-  t <- 2 * sqrt(dim) / alpha
-  param.geom <- 1 - exp(-1 / t)
+  param.geom <- 1 - exp(-alpha / (2*sqrt(dim)))
   n.noise <-  n * dim
   noise <- rgeom(n.noise, param.geom) - rgeom(n.noise, param.geom)
   return(noise)
 }
+
+noise.vairance.theoretic.conti <-function(dim, alpha){
+  return(8 * dim / (alpha^2))
+}
+
+noise.vairance.theoretic.discrete <-function(dim, alpha){
+  p <- exp(-alpha/(2*sqrt(dim)))
+  return(2*p/(1-p)^2)
+}
+
 
 UstatTwoSample <- function(data, n.1) {
   n.2 <- nrow(data) - n.1
