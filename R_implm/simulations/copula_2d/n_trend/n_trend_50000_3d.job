@@ -1,0 +1,14 @@
+#!/bin/bash 
+#
+#SBATCH --job-name=copula3d_50000
+#SBATCH --partition=all
+#SBATCH --account=mjm
+#SBATCH --mem=100gb
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=25
+#SBATCH --time=999:59:59
+#SBATCH --output=/mnt/nas/users/mjm/GitHub/private_conti_test/R_implm/simulations/copula_2d/n_trend/n_trend_50000_3d.log
+#SBATCH --error=/mnt/nas/users/mjm/GitHub/private_conti_test/R_implm/simulations/copula_2d/n_trend/n_trend_50000_3d.err
+#SBATCH --nodelist=cpu-compute
+
+Rscript /mnt/nas/users/mjm/GitHub/private_conti_test/R_implm/simulations/copula_2d/n_trend/n_trend_50000_3d.R
