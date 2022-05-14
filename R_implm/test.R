@@ -104,6 +104,7 @@ noise.conti <- function(n, dim, alpha) {
   n.noise <- n * dim
   unit.laplace <- rexp(n.noise, sqrt(2)) - rexp(n.noise, sqrt(2))
   noise <- scale * unit.laplace
+  print(var(noise))
   return(noise)
 }
 
@@ -159,7 +160,7 @@ PrivatePermutationTwoSampleTest <-
     data.combined <- rbind(data.x.binned, data.y.binned)
     data.privatized <- PrivatizeTwoSample(data.combined, alpha)
     ustat.original <- UstatTwoSample(data.privatized, n.1)
-    #cat("\nunpermuted statistic:", ustat.original)
+    cat("\nunpermuted statistic:", ustat.original)
     #permutation procedure
     perm.stats <- rep(0, B)
     for (rep in 1:B) {
@@ -170,7 +171,7 @@ PrivatePermutationTwoSampleTest <-
     p.value.proxy <- (1 + sum(ustat.original < perm.stats)) / (B + 1)
     
     #test result: TRUE = 1 = reject the null, FALSE = 0 = retain the null.
-    
+    print(p.value.proxy)
     return(p.value.proxy < gamma)
   }
 
