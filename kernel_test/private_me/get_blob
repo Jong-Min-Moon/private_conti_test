@@ -1,0 +1,12 @@
+import data as datasets
+sample_size = 100
+seed = 1
+tr_proportion = 0.7
+sample_source = datasets.SSBlobs()
+
+tst_data = sample_source.sample(sample_size, seed=seed)
+
+tr, te = tst_data.split_tr_te(tr_proportion, seed=seed+20)
+
+print(tr.X)
+print(tr.Y)
