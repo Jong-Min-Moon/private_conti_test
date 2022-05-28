@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/d_trend/9d_20000.py", line 58, in <module>
+    result_now = tester.run_test_conti_data(B, data_x, data_y,
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester.py", line 8, in run_test_conti_data
+    dataPrivatized = self.preprocess_conti_data(data_X, data_Y, kappa, alpha)
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester.py", line 42, in preprocess_conti_data
+    dataPrivatized = self.privatize_twosample(dataCombined, alpha)
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester.py", line 119, in privatize_twosample
+    noise = self.noise_conti(n = n, dim = dim, alpha = alpha)
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester.py", line 135, in noise_conti
+    laplace_samples = unit_laplace_generator.sample(sample_shape = torch.Size([n * dim]))
+  File "/mnt/nas/users/mjm/.local/lib/python3.8/site-packages/torch/distributions/distribution.py", line 136, in sample
+    return self.rsample(sample_shape)
+  File "/mnt/nas/users/mjm/.local/lib/python3.8/site-packages/torch/distributions/laplace.py", line 62, in rsample
+    u = self.loc.new(shape).uniform_(finfo.eps - 1, 1)
+RuntimeError: CUDA out of memory. Tried to allocate 2.93 GiB (GPU 0; 15.72 GiB total capacity; 11.73 GiB already allocated; 2.01 GiB free; 11.74 GiB reserved in total by PyTorch)
