@@ -1,0 +1,48 @@
+source("~/GitHub/private_conti_test/R_implm/test.R")
+
+runif(24)
+
+
+data <- matrix(
+  c(
+0.19901582, 0.29330425, 0.08031318, 0.27744206, 0.38371595, 0.07725842, 0.58872328,
+0.60947456, 0.78765378, 0.18596928, 0.20049580, 0.04321161, 0.60499579, 0.38050702,
+0.26301983, 0.58410214, 0.42093993, 0.42060113, 0.89575178, 0.57233768, 0.01160462,
+0.55440856, 0.50919182, 0.80756614
+), ncol = 4, byrow = TRUE)
+
+data
+
+# 1. test of TransformIntervalIndex
+
+index_1 <- .TransformIntervalIndex(data, n.intervals = 4)
+index_1
+index_2 <- .TransformIntervalIndex(data, n.intervals = 5)
+index_2
+index_3 <- .TransformIntervalIndex(data, n.intervals = 6)
+index_3
+
+# 2. test of TransformMultivariate
+multi_1 <- .TransformMultivariate(index_1, 4)
+multi_1
+multi_2 <- .TransformMultivariate(index_2, 5)
+multi_2
+multi_3 <- .TransformMultivariate(index_3, 6)
+multi_3
+
+# 3. test of TransformOnehot
+onehot_1 <- .TransformOnehot(multi_1, 4^4)
+onehot_1[1,]
+
+
+onehot_2 <- .TransformOnehot(multi_1, 4^5)
+onehot_2
+onehot_3 <- .TransformOnehot(multi_1, 4^6)
+onehot_3
+
+
+
+
+
+
+PrivatizeTwoSample(data, alpha = 0.5)
