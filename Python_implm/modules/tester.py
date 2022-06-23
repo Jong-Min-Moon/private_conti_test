@@ -5,7 +5,8 @@ class LDPTwoSampleTester:
         self.cuda_device = cuda_device
 
     def run_test_conti_data(self, B, data_X, data_Y, kappa, alpha, gamma, discrete = False):
-        dataPrivatized = self.preprocess_conti_data(data_X, data_Y, kappa, alpha)
+        dataPrivatized, noise_var = self.preprocess_conti_data(data_X, data_Y, kappa, alpha, discrete)
+        
         n_1 = data_X.size(dim = 0)
         
  
@@ -32,15 +33,16 @@ class LDPTwoSampleTester:
         
         
         print(f"p value proxy: {p_value_proxy}")
-        return(p_value_proxy < gamma)#test result: TRUE = 1 = reject the null, FALSE = 0 = retain the null.
+        return(p_value_proxy < gamma, noise_var)#test result: TRUE = 1 = reject the null, FALSE = 0 = retain the null.
     
-    def preprocess_conti_data(self, data_X, data_Y, kappa, alpha):
+    def preprocess_conti_data(self, data_X, data_Y, kappa, alpha, discrete):
         data_X_binned = self.bin(data_X, kappa)
         data_Y_binned = self.bin(data_Y, kappa)
         
         dataCombined = torch.cat([data_X_binned, data_Y_binned], dim = 0)
-        dataPrivatized = self.privatize_twosample(dataCombined, alpha)
-        return(dataPrivatized)
+        dataPrivatized, noise_var = self.privatize_twosample(dataCombined, alpha, discrete)
+        print(dataPrivatized.size())
+        return(dataPrivatized, noise_var)
         
 
     def bin(self, data, kappa): 
@@ -114,16 +116,17 @@ class LDPTwoSampleTester:
             return( torch.mul(scale, data) )
         else: # private case
             if discrete_noise:
-                noise = self.noise_discrete(n = n, dim = dim, alpha = alpha)
+                noise, noise_var = self.noise_discrete(n = n, dim = dim, alpha = alpha)
             else:
-                noise = self.noise_conti(n = n, dim = dim, alpha = alpha)
+                noise, noise_var = self.noise_conti(n = n, dim = dim, alpha = alpha)
         return(
             
             torch.add(
                 input = noise.reshape(n, -1),
                 alpha = scale,
                 other = data
-            )
+            ), 
+            noise_var
         )
     
     def noise_conti(self, n, dim, alpha):
@@ -135,8 +138,8 @@ class LDPTwoSampleTester:
         laplace_samples = unit_laplace_generator.sample(sample_shape = torch.Size([n * dim]))
         scale = (8**(1/2) / alpha) * (dim**(1/2))
         laplace_samples = scale*laplace_samples
-        print(f"noise variance: {torch.var(laplace_samples)}")
-        return(laplace_samples)
+        print("noise type: conti")
+        return(laplace_samples, torch.var(laplace_samples))
     
   
         
@@ -147,7 +150,9 @@ class LDPTwoSampleTester:
         n_noise =  n * dim
         geometric_generator = torch.distributions.geometric.Geometric(param_geom.to(self.cuda_device))
         noise = geometric_generator.sample((n_noise,)) - geometric_generator.sample((n_noise,))
-        return(noise)
+        print("noise type: discrete")
+
+        return(noise, torch.var(noise))
     
     def u_stat_twosample(self, data, n_1):
         n_2 = data.size(dim = 0) - n_1
