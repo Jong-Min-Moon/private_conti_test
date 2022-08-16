@@ -1,6 +1,8 @@
 import torch
 import itertools
 import scipy
+from scipy.special import comb
+
 
 class LDPTwoSampleTester:
     def __init__(self, cuda_device):
@@ -185,8 +187,6 @@ class LDPTwoSampleTester:
         else:
             return # we only use up to 2-dimensional tensor, i.e. matrix
 
-
-       
 class LDPIndepTester:
     def __init__(self, cuda_device):
         self.cuda_device = cuda_device
@@ -203,7 +203,7 @@ class LDPIndepTester:
         if (torch.sum(data.gt(1))).gt(0):
             print("check data range")
             return False
-        elif (torch.sum(data.le(0))).gt(0):
+        elif (torch.sum(data.lt(0))).gt(0):
             print("check data range")
             return False
         else:
@@ -223,8 +223,8 @@ class LDPIndepTester:
 
         #2. privatize
         data_Y_priv, data_Z_priv, noise_var_Y, noise_var_Z = self.privatize_indep(
-            data_Y = data_Y,
-            data_Z = data_Z,
+            data_Y = data_Y_binned,
+            data_Z = data_Z_binned,
             alpha = alpha,
             discrete_noise = discrete_noise
         )
@@ -232,7 +232,7 @@ class LDPIndepTester:
         #4 compute original u-stat
         ustatOriginal = self.u_stat_indep_matrix(data_Y_priv, data_Z_priv)
 
-        print(f"original u-statistic:{ustatOriginal}")
+        #print(f"original u-statistic:{ustatOriginal}")
         
         #permutation procedure
         permStats = torch.empty(B).to(self.cuda_device)
@@ -245,7 +245,7 @@ class LDPIndepTester:
                 ).to(self.cuda_device)
 
             permStats[i] = perm_stat_now
-            #print(perm_stat_now)
+            #print(f"perm_stat_now = {perm_stat_now}")
          
         
         p_value_proxy = (1 +
@@ -255,7 +255,7 @@ class LDPIndepTester:
                         ) / (B + 1)
         
         
-        print(f"p value proxy: {p_value_proxy}")
+        #print(f"p value proxy: {p_value_proxy}")
         
         return(p_value_proxy < gamma, noise_var_Y, noise_var_Z)#test result: TRUE = 1 = reject the null, FALSE = 0 = retain the null.
 
@@ -272,7 +272,11 @@ class LDPIndepTester:
         sigma_kappa_alpha = 4 * (2 ** (1/2)) * scale_factor / alpha
         
         if alpha == float("inf"): #non-private case
-            return( torch.mul(scale_factor, data) )
+            return( 
+                    torch.mul(scale_factor, data_Y),
+                    torch.mul(scale_factor, data_Z),
+                    0, 0
+                     )
         else:
             data_Y_priv, noise_var_Y = self.privatize_indep_separate(
                     data = data_Y,
@@ -321,14 +325,12 @@ class LDPIndepTester:
         )
         return unit_laplace_generator.sample(sample_shape = torch.Size([n * d]))
 
-  
 
     def bin(self, data, kappa): 
         ''' Only for continuous data'''
         
         # create designated number of intervals
         d = self.get_dimension(data)
-        print(d)
      
         # 1. for each dimension, turn the continuous data into interval
         # each row now indicates a hypercube in [0,1]^d
@@ -391,7 +393,12 @@ class LDPIndepTester:
         elif data.dim() == 2:
             return( data.size(dim = 1) )
         else:
-            return # we only use up to 2-dimensional tensor, i.e. matrix  
+            return # we only use up to 2-dimensional tensor, i.e. matrix
+##########################################################################################
+##########################################################################################
+
+
+    
     
     def kernel_indep(self, fourchunk):
         ip = torch.matmul(fourchunk, torch.transpose(fourchunk, 0, 1))
@@ -405,7 +412,7 @@ class LDPIndepTester:
         Phi_tilde = Phi.fill_diagonal_(0.0)
         Psi_tilde = Psi.fill_diagonal_(0.0)
         n_four = n * (n-1) * (n-2) * (n-3)
-        one = torch.ones(n, 1).to(device)
+        one = torch.ones(n, 1).to(self.cuda_device)
         oneT = torch.transpose(one, 0, 1)
 
         PhiPsi = torch.matmul(Phi, Psi)
@@ -441,3 +448,5 @@ class LDPIndepTester:
                             self.kernel_indep(data_X[comb,]) * self.kernel_indep(data_Y[comb,])
                         )/n_four
         return(U_statistic)
+
+
