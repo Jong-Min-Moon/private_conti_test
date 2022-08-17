@@ -32,13 +32,13 @@ torch.cuda.empty_cache()
 
 
 ####CHANGE HERE#####
-n = 30000
+n = 35000
 ####################
 kappa = 3 #number of bins
-alpha = 0.8*2 #privacy level
+alpha = 0.8*1.5 #privacy level
 gamma = 0.05 # significance level
 nTests = 50 #number of tests for power estimation
-B = 50 # number of permutations
+B = 100 # number of permutations
 d = 2
 
 

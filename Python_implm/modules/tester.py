@@ -190,15 +190,13 @@ class LDPTwoSampleTester:
 class LDPIndepTester:
     def __init__(self, cuda_device):
         self.cuda_device = cuda_device
-
    
     def bin_separately(self, data_X, data_Y, kappa):
         return (
             self.bin(data_X, kappa),
             self.bin(data_Y, kappa)
             )
-
-        
+       
     def range_check(self, data):
         if (torch.sum(data.gt(1))).gt(0):
             print("check data range")
@@ -406,12 +404,16 @@ class LDPIndepTester:
 
      
     def u_stat_indep_matrix(self, data_X, data_Y):
-        n = data_X.size(dim=0)
+        n = data_X.size(dim = 0)
+        n_four = n * (n-1) * (n-2) * (n-3)
+
+
+
         Phi = torch.matmul(data_X, torch.transpose(data_X, 0, 1))
         Psi = torch.matmul(data_Y, torch.transpose(data_Y, 0, 1))
         Phi_tilde = Phi.fill_diagonal_(0.0)
         Psi_tilde = Psi.fill_diagonal_(0.0)
-        n_four = n * (n-1) * (n-2) * (n-3)
+
         one = torch.ones(n, 1).to(self.cuda_device)
         oneT = torch.transpose(one, 0, 1)
 
@@ -423,11 +425,63 @@ class LDPIndepTester:
         onePsione = torch.matmul(oneT, torch.matmul(Psi, one))
         onePhioneonePsione = torch.matmul(onePhione, onePsione)
 
+        #Un = (
+        #   4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
+        # - 8 * (n-3) *(onePhiPsiOne - trPhiPsi)
+        # + 4 * (n-3)*(n-2) * trPhiPsi
+        # )
+
         Un = (
-          4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
-        - 8 * (n-3) *(onePhiPsiOne - trPhiPsi)
-        + 4 * (n-3)*(n-2) * trPhiPsi
-        )
+           4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
+         - 8 * (n-3) *(onePhiPsiOne - trPhiPsi)
+         - 8 * (n-3) *(onePhiPsiOne - trPhiPsi)
+
+
+         + 4 * (n-3)*(n-2) * trPhiPsi
+         )
+        
+        return(Un/n_four)
+
+    def u_stat_indep_matrix_efficient(self, data_X, data_Y):
+        n = data_X.size(dim = 0)
+        n_four = n * (n-1) * (n-2) * (n-3)
+
+
+
+        Phi = torch.matmul(data_X, torch.transpose(data_X, 0, 1))
+        Psi = torch.matmul(data_Y, torch.transpose(data_Y, 0, 1))
+        Phi_tilde = Phi.fill_diagonal_(0.0)
+        Psi_tilde = Psi.fill_diagonal_(0.0)
+
+        one = torch.ones(n, 1).to(self.cuda_device)
+        oneT = torch.transpose(one, 0, 1)
+
+        PhiPsi = torch.matmul(Phi, Psi)
+        trPhiPsi = torch.trace(PhiPsi)
+        onePhiPsiOne = torch.matmul(oneT, torch.matmul(PhiPsi, one))
+
+        onePhione = torch.matmul(oneT, torch.matmul(Phi, one))
+        onePsione = torch.matmul(oneT, torch.matmul(Psi, one))
+        onePhioneonePsione = torch.matmul(onePhione, onePsione)
+
+        #Un = (
+        #   4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
+        # - 8 * (n-3) *(onePhiPsiOne - trPhiPsi)
+        # + 4 * (n-3)*(n-2) * trPhiPsi
+        # )
+
+        Un = (
+           4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
+           4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
+           4 * (onePhioneonePsione - 4 * onePhiPsiOne + 2 * trPhiPsi)
+
+
+         - 8 * (n-3) * onePhiPsiOne
+         + 8 * (n-3) * trPhiPsi
+
+
+         + 4 * (n-3)*(n-2) * trPhiPsi
+         )
         
         return(Un/n_four)
     

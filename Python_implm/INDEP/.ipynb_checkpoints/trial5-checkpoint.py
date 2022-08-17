@@ -22,7 +22,7 @@ print(f"cuda available: {USE_CUDA}")
 num_of_gpus = torch.cuda.device_count()
 print(num_of_gpus)
 
-device = torch.device('cuda:0' if USE_CUDA else 'cpu') 
+device = torch.device('cuda:1' if USE_CUDA else 'cpu') 
 print(f"code run on device:: {device}")
 
 print(torch.cuda.memory_allocated())
@@ -32,10 +32,10 @@ torch.cuda.empty_cache()
 
 
 ####CHANGE HERE#####
-n = 30000
+n = 35000
 ####################
 kappa = 3 #number of bins
-alpha = 0.8*2 #privacy level
+alpha = 0.8 #privacy level
 gamma = 0.05 # significance level
 nTests = 50 #number of tests for power estimation
 B = 50 # number of permutations
