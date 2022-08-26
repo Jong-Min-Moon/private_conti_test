@@ -1,0 +1,5535 @@
+job started
+cuda available: True
+code run on device:: cuda:0
+
+simulation started at = 2022-08-24 15:36:39.631550 
+
+n1 = 20000, n2 = 20000,
+
+kappa = 3, alpha = 0.8,
+
+gamma = 0.05, nTests = 500,
+
+B = 300, d = 7
+
+sigma_1
+tensor([[1.0000, 0.5000, 0.5000, 0.5000, 0.5000, 0.5000, 0.5000],
+        [0.5000, 1.0000, 0.5000, 0.5000, 0.5000, 0.5000, 0.5000],
+        [0.5000, 0.5000, 1.0000, 0.5000, 0.5000, 0.5000, 0.5000],
+        [0.5000, 0.5000, 0.5000, 1.0000, 0.5000, 0.5000, 0.5000],
+        [0.5000, 0.5000, 0.5000, 0.5000, 1.0000, 0.5000, 0.5000],
+        [0.5000, 0.5000, 0.5000, 0.5000, 0.5000, 1.0000, 0.5000],
+        [0.5000, 0.5000, 0.5000, 0.5000, 0.5000, 0.5000, 1.0000]],
+       device='cuda:0')
+sigma_2
+tensor([[5.0000, 2.5000, 2.5000, 2.5000, 2.5000, 2.5000, 2.5000],
+        [2.5000, 5.0000, 2.5000, 2.5000, 2.5000, 2.5000, 2.5000],
+        [2.5000, 2.5000, 5.0000, 2.5000, 2.5000, 2.5000, 2.5000],
+        [2.5000, 2.5000, 2.5000, 5.0000, 2.5000, 2.5000, 2.5000],
+        [2.5000, 2.5000, 2.5000, 2.5000, 5.0000, 2.5000, 2.5000],
+        [2.5000, 2.5000, 2.5000, 2.5000, 2.5000, 5.0000, 2.5000],
+        [2.5000, 2.5000, 2.5000, 2.5000, 2.5000, 2.5000, 5.0000]],
+       device='cuda:0')
+
+1th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-32.83709716796875
+p value proxy: 0.5913621187210083
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27332.60546875
+average noise variance upto now: 27332.60546875
+
+2th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-143.26983642578125
+p value proxy: 0.7707641124725342
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27328.599609375
+average noise variance upto now: 27330.6015625
+
+3th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-80.35324096679688
+p value proxy: 0.6578072905540466
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27340.5703125
+average noise variance upto now: 27333.923828125
+
+4th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-196.0233612060547
+p value proxy: 0.8737541437149048
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27340.978515625
+average noise variance upto now: 27335.6875
+
+5th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-227.59219360351562
+p value proxy: 0.8571428656578064
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27347.57421875
+average noise variance upto now: 27338.06640625
+
+6th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-75.46529388427734
+p value proxy: 0.6511628031730652
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27333.888671875
+average noise variance upto now: 27337.373046875
+
+7th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:34.66088104248047
+p value proxy: 0.4651162624359131
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27332.8125
+average noise variance upto now: 27336.720703125
+
+8th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-18.94255256652832
+p value proxy: 0.5714285373687744
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27331.4609375
+average noise variance upto now: 27336.0625
+
+9th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:89.2619857788086
+p value proxy: 0.31561461091041565
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27346.26953125
+average noise variance upto now: 27337.197265625
+
+10th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:0.925384521484375
+p value proxy: 0.5382059812545776
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27321.82421875
+average noise variance upto now: 27335.66015625
+
+11th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-34.53200912475586
+p value proxy: 0.5847175717353821
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27351.2109375
+average noise variance upto now: 27337.0703125
+
+12th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-126.67860412597656
+p value proxy: 0.7209302186965942
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27334.21484375
+average noise variance upto now: 27336.833984375
+
+13th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-5.107212543487549
+p value proxy: 0.5116279125213623
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27340.6484375
+average noise variance upto now: 27337.126953125
+
+14th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:193.15707397460938
+p value proxy: 0.14617939293384552
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27329.763671875
+average noise variance upto now: 27336.59765625
+
+15th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:17.292152404785156
+p value proxy: 0.4119601249694824
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27340.015625
+average noise variance upto now: 27336.826171875
+
+16th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-61.956443786621094
+p value proxy: 0.684385359287262
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27337.244140625
+average noise variance upto now: 27336.85546875
+
+17th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-66.1310806274414
+p value proxy: 0.6212624311447144
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27338.84375
+average noise variance upto now: 27336.970703125
+
+18th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-73.76300048828125
+p value proxy: 0.6478404998779297
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27342.7734375
+average noise variance upto now: 27337.291015625
+
+19th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-158.4523468017578
+p value proxy: 0.7807309031486511
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27339.306640625
+average noise variance upto now: 27337.3984375
+
+20th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:151.76844787597656
+p value proxy: 0.2026578038930893
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27335.767578125
+average noise variance upto now: 27337.31640625
+
+21th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-8.874649047851562
+p value proxy: 0.5182723999023438
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27336.884765625
+average noise variance upto now: 27337.296875
+
+22th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:119.81260681152344
+p value proxy: 0.21926909685134888
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27329.10546875
+average noise variance upto now: 27336.92578125
+
+23th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:33.66990661621094
+p value proxy: 0.45514950156211853
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27334.4453125
+average noise variance upto now: 27336.818359375
+
+24th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-18.50743865966797
+p value proxy: 0.5348837375640869
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27337.484375
+average noise variance upto now: 27336.84375
+
+25th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:2.1021156311035156
+p value proxy: 0.4451827108860016
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27350.603515625
+average noise variance upto now: 27337.39453125
+
+26th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:79.21277618408203
+p value proxy: 0.35548171401023865
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27343.3984375
+average noise variance upto now: 27337.625
+
+27th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:86.5003662109375
+p value proxy: 0.3089700937271118
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27347.708984375
+average noise variance upto now: 27338.0
+
+28th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-83.572998046875
+p value proxy: 0.684385359287262
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27329.251953125
+average noise variance upto now: 27337.6875
+
+29th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-274.507568359375
+p value proxy: 0.9269102811813354
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27332.32421875
+average noise variance upto now: 27337.501953125
+
+30th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-145.92359924316406
+p value proxy: 0.7508305311203003
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27335.55078125
+average noise variance upto now: 27337.4375
+
+31th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-22.731002807617188
+p value proxy: 0.554817259311676
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27341.744140625
+average noise variance upto now: 27337.576171875
+
+32th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-351.8936767578125
+p value proxy: 0.9833886623382568
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27338.849609375
+average noise variance upto now: 27337.6171875
+
+33th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-68.2500228881836
+p value proxy: 0.604651153087616
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27341.5234375
+average noise variance upto now: 27337.734375
+
+34th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:65.15000915527344
+p value proxy: 0.3322259187698364
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27337.015625
+average noise variance upto now: 27337.712890625
+
+35th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:249.54879760742188
+p value proxy: 0.09966777265071869
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27336.240234375
+average noise variance upto now: 27337.671875
+
+36th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-225.03707885742188
+p value proxy: 0.9235880374908447
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27337.923828125
+average noise variance upto now: 27337.6796875
+
+37th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-75.1080551147461
+p value proxy: 0.6478404998779297
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27340.9296875
+average noise variance upto now: 27337.765625
+
+38th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:163.27435302734375
+p value proxy: 0.15614616870880127
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27332.125
+average noise variance upto now: 27337.6171875
+
+39th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:336.76422119140625
+p value proxy: 0.05647840350866318
+result: 0.0
+power_upto_now: 0.0
+noise variance: 27348.505859375
+average noise variance upto now: 27337.89453125
+
+40th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:349.7779846191406
+p value proxy: 0.039867110550403595
+result: 1.0
+power_upto_now: 0.02500000037252903
+noise variance: 27335.662109375
+average noise variance upto now: 27337.84375
+
+41th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:92.36109924316406
+p value proxy: 0.29235878586769104
+result: 0.0
+power_upto_now: 0.024390242993831635
+noise variance: 27343.044921875
+average noise variance upto now: 27337.96875
+
+42th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:346.75030517578125
+p value proxy: 0.033222589641809464
+result: 1.0
+power_upto_now: 0.0476190485060215
+noise variance: 27334.259765625
+average noise variance upto now: 27337.880859375
+
+43th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-118.52117919921875
+p value proxy: 0.724252462387085
+result: 0.0
+power_upto_now: 0.04651162773370743
+noise variance: 27337.5703125
+average noise variance upto now: 27337.875
+
+44th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:75.62361145019531
+p value proxy: 0.3289036452770233
+result: 0.0
+power_upto_now: 0.04545454680919647
+noise variance: 27342.78515625
+average noise variance upto now: 27337.986328125
+
+45th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-71.89743041992188
+p value proxy: 0.634551465511322
+result: 0.0
+power_upto_now: 0.04444444552063942
+noise variance: 27332.1328125
+average noise variance upto now: 27337.85546875
+
+46th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-201.77127075195312
+p value proxy: 0.8704319000244141
+result: 0.0
+power_upto_now: 0.043478261679410934
+noise variance: 27337.4296875
+average noise variance upto now: 27337.84765625
+
+47th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:15.8106689453125
+p value proxy: 0.4883720874786377
+result: 0.0
+power_upto_now: 0.042553190141916275
+noise variance: 27331.01171875
+average noise variance upto now: 27337.701171875
+
+48th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:9.37164306640625
+p value proxy: 0.48172757029533386
+result: 0.0
+power_upto_now: 0.0416666679084301
+noise variance: 27340.576171875
+average noise variance upto now: 27337.759765625
+
+49th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:487.4114685058594
+p value proxy: 0.006644518114626408
+result: 1.0
+power_upto_now: 0.06122449040412903
+noise variance: 27342.908203125
+average noise variance upto now: 27337.865234375
+
+50th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:211.61013793945312
+p value proxy: 0.1229235827922821
+result: 0.0
+power_upto_now: 0.05999999865889549
+noise variance: 27331.31640625
+average noise variance upto now: 27337.734375
+
+51th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:259.9582824707031
+p value proxy: 0.09634551405906677
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27339.626953125
+average noise variance upto now: 27337.76953125
+
+52th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:29.154325485229492
+p value proxy: 0.4318936765193939
+result: 0.0
+power_upto_now: 0.057692307978868484
+noise variance: 27346.083984375
+average noise variance upto now: 27337.9296875
+
+53th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:168.6293487548828
+p value proxy: 0.1661129593849182
+result: 0.0
+power_upto_now: 0.056603774428367615
+noise variance: 27347.32421875
+average noise variance upto now: 27338.10546875
+
+54th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-64.74118041992188
+p value proxy: 0.6179401874542236
+result: 0.0
+power_upto_now: 0.0555555559694767
+noise variance: 27345.298828125
+average noise variance upto now: 27338.240234375
+
+55th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-11.537376403808594
+p value proxy: 0.5382059812545776
+result: 0.0
+power_upto_now: 0.05454545468091965
+noise variance: 27339.275390625
+average noise variance upto now: 27338.259765625
+
+56th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-17.910507202148438
+p value proxy: 0.5215946435928345
+result: 0.0
+power_upto_now: 0.0535714291036129
+noise variance: 27345.1875
+average noise variance upto now: 27338.384765625
+
+57th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:97.88325500488281
+p value proxy: 0.27242523431777954
+result: 0.0
+power_upto_now: 0.05263157933950424
+noise variance: 27332.005859375
+average noise variance upto now: 27338.271484375
+
+58th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:61.75090026855469
+p value proxy: 0.41860464215278625
+result: 0.0
+power_upto_now: 0.0517241396009922
+noise variance: 27348.859375
+average noise variance upto now: 27338.453125
+
+59th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-54.695621490478516
+p value proxy: 0.6511628031730652
+result: 0.0
+power_upto_now: 0.050847455859184265
+noise variance: 27334.79296875
+average noise variance upto now: 27338.39453125
+
+60th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-28.809040069580078
+p value proxy: 0.554817259311676
+result: 0.0
+power_upto_now: 0.05000000074505806
+noise variance: 27344.177734375
+average noise variance upto now: 27338.48828125
+
+61th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:188.59349060058594
+p value proxy: 0.13621261715888977
+result: 0.0
+power_upto_now: 0.04918032884597778
+noise variance: 27328.91015625
+average noise variance upto now: 27338.33203125
+
+62th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-125.3615951538086
+p value proxy: 0.7209302186965942
+result: 0.0
+power_upto_now: 0.04838709533214569
+noise variance: 27335.6796875
+average noise variance upto now: 27338.291015625
+
+63th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-82.38130950927734
+p value proxy: 0.7076411843299866
+result: 0.0
+power_upto_now: 0.0476190485060215
+noise variance: 27331.55859375
+average noise variance upto now: 27338.181640625
+
+64th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-289.5994873046875
+p value proxy: 0.9634551405906677
+result: 0.0
+power_upto_now: 0.046875
+noise variance: 27335.7421875
+average noise variance upto now: 27338.14453125
+
+65th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-230.7276611328125
+p value proxy: 0.8870431780815125
+result: 0.0
+power_upto_now: 0.04615384712815285
+noise variance: 27341.31640625
+average noise variance upto now: 27338.193359375
+
+66th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:37.3385009765625
+p value proxy: 0.35548171401023865
+result: 0.0
+power_upto_now: 0.04545454680919647
+noise variance: 27339.359375
+average noise variance upto now: 27338.212890625
+
+67th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:73.79513549804688
+p value proxy: 0.3455149531364441
+result: 0.0
+power_upto_now: 0.04477611929178238
+noise variance: 27347.87109375
+average noise variance upto now: 27338.35546875
+
+68th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-53.303401947021484
+p value proxy: 0.6279069781303406
+result: 0.0
+power_upto_now: 0.04411764815449715
+noise variance: 27328.48828125
+average noise variance upto now: 27338.208984375
+
+69th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-54.955902099609375
+p value proxy: 0.594684362411499
+result: 0.0
+power_upto_now: 0.043478261679410934
+noise variance: 27341.169921875
+average noise variance upto now: 27338.25390625
+
+70th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-419.4571533203125
+p value proxy: 0.9800664186477661
+result: 0.0
+power_upto_now: 0.04285714402794838
+noise variance: 27331.63671875
+average noise variance upto now: 27338.158203125
+
+71th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:134.03326416015625
+p value proxy: 0.23588038980960846
+result: 0.0
+power_upto_now: 0.0422535203397274
+noise variance: 27334.37109375
+average noise variance upto now: 27338.10546875
+
+72th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:30.71086883544922
+p value proxy: 0.421926885843277
+result: 0.0
+power_upto_now: 0.0416666679084301
+noise variance: 27332.1015625
+average noise variance upto now: 27338.021484375
+
+73th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-411.54364013671875
+p value proxy: 0.9933554530143738
+result: 0.0
+power_upto_now: 0.04109589010477066
+noise variance: 27330.765625
+average noise variance upto now: 27337.921875
+
+74th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-130.26974487304688
+p value proxy: 0.7740863561630249
+result: 0.0
+power_upto_now: 0.04054053872823715
+noise variance: 27340.341796875
+average noise variance upto now: 27337.95703125
+
+75th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:159.12905883789062
+p value proxy: 0.18936876952648163
+result: 0.0
+power_upto_now: 0.03999999910593033
+noise variance: 27345.634765625
+average noise variance upto now: 27338.056640625
+
+76th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-161.31031799316406
+p value proxy: 0.843853771686554
+result: 0.0
+power_upto_now: 0.03947368264198303
+noise variance: 27342.3203125
+average noise variance upto now: 27338.115234375
+
+77th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:15.394882202148438
+p value proxy: 0.43521595001220703
+result: 0.0
+power_upto_now: 0.03896103799343109
+noise variance: 27335.38671875
+average noise variance upto now: 27338.078125
+
+78th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:270.0378723144531
+p value proxy: 0.05315614491701126
+result: 0.0
+power_upto_now: 0.03846153989434242
+noise variance: 27339.69921875
+average noise variance upto now: 27338.099609375
+
+79th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-143.4604949951172
+p value proxy: 0.8172757029533386
+result: 0.0
+power_upto_now: 0.037974681705236435
+noise variance: 27323.615234375
+average noise variance upto now: 27337.9140625
+
+80th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-350.1351318359375
+p value proxy: 0.9933554530143738
+result: 0.0
+power_upto_now: 0.03750000149011612
+noise variance: 27329.4765625
+average noise variance upto now: 27337.8125
+
+81th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-202.3639373779297
+p value proxy: 0.8870431780815125
+result: 0.0
+power_upto_now: 0.03703703731298447
+noise variance: 27342.853515625
+average noise variance upto now: 27337.873046875
+
+82th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:138.80853271484375
+p value proxy: 0.2591361999511719
+result: 0.0
+power_upto_now: 0.03658536449074745
+noise variance: 27331.16015625
+average noise variance upto now: 27337.79296875
+
+83th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:168.46466064453125
+p value proxy: 0.1860465109348297
+result: 0.0
+power_upto_now: 0.03614457696676254
+noise variance: 27330.95703125
+average noise variance upto now: 27337.7109375
+
+84th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-6.418449401855469
+p value proxy: 0.5348837375640869
+result: 0.0
+power_upto_now: 0.0357142873108387
+noise variance: 27339.634765625
+average noise variance upto now: 27337.732421875
+
+85th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-240.1945343017578
+p value proxy: 0.8936876654624939
+result: 0.0
+power_upto_now: 0.03529411926865578
+noise variance: 27336.64453125
+average noise variance upto now: 27337.720703125
+
+86th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-231.97569274902344
+p value proxy: 0.9335547685623169
+result: 0.0
+power_upto_now: 0.03488372266292572
+noise variance: 27332.29296875
+average noise variance upto now: 27337.65625
+
+87th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:417.523193359375
+p value proxy: 0.009966777637600899
+result: 1.0
+power_upto_now: 0.04597701132297516
+noise variance: 27341.15234375
+average noise variance upto now: 27337.6953125
+
+88th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:63.734596252441406
+p value proxy: 0.3322259187698364
+result: 0.0
+power_upto_now: 0.04545454680919647
+noise variance: 27350.939453125
+average noise variance upto now: 27337.845703125
+
+89th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-129.38038635253906
+p value proxy: 0.7607973217964172
+result: 0.0
+power_upto_now: 0.04494382068514824
+noise variance: 27328.458984375
+average noise variance upto now: 27337.7421875
+
+90th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-109.69725036621094
+p value proxy: 0.7508305311203003
+result: 0.0
+power_upto_now: 0.04444444552063942
+noise variance: 27335.392578125
+average noise variance upto now: 27337.71484375
+
+91th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-259.664794921875
+p value proxy: 0.9069766998291016
+result: 0.0
+power_upto_now: 0.04395604506134987
+noise variance: 27355.841796875
+average noise variance upto now: 27337.9140625
+
+92th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:174.43634033203125
+p value proxy: 0.15946844220161438
+result: 0.0
+power_upto_now: 0.043478261679410934
+noise variance: 27342.07421875
+average noise variance upto now: 27337.958984375
+
+93th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-247.46739196777344
+p value proxy: 0.9302325248718262
+result: 0.0
+power_upto_now: 0.04301075264811516
+noise variance: 27339.740234375
+average noise variance upto now: 27337.978515625
+
+94th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:389.31494140625
+p value proxy: 0.033222589641809464
+result: 1.0
+power_upto_now: 0.05319149047136307
+noise variance: 27331.40625
+average noise variance upto now: 27337.90625
+
+95th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:129.3046112060547
+p value proxy: 0.2026578038930893
+result: 0.0
+power_upto_now: 0.05263157933950424
+noise variance: 27348.19921875
+average noise variance upto now: 27338.015625
+
+96th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-18.74536895751953
+p value proxy: 0.554817259311676
+result: 0.0
+power_upto_now: 0.0520833320915699
+noise variance: 27341.623046875
+average noise variance upto now: 27338.052734375
+
+97th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-184.35800170898438
+p value proxy: 0.8803986310958862
+result: 0.0
+power_upto_now: 0.05154639109969139
+noise variance: 27335.83203125
+average noise variance upto now: 27338.03125
+
+98th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-254.79966735839844
+p value proxy: 0.9302325248718262
+result: 0.0
+power_upto_now: 0.051020409911870956
+noise variance: 27337.54296875
+average noise variance upto now: 27338.025390625
+
+99th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-257.280517578125
+p value proxy: 0.9302325248718262
+result: 0.0
+power_upto_now: 0.05050504952669144
+noise variance: 27342.404296875
+average noise variance upto now: 27338.0703125
+
+100th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-356.73468017578125
+p value proxy: 0.9767441749572754
+result: 0.0
+power_upto_now: 0.05000000074505806
+noise variance: 27339.291015625
+average noise variance upto now: 27338.080078125
+
+101th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-80.37053680419922
+p value proxy: 0.6810631155967712
+result: 0.0
+power_upto_now: 0.049504950642585754
+noise variance: 27348.361328125
+average noise variance upto now: 27338.18359375
+
+102th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-22.024703979492188
+p value proxy: 0.5215946435928345
+result: 0.0
+power_upto_now: 0.04901960864663124
+noise variance: 27325.341796875
+average noise variance upto now: 27338.05859375
+
+103th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:2.896183967590332
+p value proxy: 0.5083056092262268
+result: 0.0
+power_upto_now: 0.04854368790984154
+noise variance: 27334.25390625
+average noise variance upto now: 27338.01953125
+
+104th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:41.61228942871094
+p value proxy: 0.41860464215278625
+result: 0.0
+power_upto_now: 0.048076923936605453
+noise variance: 27328.796875
+average noise variance upto now: 27337.935546875
+
+105th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:119.92076110839844
+p value proxy: 0.21262457966804504
+result: 0.0
+power_upto_now: 0.0476190485060215
+noise variance: 27355.03515625
+average noise variance upto now: 27338.09765625
+
+106th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:52.1501579284668
+p value proxy: 0.39867109060287476
+result: 0.0
+power_upto_now: 0.04716981202363968
+noise variance: 27343.154296875
+average noise variance upto now: 27338.14453125
+
+107th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:161.55126953125
+p value proxy: 0.17607973515987396
+result: 0.0
+power_upto_now: 0.04672897234559059
+noise variance: 27352.111328125
+average noise variance upto now: 27338.2734375
+
+108th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:211.84530639648438
+p value proxy: 0.11960132420063019
+result: 0.0
+power_upto_now: 0.046296294778585434
+noise variance: 27337.73046875
+average noise variance upto now: 27338.271484375
+
+109th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:77.93604278564453
+p value proxy: 0.3056478202342987
+result: 0.0
+power_upto_now: 0.0458715595304966
+noise variance: 27344.517578125
+average noise variance upto now: 27338.328125
+
+110th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:284.0592041015625
+p value proxy: 0.06976743787527084
+result: 0.0
+power_upto_now: 0.04545454680919647
+noise variance: 27338.544921875
+average noise variance upto now: 27338.330078125
+
+111th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:42.950340270996094
+p value proxy: 0.3853820562362671
+result: 0.0
+power_upto_now: 0.045045044273138046
+noise variance: 27329.5546875
+average noise variance upto now: 27338.25
+
+112th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:332.53326416015625
+p value proxy: 0.033222589641809464
+result: 1.0
+power_upto_now: 0.0535714291036129
+noise variance: 27336.078125
+average noise variance upto now: 27338.228515625
+
+113th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:15.680038452148438
+p value proxy: 0.4451827108860016
+result: 0.0
+power_upto_now: 0.05309734493494034
+noise variance: 27340.76171875
+average noise variance upto now: 27338.25
+
+114th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:32.80375289916992
+p value proxy: 0.3687707483768463
+result: 0.0
+power_upto_now: 0.05263157933950424
+noise variance: 27341.912109375
+average noise variance upto now: 27338.283203125
+
+115th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-46.48488235473633
+p value proxy: 0.5847175717353821
+result: 0.0
+power_upto_now: 0.052173912525177
+noise variance: 27346.76171875
+average noise variance upto now: 27338.357421875
+
+116th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-27.42658233642578
+p value proxy: 0.5448504686355591
+result: 0.0
+power_upto_now: 0.0517241396009922
+noise variance: 27336.880859375
+average noise variance upto now: 27338.345703125
+
+117th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:96.24871826171875
+p value proxy: 0.3089700937271118
+result: 0.0
+power_upto_now: 0.05128205195069313
+noise variance: 27350.20703125
+average noise variance upto now: 27338.447265625
+
+118th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-125.74079132080078
+p value proxy: 0.803986668586731
+result: 0.0
+power_upto_now: 0.050847455859184265
+noise variance: 27337.798828125
+average noise variance upto now: 27338.44140625
+
+119th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-234.30239868164062
+p value proxy: 0.9269102811813354
+result: 0.0
+power_upto_now: 0.05042016878724098
+noise variance: 27343.224609375
+average noise variance upto now: 27338.48046875
+
+120th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:35.70406723022461
+p value proxy: 0.43521595001220703
+result: 0.0
+power_upto_now: 0.05000000074505806
+noise variance: 27342.470703125
+average noise variance upto now: 27338.513671875
+
+121th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:46.30115509033203
+p value proxy: 0.4451827108860016
+result: 0.0
+power_upto_now: 0.04958677664399147
+noise variance: 27336.10546875
+average noise variance upto now: 27338.494140625
+
+122th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-138.37057495117188
+p value proxy: 0.764119565486908
+result: 0.0
+power_upto_now: 0.04918032884597778
+noise variance: 27327.05859375
+average noise variance upto now: 27338.400390625
+
+123th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-143.31886291503906
+p value proxy: 0.7774085998535156
+result: 0.0
+power_upto_now: 0.04878048598766327
+noise variance: 27340.46875
+average noise variance upto now: 27338.416015625
+
+124th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:30.383331298828125
+p value proxy: 0.4485049843788147
+result: 0.0
+power_upto_now: 0.04838709533214569
+noise variance: 27341.271484375
+average noise variance upto now: 27338.439453125
+
+125th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:4.254131317138672
+p value proxy: 0.4485049843788147
+result: 0.0
+power_upto_now: 0.04800000041723251
+noise variance: 27333.390625
+average noise variance upto now: 27338.400390625
+
+126th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-306.9065856933594
+p value proxy: 0.960132896900177
+result: 0.0
+power_upto_now: 0.0476190485060215
+noise variance: 27344.859375
+average noise variance upto now: 27338.451171875
+
+127th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-512.3012084960938
+p value proxy: 1.0
+result: 0.0
+power_upto_now: 0.04724409431219101
+noise variance: 27346.2578125
+average noise variance upto now: 27338.51171875
+
+128th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-201.0885009765625
+p value proxy: 0.843853771686554
+result: 0.0
+power_upto_now: 0.046875
+noise variance: 27330.98046875
+average noise variance upto now: 27338.455078125
+
+129th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-10.100471496582031
+p value proxy: 0.4717607796192169
+result: 0.0
+power_upto_now: 0.04651162773370743
+noise variance: 27334.384765625
+average noise variance upto now: 27338.423828125
+
+130th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:276.93817138671875
+p value proxy: 0.059800662100315094
+result: 0.0
+power_upto_now: 0.04615384712815285
+noise variance: 27338.23828125
+average noise variance upto now: 27338.423828125
+
+131th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-182.72918701171875
+p value proxy: 0.8504983186721802
+result: 0.0
+power_upto_now: 0.04580152779817581
+noise variance: 27329.830078125
+average noise variance upto now: 27338.357421875
+
+132th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-201.00357055664062
+p value proxy: 0.8571428656578064
+result: 0.0
+power_upto_now: 0.04545454680919647
+noise variance: 27335.548828125
+average noise variance upto now: 27338.3359375
+
+133th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:19.587982177734375
+p value proxy: 0.45847174525260925
+result: 0.0
+power_upto_now: 0.04511278122663498
+noise variance: 27334.404296875
+average noise variance upto now: 27338.306640625
+
+134th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:173.00755310058594
+p value proxy: 0.18936876952648163
+result: 0.0
+power_upto_now: 0.04477611929178238
+noise variance: 27342.697265625
+average noise variance upto now: 27338.33984375
+
+135th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:35.83412170410156
+p value proxy: 0.3720930218696594
+result: 0.0
+power_upto_now: 0.04444444552063942
+noise variance: 27345.611328125
+average noise variance upto now: 27338.392578125
+
+136th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:207.0080108642578
+p value proxy: 0.14617939293384552
+result: 0.0
+power_upto_now: 0.04411764815449715
+noise variance: 27330.638671875
+average noise variance upto now: 27338.33203125
+
+137th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-198.58486938476562
+p value proxy: 0.8770763874053955
+result: 0.0
+power_upto_now: 0.043795619159936905
+noise variance: 27338.904296875
+average noise variance upto now: 27338.337890625
+
+138th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-74.5719985961914
+p value proxy: 0.6245846748352051
+result: 0.0
+power_upto_now: 0.043478261679410934
+noise variance: 27339.390625
+average noise variance upto now: 27338.345703125
+
+139th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:271.260986328125
+p value proxy: 0.08637873828411102
+result: 0.0
+power_upto_now: 0.04316546767950058
+noise variance: 27339.587890625
+average noise variance upto now: 27338.353515625
+
+140th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-230.3015594482422
+p value proxy: 0.9136212468147278
+result: 0.0
+power_upto_now: 0.04285714402794838
+noise variance: 27338.73046875
+average noise variance upto now: 27338.35546875
+
+141th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:158.52920532226562
+p value proxy: 0.21262457966804504
+result: 0.0
+power_upto_now: 0.042553190141916275
+noise variance: 27345.869140625
+average noise variance upto now: 27338.41015625
+
+142th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:49.37834167480469
+p value proxy: 0.3621262311935425
+result: 0.0
+power_upto_now: 0.0422535203397274
+noise variance: 27339.953125
+average noise variance upto now: 27338.419921875
+
+143th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-66.52474975585938
+p value proxy: 0.7009966373443604
+result: 0.0
+power_upto_now: 0.0419580414891243
+noise variance: 27341.34375
+average noise variance upto now: 27338.439453125
+
+144th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-434.05242919921875
+p value proxy: 0.9933554530143738
+result: 0.0
+power_upto_now: 0.0416666679084301
+noise variance: 27340.900390625
+average noise variance upto now: 27338.458984375
+
+145th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:160.43914794921875
+p value proxy: 0.19933554530143738
+result: 0.0
+power_upto_now: 0.04137931019067764
+noise variance: 27333.611328125
+average noise variance upto now: 27338.42578125
+
+146th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:260.50762939453125
+p value proxy: 0.06312292069196701
+result: 0.0
+power_upto_now: 0.04109589010477066
+noise variance: 27335.82421875
+average noise variance upto now: 27338.408203125
+
+147th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-133.02728271484375
+p value proxy: 0.7607973217964172
+result: 0.0
+power_upto_now: 0.040816325694322586
+noise variance: 27330.08203125
+average noise variance upto now: 27338.349609375
+
+148th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:87.75489807128906
+p value proxy: 0.31893688440322876
+result: 0.0
+power_upto_now: 0.04054053872823715
+noise variance: 27335.265625
+average noise variance upto now: 27338.330078125
+
+149th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:38.5821533203125
+p value proxy: 0.37873753905296326
+result: 0.0
+power_upto_now: 0.04026845470070839
+noise variance: 27334.068359375
+average noise variance upto now: 27338.302734375
+
+150th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-257.3420715332031
+p value proxy: 0.9069766998291016
+result: 0.0
+power_upto_now: 0.03999999910593033
+noise variance: 27335.427734375
+average noise variance upto now: 27338.283203125
+
+151th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:60.78169250488281
+p value proxy: 0.3887042999267578
+result: 0.0
+power_upto_now: 0.0397351011633873
+noise variance: 27341.11328125
+average noise variance upto now: 27338.302734375
+
+152th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-74.81597900390625
+p value proxy: 0.6378737688064575
+result: 0.0
+power_upto_now: 0.03947368264198303
+noise variance: 27342.9375
+average noise variance upto now: 27338.33203125
+
+153th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:42.70845031738281
+p value proxy: 0.4019933342933655
+result: 0.0
+power_upto_now: 0.03921568766236305
+noise variance: 27349.439453125
+average noise variance upto now: 27338.404296875
+
+154th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:253.85800170898438
+p value proxy: 0.06644517928361893
+result: 0.0
+power_upto_now: 0.03896103799343109
+noise variance: 27344.681640625
+average noise variance upto now: 27338.4453125
+
+155th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:9.070579528808594
+p value proxy: 0.4883720874786377
+result: 0.0
+power_upto_now: 0.03870967775583267
+noise variance: 27335.080078125
+average noise variance upto now: 27338.421875
+
+156th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-139.1000213623047
+p value proxy: 0.7940199375152588
+result: 0.0
+power_upto_now: 0.03846153989434242
+noise variance: 27330.23828125
+average noise variance upto now: 27338.37109375
+
+157th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:98.08255004882812
+p value proxy: 0.33887043595314026
+result: 0.0
+power_upto_now: 0.03821656107902527
+noise variance: 27344.466796875
+average noise variance upto now: 27338.41015625
+
+158th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:118.55413055419922
+p value proxy: 0.3056478202342987
+result: 0.0
+power_upto_now: 0.037974681705236435
+noise variance: 27338.93359375
+average noise variance upto now: 27338.4140625
+
+159th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-178.18746948242188
+p value proxy: 0.8604651093482971
+result: 0.0
+power_upto_now: 0.03773584961891174
+noise variance: 27334.30078125
+average noise variance upto now: 27338.38671875
+
+160th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:488.46435546875
+p value proxy: 0.006644518114626408
+result: 1.0
+power_upto_now: 0.04374999925494194
+noise variance: 27321.9609375
+average noise variance upto now: 27338.28515625
+
+161th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-393.81439208984375
+p value proxy: 0.9867109656333923
+result: 0.0
+power_upto_now: 0.043478261679410934
+noise variance: 27349.3359375
+average noise variance upto now: 27338.353515625
+
+162th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:175.3892364501953
+p value proxy: 0.1827242523431778
+result: 0.0
+power_upto_now: 0.043209876865148544
+noise variance: 27339.9921875
+average noise variance upto now: 27338.36328125
+
+163th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-27.203472137451172
+p value proxy: 0.5813953280448914
+result: 0.0
+power_upto_now: 0.042944785207509995
+noise variance: 27330.95703125
+average noise variance upto now: 27338.31640625
+
+164th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:100.48260498046875
+p value proxy: 0.29235878586769104
+result: 0.0
+power_upto_now: 0.04268292710185051
+noise variance: 27326.115234375
+average noise variance upto now: 27338.244140625
+
+165th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:325.2353515625
+p value proxy: 0.039867110550403595
+result: 1.0
+power_upto_now: 0.04848484694957733
+noise variance: 27344.67578125
+average noise variance upto now: 27338.28125
+
+166th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:149.65635681152344
+p value proxy: 0.1860465109348297
+result: 0.0
+power_upto_now: 0.048192769289016724
+noise variance: 27332.9765625
+average noise variance upto now: 27338.25
+
+167th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:493.56243896484375
+p value proxy: 0.009966777637600899
+result: 1.0
+power_upto_now: 0.053892213851213455
+noise variance: 27337.244140625
+average noise variance upto now: 27338.24609375
+
+168th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-81.90528869628906
+p value proxy: 0.684385359287262
+result: 0.0
+power_upto_now: 0.0535714291036129
+noise variance: 27333.46875
+average noise variance upto now: 27338.21484375
+
+169th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:377.31768798828125
+p value proxy: 0.019933555275201797
+result: 1.0
+power_upto_now: 0.05917159840464592
+noise variance: 27330.95703125
+average noise variance upto now: 27338.171875
+
+170th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-206.6456756591797
+p value proxy: 0.8704319000244141
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27342.4765625
+average noise variance upto now: 27338.197265625
+
+171th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-29.195697784423828
+p value proxy: 0.5714285373687744
+result: 0.0
+power_upto_now: 0.05847953259944916
+noise variance: 27332.845703125
+average noise variance upto now: 27338.166015625
+
+172th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:70.06797790527344
+p value proxy: 0.35880398750305176
+result: 0.0
+power_upto_now: 0.058139536529779434
+noise variance: 27350.4296875
+average noise variance upto now: 27338.236328125
+
+173th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:263.98760986328125
+p value proxy: 0.07308969646692276
+result: 0.0
+power_upto_now: 0.05780346691608429
+noise variance: 27335.767578125
+average noise variance upto now: 27338.22265625
+
+174th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:93.32190704345703
+p value proxy: 0.302325576543808
+result: 0.0
+power_upto_now: 0.05747126415371895
+noise variance: 27340.49609375
+average noise variance upto now: 27338.236328125
+
+175th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-554.1830444335938
+p value proxy: 1.0
+result: 0.0
+power_upto_now: 0.05714285746216774
+noise variance: 27340.330078125
+average noise variance upto now: 27338.248046875
+
+176th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-213.04393005371094
+p value proxy: 0.8870431780815125
+result: 0.0
+power_upto_now: 0.05681818351149559
+noise variance: 27343.458984375
+average noise variance upto now: 27338.279296875
+
+177th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:85.74679565429688
+p value proxy: 0.35548171401023865
+result: 0.0
+power_upto_now: 0.05649717524647713
+noise variance: 27331.736328125
+average noise variance upto now: 27338.2421875
+
+178th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:78.89364624023438
+p value proxy: 0.29568105936050415
+result: 0.0
+power_upto_now: 0.056179776787757874
+noise variance: 27330.447265625
+average noise variance upto now: 27338.19921875
+
+179th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:122.71778106689453
+p value proxy: 0.262458473443985
+result: 0.0
+power_upto_now: 0.05586592108011246
+noise variance: 27343.51953125
+average noise variance upto now: 27338.228515625
+
+180th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:317.9845886230469
+p value proxy: 0.04651162773370743
+result: 1.0
+power_upto_now: 0.06111111119389534
+noise variance: 27342.25390625
+average noise variance upto now: 27338.25
+
+181th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-174.21714782714844
+p value proxy: 0.7973421812057495
+result: 0.0
+power_upto_now: 0.06077348068356514
+noise variance: 27331.875
+average noise variance upto now: 27338.21484375
+
+182th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-328.20465087890625
+p value proxy: 0.9634551405906677
+result: 0.0
+power_upto_now: 0.06043956056237221
+noise variance: 27339.26953125
+average noise variance upto now: 27338.22265625
+
+183th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-35.967613220214844
+p value proxy: 0.564784049987793
+result: 0.0
+power_upto_now: 0.06010929122567177
+noise variance: 27332.10546875
+average noise variance upto now: 27338.189453125
+
+184th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:152.78085327148438
+p value proxy: 0.17607973515987396
+result: 0.0
+power_upto_now: 0.05978260934352875
+noise variance: 27345.83203125
+average noise variance upto now: 27338.228515625
+
+185th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:242.37045288085938
+p value proxy: 0.06976743787527084
+result: 0.0
+power_upto_now: 0.05945945903658867
+noise variance: 27335.806640625
+average noise variance upto now: 27338.216796875
+
+186th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:228.1825408935547
+p value proxy: 0.1428571343421936
+result: 0.0
+power_upto_now: 0.059139784425497055
+noise variance: 27337.783203125
+average noise variance upto now: 27338.21484375
+
+187th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:42.44957733154297
+p value proxy: 0.41860464215278625
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27345.919921875
+average noise variance upto now: 27338.255859375
+
+188th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-103.81327819824219
+p value proxy: 0.7043189406394958
+result: 0.0
+power_upto_now: 0.058510638773441315
+noise variance: 27338.095703125
+average noise variance upto now: 27338.255859375
+
+189th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-3.33526611328125
+p value proxy: 0.5382059812545776
+result: 0.0
+power_upto_now: 0.05820105969905853
+noise variance: 27342.837890625
+average noise variance upto now: 27338.28125
+
+190th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:70.87800598144531
+p value proxy: 0.3654485046863556
+result: 0.0
+power_upto_now: 0.057894736528396606
+noise variance: 27328.375
+average noise variance upto now: 27338.2265625
+
+191th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:321.13360595703125
+p value proxy: 0.059800662100315094
+result: 0.0
+power_upto_now: 0.057591624557971954
+noise variance: 27341.306640625
+average noise variance upto now: 27338.240234375
+
+192th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-299.6748352050781
+p value proxy: 0.9634551405906677
+result: 0.0
+power_upto_now: 0.0572916679084301
+noise variance: 27333.412109375
+average noise variance upto now: 27338.21875
+
+193th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-374.7585754394531
+p value proxy: 0.9833886623382568
+result: 0.0
+power_upto_now: 0.05699481815099716
+noise variance: 27341.068359375
+average noise variance upto now: 27338.232421875
+
+194th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-82.57893371582031
+p value proxy: 0.724252462387085
+result: 0.0
+power_upto_now: 0.05670103058218956
+noise variance: 27347.05859375
+average noise variance upto now: 27338.279296875
+
+195th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:75.1206283569336
+p value proxy: 0.33887043595314026
+result: 0.0
+power_upto_now: 0.056410256773233414
+noise variance: 27338.365234375
+average noise variance upto now: 27338.27734375
+
+196th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:283.8194274902344
+p value proxy: 0.07973422110080719
+result: 0.0
+power_upto_now: 0.05612244829535484
+noise variance: 27327.91796875
+average noise variance upto now: 27338.224609375
+
+197th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:60.3260498046875
+p value proxy: 0.4086378514766693
+result: 0.0
+power_upto_now: 0.055837564170360565
+noise variance: 27345.400390625
+average noise variance upto now: 27338.259765625
+
+198th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-193.56472778320312
+p value proxy: 0.8637873530387878
+result: 0.0
+power_upto_now: 0.0555555559694767
+noise variance: 27334.97265625
+average noise variance upto now: 27338.2421875
+
+199th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:116.14512634277344
+p value proxy: 0.2790697515010834
+result: 0.0
+power_upto_now: 0.055276382714509964
+noise variance: 27346.84765625
+average noise variance upto now: 27338.287109375
+
+200th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-84.07801818847656
+p value proxy: 0.634551465511322
+result: 0.0
+power_upto_now: 0.054999999701976776
+noise variance: 27330.21484375
+average noise variance upto now: 27338.248046875
+
+201th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:445.97613525390625
+p value proxy: 0.016611294820904732
+result: 1.0
+power_upto_now: 0.05970149114727974
+noise variance: 27330.767578125
+average noise variance upto now: 27338.208984375
+
+202th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-46.91395568847656
+p value proxy: 0.6112956404685974
+result: 0.0
+power_upto_now: 0.059405941516160965
+noise variance: 27343.603515625
+average noise variance upto now: 27338.23828125
+
+203th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-139.03817749023438
+p value proxy: 0.7674418687820435
+result: 0.0
+power_upto_now: 0.05911330133676529
+noise variance: 27345.42578125
+average noise variance upto now: 27338.271484375
+
+204th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-218.0447998046875
+p value proxy: 0.9202657341957092
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27335.34375
+average noise variance upto now: 27338.2578125
+
+205th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-155.7861785888672
+p value proxy: 0.8471760749816895
+result: 0.0
+power_upto_now: 0.0585365854203701
+noise variance: 27345.779296875
+average noise variance upto now: 27338.294921875
+
+206th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:170.97531127929688
+p value proxy: 0.2059800624847412
+result: 0.0
+power_upto_now: 0.058252427726984024
+noise variance: 27346.296875
+average noise variance upto now: 27338.33203125
+
+207th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-299.28857421875
+p value proxy: 0.9634551405906677
+result: 0.0
+power_upto_now: 0.05797101557254791
+noise variance: 27345.287109375
+average noise variance upto now: 27338.3671875
+
+208th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-451.799560546875
+p value proxy: 0.9933554530143738
+result: 0.0
+power_upto_now: 0.057692307978868484
+noise variance: 27351.248046875
+average noise variance upto now: 27338.427734375
+
+209th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:204.29104614257812
+p value proxy: 0.1229235827922821
+result: 0.0
+power_upto_now: 0.057416267693042755
+noise variance: 27335.484375
+average noise variance upto now: 27338.4140625
+
+210th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:19.811805725097656
+p value proxy: 0.4053156077861786
+result: 0.0
+power_upto_now: 0.05714285746216774
+noise variance: 27336.12109375
+average noise variance upto now: 27338.40234375
+
+211th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-25.183265686035156
+p value proxy: 0.5847175717353821
+result: 0.0
+power_upto_now: 0.056872036308050156
+noise variance: 27331.26953125
+average noise variance upto now: 27338.369140625
+
+212th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:208.98333740234375
+p value proxy: 0.11295680701732635
+result: 0.0
+power_upto_now: 0.056603774428367615
+noise variance: 27334.529296875
+average noise variance upto now: 27338.3515625
+
+213th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-567.137939453125
+p value proxy: 1.0
+result: 0.0
+power_upto_now: 0.056338027119636536
+noise variance: 27339.365234375
+average noise variance upto now: 27338.357421875
+
+214th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-34.55303955078125
+p value proxy: 0.5083056092262268
+result: 0.0
+power_upto_now: 0.05607476457953453
+noise variance: 27330.13671875
+average noise variance upto now: 27338.318359375
+
+215th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-168.08731079101562
+p value proxy: 0.8272424936294556
+result: 0.0
+power_upto_now: 0.055813953280448914
+noise variance: 27333.306640625
+average noise variance upto now: 27338.29296875
+
+216th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:190.94691467285156
+p value proxy: 0.15282391011714935
+result: 0.0
+power_upto_now: 0.0555555559694767
+noise variance: 27337.166015625
+average noise variance upto now: 27338.291015625
+
+217th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-17.490280151367188
+p value proxy: 0.5980066061019897
+result: 0.0
+power_upto_now: 0.0552995391190052
+noise variance: 27330.564453125
+average noise variance upto now: 27338.2578125
+
+218th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:98.682861328125
+p value proxy: 0.31893688440322876
+result: 0.0
+power_upto_now: 0.055045872926712036
+noise variance: 27336.51953125
+average noise variance upto now: 27338.248046875
+
+219th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-9.930442810058594
+p value proxy: 0.4850498139858246
+result: 0.0
+power_upto_now: 0.054794520139694214
+noise variance: 27343.521484375
+average noise variance upto now: 27338.2734375
+
+220th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-26.714599609375
+p value proxy: 0.6146179437637329
+result: 0.0
+power_upto_now: 0.05454545468091965
+noise variance: 27328.640625
+average noise variance upto now: 27338.2265625
+
+221th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-32.17073059082031
+p value proxy: 0.5614618062973022
+result: 0.0
+power_upto_now: 0.05429864302277565
+noise variance: 27335.716796875
+average noise variance upto now: 27338.216796875
+
+222th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-150.0784912109375
+p value proxy: 0.7906976342201233
+result: 0.0
+power_upto_now: 0.054054055362939835
+noise variance: 27340.0390625
+average noise variance upto now: 27338.224609375
+
+223th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-228.47816467285156
+p value proxy: 0.8936876654624939
+result: 0.0
+power_upto_now: 0.053811658173799515
+noise variance: 27346.744140625
+average noise variance upto now: 27338.263671875
+
+224th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:254.0358428955078
+p value proxy: 0.0830564796924591
+result: 0.0
+power_upto_now: 0.0535714291036129
+noise variance: 27334.1328125
+average noise variance upto now: 27338.244140625
+
+225th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:31.490570068359375
+p value proxy: 0.4086378514766693
+result: 0.0
+power_upto_now: 0.0533333346247673
+noise variance: 27347.33984375
+average noise variance upto now: 27338.28515625
+
+226th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:85.91117858886719
+p value proxy: 0.31229233741760254
+result: 0.0
+power_upto_now: 0.05309734493494034
+noise variance: 27334.6484375
+average noise variance upto now: 27338.267578125
+
+227th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:93.59335327148438
+p value proxy: 0.2990033030509949
+result: 0.0
+power_upto_now: 0.05286343768239021
+noise variance: 27324.94921875
+average noise variance upto now: 27338.208984375
+
+228th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:97.35735321044922
+p value proxy: 0.31561461091041565
+result: 0.0
+power_upto_now: 0.05263157933950424
+noise variance: 27331.6875
+average noise variance upto now: 27338.1796875
+
+229th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:291.38970947265625
+p value proxy: 0.059800662100315094
+result: 0.0
+power_upto_now: 0.052401747554540634
+noise variance: 27341.45703125
+average noise variance upto now: 27338.193359375
+
+230th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:50.85185623168945
+p value proxy: 0.3887042999267578
+result: 0.0
+power_upto_now: 0.052173912525177
+noise variance: 27343.126953125
+average noise variance upto now: 27338.21484375
+
+231th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:15.801453590393066
+p value proxy: 0.4916943311691284
+result: 0.0
+power_upto_now: 0.051948051899671555
+noise variance: 27344.67578125
+average noise variance upto now: 27338.244140625
+
+232th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-371.1678161621094
+p value proxy: 0.9933554530143738
+result: 0.0
+power_upto_now: 0.0517241396009922
+noise variance: 27336.6875
+average noise variance upto now: 27338.234375
+
+233th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-344.6741027832031
+p value proxy: 0.9734219312667847
+result: 0.0
+power_upto_now: 0.05150214582681656
+noise variance: 27346.29296875
+average noise variance upto now: 27338.26953125
+
+234th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:23.647789001464844
+p value proxy: 0.41860464215278625
+result: 0.0
+power_upto_now: 0.05128205195069313
+noise variance: 27331.69140625
+average noise variance upto now: 27338.2421875
+
+235th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:151.07846069335938
+p value proxy: 0.15946844220161438
+result: 0.0
+power_upto_now: 0.05106382817029953
+noise variance: 27329.609375
+average noise variance upto now: 27338.205078125
+
+236th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:181.97006225585938
+p value proxy: 0.1627907007932663
+result: 0.0
+power_upto_now: 0.050847455859184265
+noise variance: 27345.220703125
+average noise variance upto now: 27338.234375
+
+237th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:312.76092529296875
+p value proxy: 0.04318936914205551
+result: 1.0
+power_upto_now: 0.05485232174396515
+noise variance: 27330.18359375
+average noise variance upto now: 27338.201171875
+
+238th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:114.22019958496094
+p value proxy: 0.27574750781059265
+result: 0.0
+power_upto_now: 0.054621849209070206
+noise variance: 27333.294921875
+average noise variance upto now: 27338.181640625
+
+239th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-403.6249084472656
+p value proxy: 1.0
+result: 0.0
+power_upto_now: 0.054393306374549866
+noise variance: 27342.34375
+average noise variance upto now: 27338.197265625
+
+240th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-13.029251098632812
+p value proxy: 0.5348837375640869
+result: 0.0
+power_upto_now: 0.05416666716337204
+noise variance: 27339.486328125
+average noise variance upto now: 27338.205078125
+
+241th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-74.26519775390625
+p value proxy: 0.7209302186965942
+result: 0.0
+power_upto_now: 0.05394190922379494
+noise variance: 27340.294921875
+average noise variance upto now: 27338.212890625
+
+242th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-34.8831787109375
+p value proxy: 0.5747508406639099
+result: 0.0
+power_upto_now: 0.05371900647878647
+noise variance: 27322.33203125
+average noise variance upto now: 27338.146484375
+
+243th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-32.715362548828125
+p value proxy: 0.5215946435928345
+result: 0.0
+power_upto_now: 0.05349794402718544
+noise variance: 27348.8359375
+average noise variance upto now: 27338.19140625
+
+244th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-42.150421142578125
+p value proxy: 0.564784049987793
+result: 0.0
+power_upto_now: 0.053278688341379166
+noise variance: 27331.982421875
+average noise variance upto now: 27338.166015625
+
+245th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:81.142822265625
+p value proxy: 0.31229233741760254
+result: 0.0
+power_upto_now: 0.05306122452020645
+noise variance: 27336.470703125
+average noise variance upto now: 27338.16015625
+
+246th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:378.1694030761719
+p value proxy: 0.039867110550403595
+result: 1.0
+power_upto_now: 0.056910570710897446
+noise variance: 27344.517578125
+average noise variance upto now: 27338.185546875
+
+247th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-34.223777770996094
+p value proxy: 0.6312292218208313
+result: 0.0
+power_upto_now: 0.056680161505937576
+noise variance: 27339.201171875
+average noise variance upto now: 27338.1875
+
+248th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:211.87657165527344
+p value proxy: 0.12956809997558594
+result: 0.0
+power_upto_now: 0.05645161122083664
+noise variance: 27336.623046875
+average noise variance upto now: 27338.185546875
+
+249th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:425.29095458984375
+p value proxy: 0.009966777637600899
+result: 1.0
+power_upto_now: 0.0602409653365612
+noise variance: 27350.435546875
+average noise variance upto now: 27338.232421875
+
+250th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-52.34557342529297
+p value proxy: 0.6245846748352051
+result: 0.0
+power_upto_now: 0.05999999865889549
+noise variance: 27336.560546875
+average noise variance upto now: 27338.228515625
+
+251th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-21.569110870361328
+p value proxy: 0.5747508406639099
+result: 0.0
+power_upto_now: 0.05976095795631409
+noise variance: 27346.3515625
+average noise variance upto now: 27338.259765625
+
+252th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-384.27813720703125
+p value proxy: 0.9667773842811584
+result: 0.0
+power_upto_now: 0.0595238097012043
+noise variance: 27338.23046875
+average noise variance upto now: 27338.2578125
+
+253th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-330.6284484863281
+p value proxy: 0.9800664186477661
+result: 0.0
+power_upto_now: 0.05928853899240494
+noise variance: 27336.44140625
+average noise variance upto now: 27338.25390625
+
+254th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-27.311782836914062
+p value proxy: 0.5847175717353821
+result: 0.0
+power_upto_now: 0.05905511975288391
+noise variance: 27330.83203125
+average noise variance upto now: 27338.220703125
+
+255th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-140.09788513183594
+p value proxy: 0.7541528344154358
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27328.740234375
+average noise variance upto now: 27338.18359375
+
+256th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-70.98555755615234
+p value proxy: 0.674418568611145
+result: 0.0
+power_upto_now: 0.05859375
+noise variance: 27337.330078125
+average noise variance upto now: 27338.181640625
+
+257th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:364.9638366699219
+p value proxy: 0.033222589641809464
+result: 1.0
+power_upto_now: 0.06225680932402611
+noise variance: 27335.76953125
+average noise variance upto now: 27338.173828125
+
+258th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-318.3068542480469
+p value proxy: 0.9634551405906677
+result: 0.0
+power_upto_now: 0.06201550364494324
+noise variance: 27332.587890625
+average noise variance upto now: 27338.150390625
+
+259th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-77.85759735107422
+p value proxy: 0.6943521499633789
+result: 0.0
+power_upto_now: 0.0617760606110096
+noise variance: 27334.615234375
+average noise variance upto now: 27338.13671875
+
+260th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-274.2389831542969
+p value proxy: 0.9468438029289246
+result: 0.0
+power_upto_now: 0.0615384615957737
+noise variance: 27330.142578125
+average noise variance upto now: 27338.10546875
+
+261th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-49.240478515625
+p value proxy: 0.5980066061019897
+result: 0.0
+power_upto_now: 0.061302680522203445
+noise variance: 27333.681640625
+average noise variance upto now: 27338.08984375
+
+262th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:325.9991455078125
+p value proxy: 0.039867110550403595
+result: 1.0
+power_upto_now: 0.06488549709320068
+noise variance: 27333.701171875
+average noise variance upto now: 27338.072265625
+
+263th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-275.7203369140625
+p value proxy: 0.9069766998291016
+result: 0.0
+power_upto_now: 0.06463878601789474
+noise variance: 27335.841796875
+average noise variance upto now: 27338.064453125
+
+264th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-208.8663787841797
+p value proxy: 0.8571428656578064
+result: 0.0
+power_upto_now: 0.06439393758773804
+noise variance: 27341.01953125
+average noise variance upto now: 27338.07421875
+
+265th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-260.50640869140625
+p value proxy: 0.9468438029289246
+result: 0.0
+power_upto_now: 0.06415094435214996
+noise variance: 27330.705078125
+average noise variance upto now: 27338.046875
+
+266th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-193.4281768798828
+p value proxy: 0.843853771686554
+result: 0.0
+power_upto_now: 0.06390977650880814
+noise variance: 27335.955078125
+average noise variance upto now: 27338.0390625
+
+267th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-195.82794189453125
+p value proxy: 0.8604651093482971
+result: 0.0
+power_upto_now: 0.06367041170597076
+noise variance: 27341.1015625
+average noise variance upto now: 27338.05078125
+
+268th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:86.20806121826172
+p value proxy: 0.3255814015865326
+result: 0.0
+power_upto_now: 0.06343283504247665
+noise variance: 27329.953125
+average noise variance upto now: 27338.021484375
+
+269th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:27.503494262695312
+p value proxy: 0.45847174525260925
+result: 0.0
+power_upto_now: 0.06319702416658401
+noise variance: 27333.232421875
+average noise variance upto now: 27338.001953125
+
+270th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:55.55104064941406
+p value proxy: 0.3654485046863556
+result: 0.0
+power_upto_now: 0.06296296417713165
+noise variance: 27338.998046875
+average noise variance upto now: 27338.005859375
+
+271th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:314.80218505859375
+p value proxy: 0.029900331050157547
+result: 1.0
+power_upto_now: 0.06642066687345505
+noise variance: 27337.349609375
+average noise variance upto now: 27338.00390625
+
+272th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-128.98863220214844
+p value proxy: 0.7873753905296326
+result: 0.0
+power_upto_now: 0.06617647409439087
+noise variance: 27339.962890625
+average noise variance upto now: 27338.01171875
+
+273th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:203.5702667236328
+p value proxy: 0.12624584138393402
+result: 0.0
+power_upto_now: 0.06593406945466995
+noise variance: 27343.6328125
+average noise variance upto now: 27338.033203125
+
+274th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-167.59390258789062
+p value proxy: 0.8405315279960632
+result: 0.0
+power_upto_now: 0.0656934306025505
+noise variance: 27333.509765625
+average noise variance upto now: 27338.013671875
+
+275th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:342.2477722167969
+p value proxy: 0.03654484823346138
+result: 1.0
+power_upto_now: 0.06909091025590897
+noise variance: 27338.876953125
+average noise variance upto now: 27338.017578125
+
+276th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-3.6010589599609375
+p value proxy: 0.45514950156211853
+result: 0.0
+power_upto_now: 0.06884057819843292
+noise variance: 27333.3125
+average noise variance upto now: 27338.0
+
+277th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-348.7122497558594
+p value proxy: 0.9767441749572754
+result: 0.0
+power_upto_now: 0.06859205663204193
+noise variance: 27332.228515625
+average noise variance upto now: 27337.982421875
+
+278th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:212.5133056640625
+p value proxy: 0.07973422110080719
+result: 0.0
+power_upto_now: 0.0683453232049942
+noise variance: 27350.154296875
+average noise variance upto now: 27338.025390625
+
+279th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:88.6087417602539
+p value proxy: 0.3289036452770233
+result: 0.0
+power_upto_now: 0.06810035556554794
+noise variance: 27333.833984375
+average noise variance upto now: 27338.01171875
+
+280th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:46.956138610839844
+p value proxy: 0.39534881711006165
+result: 0.0
+power_upto_now: 0.06785714626312256
+noise variance: 27347.7421875
+average noise variance upto now: 27338.04296875
+
+281th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-270.16351318359375
+p value proxy: 0.9235880374908447
+result: 0.0
+power_upto_now: 0.06761565804481506
+noise variance: 27322.453125
+average noise variance upto now: 27337.98828125
+
+282th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:56.05052947998047
+p value proxy: 0.3887042999267578
+result: 0.0
+power_upto_now: 0.06737588346004486
+noise variance: 27327.9296875
+average noise variance upto now: 27337.951171875
+
+283th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-43.23140335083008
+p value proxy: 0.6146179437637329
+result: 0.0
+power_upto_now: 0.06713780760765076
+noise variance: 27343.16015625
+average noise variance upto now: 27337.97265625
+
+284th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:105.17366027832031
+p value proxy: 0.23920264840126038
+result: 0.0
+power_upto_now: 0.06690140813589096
+noise variance: 27341.068359375
+average noise variance upto now: 27337.982421875
+
+285th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-0.407470703125
+p value proxy: 0.4883720874786377
+result: 0.0
+power_upto_now: 0.06666667014360428
+noise variance: 27342.36328125
+average noise variance upto now: 27337.99609375
+
+286th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:158.67941284179688
+p value proxy: 0.19269102811813354
+result: 0.0
+power_upto_now: 0.06643356382846832
+noise variance: 27354.7734375
+average noise variance upto now: 27338.056640625
+
+287th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:87.7525405883789
+p value proxy: 0.33887043595314026
+result: 0.0
+power_upto_now: 0.0662020891904831
+noise variance: 27335.787109375
+average noise variance upto now: 27338.048828125
+
+288th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:487.3141784667969
+p value proxy: 0.003322259057313204
+result: 1.0
+power_upto_now: 0.0694444477558136
+noise variance: 27333.79296875
+average noise variance upto now: 27338.033203125
+
+289th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-26.91189193725586
+p value proxy: 0.5681062936782837
+result: 0.0
+power_upto_now: 0.06920415163040161
+noise variance: 27332.095703125
+average noise variance upto now: 27338.01171875
+
+290th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:14.028430938720703
+p value proxy: 0.4485049843788147
+result: 0.0
+power_upto_now: 0.06896551698446274
+noise variance: 27342.123046875
+average noise variance upto now: 27338.02734375
+
+291th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:2.6839752197265625
+p value proxy: 0.52491694688797
+result: 0.0
+power_upto_now: 0.06872852146625519
+noise variance: 27324.443359375
+average noise variance upto now: 27337.978515625
+
+292th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-336.4865417480469
+p value proxy: 0.9800664186477661
+result: 0.0
+power_upto_now: 0.06849315017461777
+noise variance: 27337.158203125
+average noise variance upto now: 27337.978515625
+
+293th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:300.8944396972656
+p value proxy: 0.07308969646692276
+result: 0.0
+power_upto_now: 0.06825938820838928
+noise variance: 27326.515625
+average noise variance upto now: 27337.939453125
+
+294th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-405.7161560058594
+p value proxy: 0.9900332093238831
+result: 0.0
+power_upto_now: 0.06802721321582794
+noise variance: 27331.0234375
+average noise variance upto now: 27337.9140625
+
+295th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-174.45889282226562
+p value proxy: 0.8006644248962402
+result: 0.0
+power_upto_now: 0.06779661029577255
+noise variance: 27328.830078125
+average noise variance upto now: 27337.884765625
+
+296th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:66.61209106445312
+p value proxy: 0.31561461091041565
+result: 0.0
+power_upto_now: 0.06756756454706192
+noise variance: 27329.728515625
+average noise variance upto now: 27337.85546875
+
+297th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:264.77471923828125
+p value proxy: 0.05315614491701126
+result: 0.0
+power_upto_now: 0.06734006851911545
+noise variance: 27338.412109375
+average noise variance upto now: 27337.859375
+
+298th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-135.91598510742188
+p value proxy: 0.7973421812057495
+result: 0.0
+power_upto_now: 0.06711409240961075
+noise variance: 27340.212890625
+average noise variance upto now: 27337.865234375
+
+299th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-20.568885803222656
+p value proxy: 0.5780730843544006
+result: 0.0
+power_upto_now: 0.06688962876796722
+noise variance: 27327.115234375
+average noise variance upto now: 27337.830078125
+
+300th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:335.24310302734375
+p value proxy: 0.033222589641809464
+result: 1.0
+power_upto_now: 0.07000000029802322
+noise variance: 27339.5390625
+average noise variance upto now: 27337.8359375
+
+301th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:107.55735778808594
+p value proxy: 0.2790697515010834
+result: 0.0
+power_upto_now: 0.06976744532585144
+noise variance: 27331.591796875
+average noise variance upto now: 27337.814453125
+
+302th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:60.05656433105469
+p value proxy: 0.3920265734195709
+result: 0.0
+power_upto_now: 0.06953642517328262
+noise variance: 27340.4453125
+average noise variance upto now: 27337.82421875
+
+303th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-186.24722290039062
+p value proxy: 0.8338870406150818
+result: 0.0
+power_upto_now: 0.06930693238973618
+noise variance: 27330.658203125
+average noise variance upto now: 27337.802734375
+
+304th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-3.7642288208007812
+p value proxy: 0.49501660466194153
+result: 0.0
+power_upto_now: 0.0690789446234703
+noise variance: 27331.65625
+average noise variance upto now: 27337.78125
+
+305th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-46.817710876464844
+p value proxy: 0.6179401874542236
+result: 0.0
+power_upto_now: 0.06885246187448502
+noise variance: 27344.826171875
+average noise variance upto now: 27337.8046875
+
+306th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:226.13507080078125
+p value proxy: 0.11960132420063019
+result: 0.0
+power_upto_now: 0.06862745434045792
+noise variance: 27338.802734375
+average noise variance upto now: 27337.80859375
+
+307th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:115.44302368164062
+p value proxy: 0.25581395626068115
+result: 0.0
+power_upto_now: 0.06840390712022781
+noise variance: 27327.1640625
+average noise variance upto now: 27337.775390625
+
+308th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-94.04571533203125
+p value proxy: 0.6943521499633789
+result: 0.0
+power_upto_now: 0.06818182021379471
+noise variance: 27340.162109375
+average noise variance upto now: 27337.783203125
+
+309th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:245.23687744140625
+p value proxy: 0.1029900312423706
+result: 0.0
+power_upto_now: 0.06796116381883621
+noise variance: 27340.078125
+average noise variance upto now: 27337.7890625
+
+310th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:289.4120178222656
+p value proxy: 0.07641195505857468
+result: 0.0
+power_upto_now: 0.06774193793535233
+noise variance: 27325.150390625
+average noise variance upto now: 27337.748046875
+
+311th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:50.51597213745117
+p value proxy: 0.4053156077861786
+result: 0.0
+power_upto_now: 0.06752411276102066
+noise variance: 27341.181640625
+average noise variance upto now: 27337.759765625
+
+312th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-226.93496704101562
+p value proxy: 0.9169434905052185
+result: 0.0
+power_upto_now: 0.06730769574642181
+noise variance: 27331.439453125
+average noise variance upto now: 27337.736328125
+
+313th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-110.40060424804688
+p value proxy: 0.7375414967536926
+result: 0.0
+power_upto_now: 0.0670926496386528
+noise variance: 27347.658203125
+average noise variance upto now: 27337.76953125
+
+314th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-618.953125
+p value proxy: 1.0
+result: 0.0
+power_upto_now: 0.06687898188829422
+noise variance: 27335.740234375
+average noise variance upto now: 27337.76171875
+
+315th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:101.22795867919922
+p value proxy: 0.31893688440322876
+result: 0.0
+power_upto_now: 0.06666667014360428
+noise variance: 27335.908203125
+average noise variance upto now: 27337.755859375
+
+316th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:413.39373779296875
+p value proxy: 0.023255813866853714
+result: 1.0
+power_upto_now: 0.06962025165557861
+noise variance: 27340.4453125
+average noise variance upto now: 27337.765625
+
+317th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:378.218505859375
+p value proxy: 0.013289036229252815
+result: 1.0
+power_upto_now: 0.07255520671606064
+noise variance: 27316.732421875
+average noise variance upto now: 27337.697265625
+
+318th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-87.17146301269531
+p value proxy: 0.6910299062728882
+result: 0.0
+power_upto_now: 0.07232704758644104
+noise variance: 27328.908203125
+average noise variance upto now: 27337.669921875
+
+319th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:90.83633422851562
+p value proxy: 0.3322259187698364
+result: 0.0
+power_upto_now: 0.07210031151771545
+noise variance: 27334.8828125
+average noise variance upto now: 27337.662109375
+
+320th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:141.81893920898438
+p value proxy: 0.23255813121795654
+result: 0.0
+power_upto_now: 0.07187499850988388
+noise variance: 27336.830078125
+average noise variance upto now: 27337.66015625
+
+321th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-138.25259399414062
+p value proxy: 0.8073089718818665
+result: 0.0
+power_upto_now: 0.07165109366178513
+noise variance: 27347.390625
+average noise variance upto now: 27337.69140625
+
+322th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:3.5525970458984375
+p value proxy: 0.5049833655357361
+result: 0.0
+power_upto_now: 0.0714285746216774
+noise variance: 27334.541015625
+average noise variance upto now: 27337.6796875
+
+323th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-154.99610900878906
+p value proxy: 0.8006644248962402
+result: 0.0
+power_upto_now: 0.0712074339389801
+noise variance: 27333.798828125
+average noise variance upto now: 27337.66796875
+
+324th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-63.41083526611328
+p value proxy: 0.6710963249206543
+result: 0.0
+power_upto_now: 0.07098765671253204
+noise variance: 27331.556640625
+average noise variance upto now: 27337.650390625
+
+325th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:334.4315185546875
+p value proxy: 0.03654484823346138
+result: 1.0
+power_upto_now: 0.07384615391492844
+noise variance: 27334.615234375
+average noise variance upto now: 27337.640625
+
+326th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-117.87759399414062
+p value proxy: 0.7375414967536926
+result: 0.0
+power_upto_now: 0.07361963391304016
+noise variance: 27329.7109375
+average noise variance upto now: 27337.6171875
+
+327th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-54.04949951171875
+p value proxy: 0.6013289093971252
+result: 0.0
+power_upto_now: 0.07339449226856232
+noise variance: 27335.310546875
+average noise variance upto now: 27337.609375
+
+328th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:115.631591796875
+p value proxy: 0.24916942417621613
+result: 0.0
+power_upto_now: 0.0731707289814949
+noise variance: 27335.712890625
+average noise variance upto now: 27337.603515625
+
+329th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:47.49006652832031
+p value proxy: 0.4019933342933655
+result: 0.0
+power_upto_now: 0.07294832915067673
+noise variance: 27349.236328125
+average noise variance upto now: 27337.638671875
+
+330th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:65.29796600341797
+p value proxy: 0.3687707483768463
+result: 0.0
+power_upto_now: 0.072727270424366
+noise variance: 27328.4453125
+average noise variance upto now: 27337.609375
+
+331th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:88.37281799316406
+p value proxy: 0.31561461091041565
+result: 0.0
+power_upto_now: 0.07250755280256271
+noise variance: 27341.19921875
+average noise variance upto now: 27337.623046875
+
+332th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:13.96420669555664
+p value proxy: 0.5083056092262268
+result: 0.0
+power_upto_now: 0.07228915393352509
+noise variance: 27330.04296875
+average noise variance upto now: 27337.599609375
+
+333th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-81.07310485839844
+p value proxy: 0.6544850468635559
+result: 0.0
+power_upto_now: 0.07207207381725311
+noise variance: 27336.873046875
+average noise variance upto now: 27337.59765625
+
+334th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-161.56173706054688
+p value proxy: 0.8073089718818665
+result: 0.0
+power_upto_now: 0.071856290102005
+noise variance: 27342.68359375
+average noise variance upto now: 27337.611328125
+
+335th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-114.75116729736328
+p value proxy: 0.7275747060775757
+result: 0.0
+power_upto_now: 0.07164178788661957
+noise variance: 27340.46484375
+average noise variance upto now: 27337.62109375
+
+336th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:66.06675720214844
+p value proxy: 0.33887043595314026
+result: 0.0
+power_upto_now: 0.0714285746216774
+noise variance: 27336.513671875
+average noise variance upto now: 27337.619140625
+
+337th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:151.43722534179688
+p value proxy: 0.25581395626068115
+result: 0.0
+power_upto_now: 0.07121662050485611
+noise variance: 27338.748046875
+average noise variance upto now: 27337.62109375
+
+338th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:49.94581604003906
+p value proxy: 0.3853820562362671
+result: 0.0
+power_upto_now: 0.0710059180855751
+noise variance: 27328.521484375
+average noise variance upto now: 27337.59375
+
+339th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-127.55157470703125
+p value proxy: 0.7707641124725342
+result: 0.0
+power_upto_now: 0.07079645991325378
+noise variance: 27340.890625
+average noise variance upto now: 27337.60546875
+
+340th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-185.2307891845703
+p value proxy: 0.8471760749816895
+result: 0.0
+power_upto_now: 0.07058823853731155
+noise variance: 27336.638671875
+average noise variance upto now: 27337.599609375
+
+341th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:313.0986022949219
+p value proxy: 0.04318936914205551
+result: 1.0
+power_upto_now: 0.07331378012895584
+noise variance: 27330.837890625
+average noise variance upto now: 27337.580078125
+
+342th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-5.348186492919922
+p value proxy: 0.4451827108860016
+result: 0.0
+power_upto_now: 0.07309941202402115
+noise variance: 27332.9765625
+average noise variance upto now: 27337.56640625
+
+343th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-138.96450805664062
+p value proxy: 0.7508305311203003
+result: 0.0
+power_upto_now: 0.07288629561662674
+noise variance: 27343.396484375
+average noise variance upto now: 27337.5859375
+
+344th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:367.16162109375
+p value proxy: 0.02657807245850563
+result: 1.0
+power_upto_now: 0.075581394135952
+noise variance: 27336.333984375
+average noise variance upto now: 27337.578125
+
+345th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:82.33758544921875
+p value proxy: 0.33887043595314026
+result: 0.0
+power_upto_now: 0.07536231726408005
+noise variance: 27327.337890625
+average noise variance upto now: 27337.55078125
+
+346th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:59.99847412109375
+p value proxy: 0.31893688440322876
+result: 0.0
+power_upto_now: 0.07514450699090958
+noise variance: 27336.80078125
+average noise variance upto now: 27337.548828125
+
+347th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-167.02395629882812
+p value proxy: 0.8205980062484741
+result: 0.0
+power_upto_now: 0.07492795586585999
+noise variance: 27330.16015625
+average noise variance upto now: 27337.52734375
+
+348th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-203.75013732910156
+p value proxy: 0.8571428656578064
+result: 0.0
+power_upto_now: 0.07471264153718948
+noise variance: 27339.544921875
+average noise variance upto now: 27337.53125
+
+349th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-10.433578491210938
+p value proxy: 0.5514950156211853
+result: 0.0
+power_upto_now: 0.07449856400489807
+noise variance: 27338.73046875
+average noise variance upto now: 27337.53515625
+
+350th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:83.6218490600586
+p value proxy: 0.3322259187698364
+result: 0.0
+power_upto_now: 0.07428571581840515
+noise variance: 27336.76171875
+average noise variance upto now: 27337.53515625
+
+351th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:54.648292541503906
+p value proxy: 0.3488371968269348
+result: 0.0
+power_upto_now: 0.07407407462596893
+noise variance: 27334.12109375
+average noise variance upto now: 27337.5234375
+
+352th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:259.0147399902344
+p value proxy: 0.07308969646692276
+result: 0.0
+power_upto_now: 0.07386363297700882
+noise variance: 27323.626953125
+average noise variance upto now: 27337.482421875
+
+353th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-230.42176818847656
+p value proxy: 0.8903654217720032
+result: 0.0
+power_upto_now: 0.07365439087152481
+noise variance: 27337.216796875
+average noise variance upto now: 27337.484375
+
+354th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-0.38506317138671875
+p value proxy: 0.4916943311691284
+result: 0.0
+power_upto_now: 0.07344632595777512
+noise variance: 27334.0078125
+average noise variance upto now: 27337.474609375
+
+355th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-330.32635498046875
+p value proxy: 0.9800664186477661
+result: 0.0
+power_upto_now: 0.07323943823575974
+noise variance: 27345.80859375
+average noise variance upto now: 27337.498046875
+
+356th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:247.48049926757812
+p value proxy: 0.09634551405906677
+result: 0.0
+power_upto_now: 0.07303370535373688
+noise variance: 27333.998046875
+average noise variance upto now: 27337.48828125
+
+357th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:61.455623626708984
+p value proxy: 0.35880398750305176
+result: 0.0
+power_upto_now: 0.07282913476228714
+noise variance: 27330.89453125
+average noise variance upto now: 27337.46875
+
+358th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:17.35894775390625
+p value proxy: 0.5049833655357361
+result: 0.0
+power_upto_now: 0.07262569665908813
+noise variance: 27352.130859375
+average noise variance upto now: 27337.5078125
+
+359th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-295.7697448730469
+p value proxy: 0.9468438029289246
+result: 0.0
+power_upto_now: 0.07242339849472046
+noise variance: 27337.640625
+average noise variance upto now: 27337.509765625
+
+360th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-87.04731750488281
+p value proxy: 0.6943521499633789
+result: 0.0
+power_upto_now: 0.07222222536802292
+noise variance: 27338.12890625
+average noise variance upto now: 27337.513671875
+
+361th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:232.44818115234375
+p value proxy: 0.09966777265071869
+result: 0.0
+power_upto_now: 0.07202216237783432
+noise variance: 27332.8984375
+average noise variance upto now: 27337.501953125
+
+362th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:24.87903594970703
+p value proxy: 0.41860464215278625
+result: 0.0
+power_upto_now: 0.07182320207357407
+noise variance: 27338.361328125
+average noise variance upto now: 27337.501953125
+
+363th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-136.0893096923828
+p value proxy: 0.7607973217964172
+result: 0.0
+power_upto_now: 0.07162534445524216
+noise variance: 27342.083984375
+average noise variance upto now: 27337.515625
+
+364th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:17.438282012939453
+p value proxy: 0.4684385359287262
+result: 0.0
+power_upto_now: 0.0714285746216774
+noise variance: 27335.376953125
+average noise variance upto now: 27337.51171875
+
+365th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:186.03114318847656
+p value proxy: 0.1395348757505417
+result: 0.0
+power_upto_now: 0.0712328776717186
+noise variance: 27324.83203125
+average noise variance upto now: 27337.4765625
+
+366th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-174.35980224609375
+p value proxy: 0.8338870406150818
+result: 0.0
+power_upto_now: 0.07103825360536575
+noise variance: 27346.970703125
+average noise variance upto now: 27337.501953125
+
+367th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:298.9034423828125
+p value proxy: 0.06644517928361893
+result: 0.0
+power_upto_now: 0.07084468752145767
+noise variance: 27338.44921875
+average noise variance upto now: 27337.50390625
+
+368th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:128.04669189453125
+p value proxy: 0.23920264840126038
+result: 0.0
+power_upto_now: 0.07065217196941376
+noise variance: 27333.306640625
+average noise variance upto now: 27337.48828125
+
+369th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:63.4627685546875
+p value proxy: 0.3222591280937195
+result: 0.0
+power_upto_now: 0.07046070694923401
+noise variance: 27346.505859375
+average noise variance upto now: 27337.515625
+
+370th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-208.13409423828125
+p value proxy: 0.8671095967292786
+result: 0.0
+power_upto_now: 0.07027027010917664
+noise variance: 27335.931640625
+average noise variance upto now: 27337.51171875
+
+371th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:53.247894287109375
+p value proxy: 0.39534881711006165
+result: 0.0
+power_upto_now: 0.07008086144924164
+noise variance: 27328.568359375
+average noise variance upto now: 27337.484375
+
+372th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:41.72053909301758
+p value proxy: 0.39534881711006165
+result: 0.0
+power_upto_now: 0.06989247351884842
+noise variance: 27337.765625
+average noise variance upto now: 27337.486328125
+
+373th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-92.33750915527344
+p value proxy: 0.6777408719062805
+result: 0.0
+power_upto_now: 0.06970509141683578
+noise variance: 27340.3671875
+average noise variance upto now: 27337.49609375
+
+374th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:145.0751495361328
+p value proxy: 0.2059800624847412
+result: 0.0
+power_upto_now: 0.06951871514320374
+noise variance: 27340.978515625
+average noise variance upto now: 27337.505859375
+
+375th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-84.89537811279297
+p value proxy: 0.6677740812301636
+result: 0.0
+power_upto_now: 0.06933332979679108
+noise variance: 27336.044921875
+average noise variance upto now: 27337.501953125
+
+376th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-320.9617004394531
+p value proxy: 0.9800664186477661
+result: 0.0
+power_upto_now: 0.06914893537759781
+noise variance: 27339.6171875
+average noise variance upto now: 27337.505859375
+
+377th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:166.63546752929688
+p value proxy: 0.15946844220161438
+result: 0.0
+power_upto_now: 0.06896551698446274
+noise variance: 27343.462890625
+average noise variance upto now: 27337.5234375
+
+378th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-28.959274291992188
+p value proxy: 0.5348837375640869
+result: 0.0
+power_upto_now: 0.06878306716680527
+noise variance: 27345.388671875
+average noise variance upto now: 27337.544921875
+
+379th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-89.93057250976562
+p value proxy: 0.6511628031730652
+result: 0.0
+power_upto_now: 0.0686015859246254
+noise variance: 27334.138671875
+average noise variance upto now: 27337.53515625
+
+380th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-24.83636474609375
+p value proxy: 0.5215946435928345
+result: 0.0
+power_upto_now: 0.06842105090618134
+noise variance: 27337.337890625
+average noise variance upto now: 27337.53125
+
+381th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:35.75666809082031
+p value proxy: 0.4684385359287262
+result: 0.0
+power_upto_now: 0.06824146956205368
+noise variance: 27340.283203125
+average noise variance upto now: 27337.54296875
+
+382th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:19.870391845703125
+p value proxy: 0.4518272280693054
+result: 0.0
+power_upto_now: 0.06806282699108124
+noise variance: 27340.384765625
+average noise variance upto now: 27337.548828125
+
+383th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:0.018077850341796875
+p value proxy: 0.4916943311691284
+result: 0.0
+power_upto_now: 0.06788511574268341
+noise variance: 27340.193359375
+average noise variance upto now: 27337.556640625
+
+384th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:7.1250762939453125
+p value proxy: 0.43521595001220703
+result: 0.0
+power_upto_now: 0.0677083358168602
+noise variance: 27344.25
+average noise variance upto now: 27337.572265625
+
+385th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:135.90664672851562
+p value proxy: 0.2425249069929123
+result: 0.0
+power_upto_now: 0.06753246486186981
+noise variance: 27337.154296875
+average noise variance upto now: 27337.572265625
+
+386th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-129.70632934570312
+p value proxy: 0.8073089718818665
+result: 0.0
+power_upto_now: 0.06735751032829285
+noise variance: 27348.51953125
+average noise variance upto now: 27337.6015625
+
+387th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-138.81533813476562
+p value proxy: 0.7906976342201233
+result: 0.0
+power_upto_now: 0.0671834647655487
+noise variance: 27335.74609375
+average noise variance upto now: 27337.59765625
+
+388th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-119.78488159179688
+p value proxy: 0.7375414967536926
+result: 0.0
+power_upto_now: 0.0670103058218956
+noise variance: 27338.904296875
+average noise variance upto now: 27337.599609375
+
+389th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-143.5712432861328
+p value proxy: 0.7740863561630249
+result: 0.0
+power_upto_now: 0.06683804839849472
+noise variance: 27329.662109375
+average noise variance upto now: 27337.578125
+
+390th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:75.07555389404297
+p value proxy: 0.31893688440322876
+result: 0.0
+power_upto_now: 0.06666667014360428
+noise variance: 27327.04296875
+average noise variance upto now: 27337.55078125
+
+391th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:71.95867919921875
+p value proxy: 0.2890365421772003
+result: 0.0
+power_upto_now: 0.06649616360664368
+noise variance: 27333.9296875
+average noise variance upto now: 27337.54296875
+
+392th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-82.7102279663086
+p value proxy: 0.7508305311203003
+result: 0.0
+power_upto_now: 0.06632652878761292
+noise variance: 27331.578125
+average noise variance upto now: 27337.525390625
+
+393th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-138.10763549804688
+p value proxy: 0.7475082874298096
+result: 0.0
+power_upto_now: 0.0661577582359314
+noise variance: 27333.01953125
+average noise variance upto now: 27337.513671875
+
+394th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-138.71437072753906
+p value proxy: 0.7940199375152588
+result: 0.0
+power_upto_now: 0.06598984450101852
+noise variance: 27339.0234375
+average noise variance upto now: 27337.517578125
+
+395th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:79.75187683105469
+p value proxy: 0.31893688440322876
+result: 0.0
+power_upto_now: 0.0658227875828743
+noise variance: 27340.451171875
+average noise variance upto now: 27337.5234375
+
+396th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-123.16970825195312
+p value proxy: 0.803986668586731
+result: 0.0
+power_upto_now: 0.06565656512975693
+noise variance: 27328.931640625
+average noise variance upto now: 27337.501953125
+
+397th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-102.18592834472656
+p value proxy: 0.6710963249206543
+result: 0.0
+power_upto_now: 0.06549118459224701
+noise variance: 27347.990234375
+average noise variance upto now: 27337.529296875
+
+398th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-73.84561157226562
+p value proxy: 0.6611295342445374
+result: 0.0
+power_upto_now: 0.06532663106918335
+noise variance: 27348.783203125
+average noise variance upto now: 27337.55859375
+
+399th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-77.11245727539062
+p value proxy: 0.7043189406394958
+result: 0.0
+power_upto_now: 0.06516290456056595
+noise variance: 27349.818359375
+average noise variance upto now: 27337.58984375
+
+400th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-50.36261749267578
+p value proxy: 0.6245846748352051
+result: 0.0
+power_upto_now: 0.06499999761581421
+noise variance: 27344.3515625
+average noise variance upto now: 27337.607421875
+
+401th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:117.68273162841797
+p value proxy: 0.25581395626068115
+result: 0.0
+power_upto_now: 0.06483790278434753
+noise variance: 27334.048828125
+average noise variance upto now: 27337.59765625
+
+402th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:73.52942657470703
+p value proxy: 0.3488371968269348
+result: 0.0
+power_upto_now: 0.06467662006616592
+noise variance: 27320.763671875
+average noise variance upto now: 27337.556640625
+
+403th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-80.45649719238281
+p value proxy: 0.6877076029777527
+result: 0.0
+power_upto_now: 0.06451612710952759
+noise variance: 27332.4609375
+average noise variance upto now: 27337.546875
+
+404th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-123.91659545898438
+p value proxy: 0.7674418687820435
+result: 0.0
+power_upto_now: 0.06435643881559372
+noise variance: 27332.88671875
+average noise variance upto now: 27337.53125
+
+405th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:143.436279296875
+p value proxy: 0.18936876952648163
+result: 0.0
+power_upto_now: 0.06419753283262253
+noise variance: 27334.775390625
+average noise variance upto now: 27337.525390625
+
+406th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-87.7447738647461
+p value proxy: 0.6810631155967712
+result: 0.0
+power_upto_now: 0.06403940916061401
+noise variance: 27338.748046875
+average noise variance upto now: 27337.529296875
+
+407th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-135.3629608154297
+p value proxy: 0.8006644248962402
+result: 0.0
+power_upto_now: 0.06388206034898758
+noise variance: 27329.896484375
+average noise variance upto now: 27337.5078125
+
+408th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:133.64613342285156
+p value proxy: 0.2259136140346527
+result: 0.0
+power_upto_now: 0.06372549384832382
+noise variance: 27334.158203125
+average noise variance upto now: 27337.501953125
+
+409th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-124.53131103515625
+p value proxy: 0.7541528344154358
+result: 0.0
+power_upto_now: 0.06356967985630035
+noise variance: 27337.298828125
+average noise variance upto now: 27337.501953125
+
+410th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-162.25897216796875
+p value proxy: 0.8504983186721802
+result: 0.0
+power_upto_now: 0.06341463327407837
+noise variance: 27344.265625
+average noise variance upto now: 27337.517578125
+
+411th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:340.24798583984375
+p value proxy: 0.023255813866853714
+result: 1.0
+power_upto_now: 0.0656934306025505
+noise variance: 27340.09765625
+average noise variance upto now: 27337.5234375
+
+412th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:40.12417984008789
+p value proxy: 0.4019933342933655
+result: 0.0
+power_upto_now: 0.06553398072719574
+noise variance: 27335.86328125
+average noise variance upto now: 27337.51953125
+
+413th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-6.412506103515625
+p value proxy: 0.49501660466194153
+result: 0.0
+power_upto_now: 0.06537530571222305
+noise variance: 27330.419921875
+average noise variance upto now: 27337.501953125
+
+414th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-17.292388916015625
+p value proxy: 0.5348837375640869
+result: 0.0
+power_upto_now: 0.06521739065647125
+noise variance: 27326.6171875
+average noise variance upto now: 27337.4765625
+
+415th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-162.37310791015625
+p value proxy: 0.8338870406150818
+result: 0.0
+power_upto_now: 0.06506024301052094
+noise variance: 27336.3203125
+average noise variance upto now: 27337.47265625
+
+416th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:65.63973999023438
+p value proxy: 0.4053156077861786
+result: 0.0
+power_upto_now: 0.06490384787321091
+noise variance: 27348.78125
+average noise variance upto now: 27337.501953125
+
+417th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:121.01156616210938
+p value proxy: 0.2691029906272888
+result: 0.0
+power_upto_now: 0.06474819779396057
+noise variance: 27338.6953125
+average noise variance upto now: 27337.505859375
+
+418th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:168.680419921875
+p value proxy: 0.1860465109348297
+result: 0.0
+power_upto_now: 0.06459330022335052
+noise variance: 27343.681640625
+average noise variance upto now: 27337.51953125
+
+419th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-264.83941650390625
+p value proxy: 0.9435215592384338
+result: 0.0
+power_upto_now: 0.06443914026021957
+noise variance: 27338.623046875
+average noise variance upto now: 27337.5234375
+
+420th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-19.493484497070312
+p value proxy: 0.4883720874786377
+result: 0.0
+power_upto_now: 0.06428571790456772
+noise variance: 27332.515625
+average noise variance upto now: 27337.509765625
+
+421th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:294.7976379394531
+p value proxy: 0.06644517928361893
+result: 0.0
+power_upto_now: 0.06413301825523376
+noise variance: 27332.544921875
+average noise variance upto now: 27337.498046875
+
+422th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-61.245819091796875
+p value proxy: 0.6511628031730652
+result: 0.0
+power_upto_now: 0.06398104131221771
+noise variance: 27331.640625
+average noise variance upto now: 27337.486328125
+
+423th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:0.1292266845703125
+p value proxy: 0.4518272280693054
+result: 0.0
+power_upto_now: 0.06382978707551956
+noise variance: 27331.2578125
+average noise variance upto now: 27337.470703125
+
+424th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:163.97352600097656
+p value proxy: 0.19601328670978546
+result: 0.0
+power_upto_now: 0.06367924809455872
+noise variance: 27334.25390625
+average noise variance upto now: 27337.458984375
+
+425th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-191.74990844726562
+p value proxy: 0.8571428656578064
+result: 0.0
+power_upto_now: 0.06352940946817398
+noise variance: 27340.681640625
+average noise variance upto now: 27337.46875
+
+426th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-21.123371124267578
+p value proxy: 0.564784049987793
+result: 0.0
+power_upto_now: 0.06338027864694595
+noise variance: 27342.892578125
+average noise variance upto now: 27337.48046875
+
+427th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-19.314044952392578
+p value proxy: 0.5714285373687744
+result: 0.0
+power_upto_now: 0.06323184818029404
+noise variance: 27334.900390625
+average noise variance upto now: 27337.474609375
+
+428th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:57.66940689086914
+p value proxy: 0.4053156077861786
+result: 0.0
+power_upto_now: 0.06308411061763763
+noise variance: 27340.83984375
+average noise variance upto now: 27337.484375
+
+429th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:32.352638244628906
+p value proxy: 0.4086378514766693
+result: 0.0
+power_upto_now: 0.06293706595897675
+noise variance: 27336.8515625
+average noise variance upto now: 27337.48046875
+
+430th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-505.7730407714844
+p value proxy: 1.0
+result: 0.0
+power_upto_now: 0.06279069930315018
+noise variance: 27336.9140625
+average noise variance upto now: 27337.478515625
+
+431th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-127.21672821044922
+p value proxy: 0.7707641124725342
+result: 0.0
+power_upto_now: 0.06264501065015793
+noise variance: 27344.462890625
+average noise variance upto now: 27337.49609375
+
+432th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-300.1734924316406
+p value proxy: 0.9700996279716492
+result: 0.0
+power_upto_now: 0.0625
+noise variance: 27338.466796875
+average noise variance upto now: 27337.498046875
+
+433th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:10.111480712890625
+p value proxy: 0.5116279125213623
+result: 0.0
+power_upto_now: 0.062355659902095795
+noise variance: 27333.806640625
+average noise variance upto now: 27337.486328125
+
+434th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-136.61557006835938
+p value proxy: 0.7940199375152588
+result: 0.0
+power_upto_now: 0.062211982905864716
+noise variance: 27337.5625
+average noise variance upto now: 27337.48828125
+
+435th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-233.29933166503906
+p value proxy: 0.8870431780815125
+result: 0.0
+power_upto_now: 0.062068965286016464
+noise variance: 27334.15234375
+average noise variance upto now: 27337.48046875
+
+436th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:57.415191650390625
+p value proxy: 0.3853820562362671
+result: 0.0
+power_upto_now: 0.06192660704255104
+noise variance: 27331.57421875
+average noise variance upto now: 27337.46875
+
+437th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:67.180419921875
+p value proxy: 0.3720930218696594
+result: 0.0
+power_upto_now: 0.06178489699959755
+noise variance: 27331.74609375
+average noise variance upto now: 27337.455078125
+
+438th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-117.36553955078125
+p value proxy: 0.7475082874298096
+result: 0.0
+power_upto_now: 0.06164383515715599
+noise variance: 27341.21484375
+average noise variance upto now: 27337.462890625
+
+439th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-31.15155792236328
+p value proxy: 0.554817259311676
+result: 0.0
+power_upto_now: 0.061503417789936066
+noise variance: 27340.703125
+average noise variance upto now: 27337.46875
+
+440th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:208.35621643066406
+p value proxy: 0.12956809997558594
+result: 0.0
+power_upto_now: 0.06136363744735718
+noise variance: 27338.21484375
+average noise variance upto now: 27337.47265625
+
+441th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-231.3225860595703
+p value proxy: 0.8803986310958862
+result: 0.0
+power_upto_now: 0.06122449040412903
+noise variance: 27330.6328125
+average noise variance upto now: 27337.455078125
+
+442th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-60.292755126953125
+p value proxy: 0.6411960124969482
+result: 0.0
+power_upto_now: 0.06108597293496132
+noise variance: 27343.95703125
+average noise variance upto now: 27337.470703125
+
+443th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:85.51485443115234
+p value proxy: 0.3056478202342987
+result: 0.0
+power_upto_now: 0.06094808131456375
+noise variance: 27333.689453125
+average noise variance upto now: 27337.462890625
+
+444th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:195.57882690429688
+p value proxy: 0.11295680701732635
+result: 0.0
+power_upto_now: 0.06081081181764603
+noise variance: 27335.056640625
+average noise variance upto now: 27337.458984375
+
+445th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-37.402435302734375
+p value proxy: 0.6279069781303406
+result: 0.0
+power_upto_now: 0.06067415699362755
+noise variance: 27340.4140625
+average noise variance upto now: 27337.46484375
+
+446th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:109.68690490722656
+p value proxy: 0.2657807171344757
+result: 0.0
+power_upto_now: 0.060538116842508316
+noise variance: 27348.07421875
+average noise variance upto now: 27337.48828125
+
+447th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-137.87806701660156
+p value proxy: 0.803986668586731
+result: 0.0
+power_upto_now: 0.06040268391370773
+noise variance: 27348.23046875
+average noise variance upto now: 27337.51171875
+
+448th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:181.260986328125
+p value proxy: 0.17940199375152588
+result: 0.0
+power_upto_now: 0.0602678582072258
+noise variance: 27329.830078125
+average noise variance upto now: 27337.494140625
+
+449th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-268.031005859375
+p value proxy: 0.9235880374908447
+result: 0.0
+power_upto_now: 0.06013362854719162
+noise variance: 27338.916015625
+average noise variance upto now: 27337.49609375
+
+450th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:184.17904663085938
+p value proxy: 0.15946844220161438
+result: 0.0
+power_upto_now: 0.05999999865889549
+noise variance: 27329.634765625
+average noise variance upto now: 27337.48046875
+
+451th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:92.37995147705078
+p value proxy: 0.2990033030509949
+result: 0.0
+power_upto_now: 0.05986696109175682
+noise variance: 27328.673828125
+average noise variance upto now: 27337.458984375
+
+452th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-249.28152465820312
+p value proxy: 0.9102990031242371
+result: 0.0
+power_upto_now: 0.059734512120485306
+noise variance: 27335.05078125
+average noise variance upto now: 27337.453125
+
+453th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-63.30061340332031
+p value proxy: 0.7009966373443604
+result: 0.0
+power_upto_now: 0.05960264801979065
+noise variance: 27335.41015625
+average noise variance upto now: 27337.451171875
+
+454th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-106.4882583618164
+p value proxy: 0.7275747060775757
+result: 0.0
+power_upto_now: 0.05947136506438255
+noise variance: 27338.169921875
+average noise variance upto now: 27337.451171875
+
+455th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:26.945831298828125
+p value proxy: 0.4119601249694824
+result: 0.0
+power_upto_now: 0.05934065952897072
+noise variance: 27348.1875
+average noise variance upto now: 27337.474609375
+
+456th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-125.21627807617188
+p value proxy: 0.7674418687820435
+result: 0.0
+power_upto_now: 0.05921052768826485
+noise variance: 27329.240234375
+average noise variance upto now: 27337.458984375
+
+457th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-263.3457946777344
+p value proxy: 0.9335547685623169
+result: 0.0
+power_upto_now: 0.05908096209168434
+noise variance: 27327.27734375
+average noise variance upto now: 27337.4375
+
+458th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-210.63955688476562
+p value proxy: 0.8737541437149048
+result: 0.0
+power_upto_now: 0.0589519664645195
+noise variance: 27340.923828125
+average noise variance upto now: 27337.4453125
+
+459th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-149.9820098876953
+p value proxy: 0.8305647373199463
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27336.18359375
+average noise variance upto now: 27337.44140625
+
+460th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-203.12062072753906
+p value proxy: 0.8837209343910217
+result: 0.0
+power_upto_now: 0.05869565159082413
+noise variance: 27342.494140625
+average noise variance upto now: 27337.453125
+
+461th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:56.06975555419922
+p value proxy: 0.342192679643631
+result: 0.0
+power_upto_now: 0.058568328619003296
+noise variance: 27341.89453125
+average noise variance upto now: 27337.462890625
+
+462th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-127.20417785644531
+p value proxy: 0.8139534592628479
+result: 0.0
+power_upto_now: 0.05844155699014664
+noise variance: 27334.685546875
+average noise variance upto now: 27337.45703125
+
+463th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-296.8031311035156
+p value proxy: 0.9568105936050415
+result: 0.0
+power_upto_now: 0.05831533297896385
+noise variance: 27343.970703125
+average noise variance upto now: 27337.470703125
+
+464th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-13.599189758300781
+p value proxy: 0.554817259311676
+result: 0.0
+power_upto_now: 0.05818965658545494
+noise variance: 27340.71484375
+average noise variance upto now: 27337.4765625
+
+465th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-20.62954330444336
+p value proxy: 0.4916943311691284
+result: 0.0
+power_upto_now: 0.05806451663374901
+noise variance: 27330.25
+average noise variance upto now: 27337.4609375
+
+466th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-178.33383178710938
+p value proxy: 0.8571428656578064
+result: 0.0
+power_upto_now: 0.057939913123846054
+noise variance: 27335.392578125
+average noise variance upto now: 27337.45703125
+
+467th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:42.75676727294922
+p value proxy: 0.4019933342933655
+result: 0.0
+power_upto_now: 0.05781584605574608
+noise variance: 27343.275390625
+average noise variance upto now: 27337.46875
+
+468th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-167.97569274902344
+p value proxy: 0.843853771686554
+result: 0.0
+power_upto_now: 0.057692307978868484
+noise variance: 27339.2421875
+average noise variance upto now: 27337.47265625
+
+469th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-105.82606506347656
+p value proxy: 0.7209302186965942
+result: 0.0
+power_upto_now: 0.057569295167922974
+noise variance: 27335.673828125
+average noise variance upto now: 27337.46875
+
+470th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:92.287353515625
+p value proxy: 0.3455149531364441
+result: 0.0
+power_upto_now: 0.057446807622909546
+noise variance: 27336.521484375
+average noise variance upto now: 27337.466796875
+
+471th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:18.654022216796875
+p value proxy: 0.44186046719551086
+result: 0.0
+power_upto_now: 0.0573248416185379
+noise variance: 27326.22265625
+average noise variance upto now: 27337.443359375
+
+472th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-309.9209899902344
+p value proxy: 0.9700996279716492
+result: 0.0
+power_upto_now: 0.05720338970422745
+noise variance: 27338.546875
+average noise variance upto now: 27337.447265625
+
+473th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:59.51201629638672
+p value proxy: 0.3488371968269348
+result: 0.0
+power_upto_now: 0.05708245187997818
+noise variance: 27344.09375
+average noise variance upto now: 27337.4609375
+
+474th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-60.73585510253906
+p value proxy: 0.5980066061019897
+result: 0.0
+power_upto_now: 0.0569620244204998
+noise variance: 27334.107421875
+average noise variance upto now: 27337.453125
+
+475th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:132.4062042236328
+p value proxy: 0.25249168276786804
+result: 0.0
+power_upto_now: 0.056842103600502014
+noise variance: 27330.1328125
+average noise variance upto now: 27337.4375
+
+476th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:77.00170135498047
+p value proxy: 0.3654485046863556
+result: 0.0
+power_upto_now: 0.05672268941998482
+noise variance: 27335.7578125
+average noise variance upto now: 27337.435546875
+
+477th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:307.81396484375
+p value proxy: 0.05315614491701126
+result: 0.0
+power_upto_now: 0.056603774428367615
+noise variance: 27340.689453125
+average noise variance upto now: 27337.439453125
+
+478th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:174.10702514648438
+p value proxy: 0.1627907007932663
+result: 0.0
+power_upto_now: 0.05648535490036011
+noise variance: 27333.76171875
+average noise variance upto now: 27337.43359375
+
+479th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-191.03350830078125
+p value proxy: 0.8139534592628479
+result: 0.0
+power_upto_now: 0.056367430835962296
+noise variance: 27335.212890625
+average noise variance upto now: 27337.427734375
+
+480th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-60.29985046386719
+p value proxy: 0.6212624311447144
+result: 0.0
+power_upto_now: 0.05624999850988388
+noise variance: 27338.083984375
+average noise variance upto now: 27337.431640625
+
+481th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:308.1566467285156
+p value proxy: 0.059800662100315094
+result: 0.0
+power_upto_now: 0.05613305792212486
+noise variance: 27339.126953125
+average noise variance upto now: 27337.4375
+
+482th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:47.181617736816406
+p value proxy: 0.4318936765193939
+result: 0.0
+power_upto_now: 0.056016597896814346
+noise variance: 27327.109375
+average noise variance upto now: 27337.4140625
+
+483th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:95.57417297363281
+p value proxy: 0.302325576543808
+result: 0.0
+power_upto_now: 0.05590062215924263
+noise variance: 27331.861328125
+average noise variance upto now: 27337.404296875
+
+484th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:213.34783935546875
+p value proxy: 0.10631228983402252
+result: 0.0
+power_upto_now: 0.05578512325882912
+noise variance: 27329.638671875
+average noise variance upto now: 27337.38671875
+
+485th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-21.698150634765625
+p value proxy: 0.5415282249450684
+result: 0.0
+power_upto_now: 0.055670104920864105
+noise variance: 27336.4765625
+average noise variance upto now: 27337.384765625
+
+486th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-126.57524871826172
+p value proxy: 0.7176079750061035
+result: 0.0
+power_upto_now: 0.0555555559694767
+noise variance: 27333.033203125
+average noise variance upto now: 27337.376953125
+
+487th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:468.079345703125
+p value proxy: 0.009966777637600899
+result: 1.0
+power_upto_now: 0.05749486759305
+noise variance: 27332.875
+average noise variance upto now: 27337.3671875
+
+488th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:278.62677001953125
+p value proxy: 0.06976743787527084
+result: 0.0
+power_upto_now: 0.05737704783678055
+noise variance: 27330.17578125
+average noise variance upto now: 27337.349609375
+
+489th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:135.6536407470703
+p value proxy: 0.20930232107639313
+result: 0.0
+power_upto_now: 0.05725971236824989
+noise variance: 27343.875
+average noise variance upto now: 27337.36328125
+
+490th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-160.7432098388672
+p value proxy: 0.7940199375152588
+result: 0.0
+power_upto_now: 0.05714285746216774
+noise variance: 27343.67578125
+average noise variance upto now: 27337.376953125
+
+491th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-112.25396728515625
+p value proxy: 0.7408637404441833
+result: 0.0
+power_upto_now: 0.05702647566795349
+noise variance: 27343.40234375
+average noise variance upto now: 27337.388671875
+
+492th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:346.62908935546875
+p value proxy: 0.02657807245850563
+result: 1.0
+power_upto_now: 0.058943089097738266
+noise variance: 27347.53125
+average noise variance upto now: 27337.41015625
+
+493th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-82.37240600585938
+p value proxy: 0.6677740812301636
+result: 0.0
+power_upto_now: 0.05882352963089943
+noise variance: 27336.021484375
+average noise variance upto now: 27337.408203125
+
+494th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-208.03628540039062
+p value proxy: 0.8704319000244141
+result: 0.0
+power_upto_now: 0.05870445445179939
+noise variance: 27347.53125
+average noise variance upto now: 27337.427734375
+
+495th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:136.61520385742188
+p value proxy: 0.23255813121795654
+result: 0.0
+power_upto_now: 0.05858585983514786
+noise variance: 27337.3046875
+average noise variance upto now: 27337.427734375
+
+496th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-71.06632995605469
+p value proxy: 0.6644518375396729
+result: 0.0
+power_upto_now: 0.058467742055654526
+noise variance: 27333.8515625
+average noise variance upto now: 27337.419921875
+
+497th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:-55.42809295654297
+p value proxy: 0.5714285373687744
+result: 0.0
+power_upto_now: 0.0583501011133194
+noise variance: 27337.63671875
+average noise variance upto now: 27337.419921875
+
+498th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:79.5093765258789
+p value proxy: 0.3455149531364441
+result: 0.0
+power_upto_now: 0.05823293328285217
+noise variance: 27344.322265625
+average noise variance upto now: 27337.43359375
+
+499th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:65.3936996459961
+p value proxy: 0.33887043595314026
+result: 0.0
+power_upto_now: 0.058116231113672256
+noise variance: 27338.5
+average noise variance upto now: 27337.4375
+
+500th run
+noise dimension : 2187
+noise type: conti
+torch.Size([40000, 2187])
+original u-statistic:28.16279411315918
+p value proxy: 0.4285714328289032
+result: 0.0
+power_upto_now: 0.057999998331069946
+noise variance: 27337.486328125
+average noise variance upto now: 27337.435546875
+power estimate : 0.057999998331069946
+elapsed time: 8626.955419301987
+simulation ended at 2022-08-24 18:00:26.587201

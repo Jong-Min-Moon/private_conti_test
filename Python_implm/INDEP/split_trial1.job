@@ -1,0 +1,20 @@
+#!/bin/bash 
+#
+#SBATCH --job-name=5000
+#SBATCH --partition=all
+#SBATCH --account=mjm
+#SBATCH --mem=20gb
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --time=99:59:59
+#SBATCH --output=/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/INDEP/split_trial1.log
+#SBATCH --error=/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/INDEP/split_trial1.err
+#SBATCH --gres=gpu:1
+#SBATCH --nodelist=gpu-compute
+
+CONDA_BIN_PATH=/opt/miniconda/bin
+ENV_NAME=mjm_env_gpu
+ENV_PATH=/mnt/nas/users/$(whoami)/.conda/envs/$ENV_NAME
+source $CONDA_BIN_PATH/activate $ENV_PATH
+
+python -u /mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/INDEP/split_trial1.py
