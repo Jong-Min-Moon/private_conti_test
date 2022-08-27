@@ -12,32 +12,54 @@ print(f"cuda available: {USE_CUDA}")
 device = torch.device('cuda:0' if USE_CUDA else 'cpu') 
 print(f"code run on device:: {device}")
 
-####CHANGE HERE#####
+# set seed number for reproducibility
+torch.manual_seed(0)
+import random
+random.seed(0)
+import numpy as np
+np.random.seed(0)
+
 n1 = 10000
 n2 = 10000
-####################
-kappa = 5 #number of bins
-alpha = 0.3 #privacy level
-gamma = 0.05 # significance level
-nTests = 100 #number of tests for power estimation
-B = 150 # number of permutations
+kappa = 3 #number of bins
 
+
+
+##############################
+alpha = 0.1 #privacy level
+##############################
+
+gamma = 0.05 # significance level
+nTests = 500 #number of tests for power estimation
+B = 300 # number of permutations
+
+d = 4
 
 
 print(f"""
 n1 = {n1}, n2 = {n2},\n
 kappa = {kappa}, alpha = {alpha},\n
 gamma = {gamma}, nTests = {nTests},\n
-B = {B}
+B = {B}, d = {d}
 """)
-torch.manual_seed(0) #for reproducibility
-
 
 start_time = time.time()
+multiplier = 1/2
+copula_mean_1 = -multiplier * torch.ones(d).to(device)
+copula_mean_2 =  multiplier * torch.ones(d).to(device)
 
-copula_mean_1 = torch.tensor([-1.0, -1.0, -1.0]).to(device)
-copula_mean_2 = torch.tensor([ 1.0,  1.0,  1.0]).to(device)
-sigma = torch.tensor([[1.0, 0.5, 0.5], [0.5, 1.0, 0.5],  [0.5, 0.5, 1.0]]).to(device)
+
+sigma = (0.5 * torch.ones(d,d) + 0.5 * torch.eye(d)).to(device)
+
+print("copula_mean_1")
+print(copula_mean_1)
+
+print("copula_mean_2")
+print(copula_mean_2)
+
+print("sigma")
+print(sigma)
+
 
 tester = LDPTwoSampleTester(device)
 generator_X = torch.distributions.multivariate_normal.MultivariateNormal(
@@ -49,6 +71,8 @@ generator_Y = torch.distributions.multivariate_normal.MultivariateNormal(
 cdf_calculator = torch.distributions.normal.Normal(loc = 0.0, scale = 1.0)
 
 test_results = torch.empty(nTests)
+noise_vars = torch.empty(nTests)
+
 for rep in range(nTests):
     print(f"{rep+1}th run")
     
@@ -56,11 +80,18 @@ for rep in range(nTests):
     data_y = cdf_calculator.cdf(generator_Y.sample((n2,)))
     
     
-    result_now = tester.run_test_conti_data(B, data_x, data_y,
+    test_results[rep], noise_vars[rep]  = tester.run_test_conti_data(B, data_x, data_y,
                                              kappa, alpha, gamma, discrete = False
                                             )
-    test_results[rep] = result_now
-    print(f"result: {result_now}")
+
+
+    print(f"result: {test_results[rep]}")
+    print(f"rejected upto now: {torch.sum(test_results[:(rep+1)])}")
+    print(f"number of test run upto now: {(rep+1) }")
+    print(f"power_upto_now: { torch.sum(test_results.int()[:(rep+1)])/(rep+1) }")
+
+    print(f"noise variance: {noise_vars[rep]}")
+    print(f"average noise variance upto now: { torch.sum(noise_vars[:(rep+1)])/(rep+1) }")
   
 print( f"power estimate : { torch.sum(test_results)/nTests }" )
 print( f"elapsed time: { time.time() - start_time }" )
