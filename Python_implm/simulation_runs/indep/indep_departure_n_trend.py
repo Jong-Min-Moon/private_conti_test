@@ -1,7 +1,7 @@
 import sys
 sys.path.append("/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules") 
 
-from tester_new import twoSampleContiTester, two_sample_generator_mean_departure
+from tester_new import indepContiTester, indep_generator_nontrivial
 import pandas as pd
 import numpy as np
 import torch
@@ -17,7 +17,8 @@ print(f"code run on device:: {device}")
 
 #n trend
 n_n=41
-values_n = np.linspace(1000, 20000, n_n)
+#values_n = np.linspace(1000, 20000, n_n)
+values_n = np.linspace(1000, 150000, n_n)*3
 n_trend = pd.DataFrame({
     "n" : values_n,
     "power" : np.repeat(np.nan, n_n)
@@ -25,21 +26,23 @@ n_trend = pd.DataFrame({
 
 
 for i in range(n_n):
-    tester = twoSampleContiTester(
+    tester = indepContiTester(
         gamma = 0.05,
         cuda_device = device,
         seed = 0,
         kappa = 3)
     n_now = int(values_n[i])
-    generator = two_sample_generator_mean_departure(
+    generator = indep_generator_nontrivial(
         cuda_device = device,
-        n1 = n_now,
-        n2 = n_now,
-        d = 4)
-    n_trend.loc[i,"power"] = (1/500)*tester.estimate_power(
+        n = n_now,
+        d = 2,
+        epsilon = 0.05)
+    test_result = tester.estimate_power(
         data_generator = generator,
-        alpha = 0.8,
+        alpha = 1.2,
         B = 300,
-        n_test = 500)
+        n_test = 500).item()
+    print(test_result)
+    n_trend.loc[i,"power"] = (1/500)*test_result
 
-n_trend.to_csv("/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/simulation_runs/two_sample/mean_departure_n.csv")
+n_trend.to_csv("/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/simulation_runs/indep/indep_departure_n_trend.csv")

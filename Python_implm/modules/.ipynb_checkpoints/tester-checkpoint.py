@@ -272,7 +272,7 @@ class LDPIndepTester:
         #4 compute original u-stat
         ustatOriginal = self.u_stat_indep_matrix_efficient(data_Y_priv, data_Z_priv)
 
-        print(f"original u-statistic:{ustatOriginal}")
+        #print(f"original u-statistic:{ustatOriginal}")
         
         #permutation procedure
         permStats = torch.empty(B).to(self.cuda_device)
@@ -285,7 +285,7 @@ class LDPIndepTester:
                 ).to(self.cuda_device)
 
             permStats[i] = perm_stat_now
-            print(f"perm_stat_now = {perm_stat_now}")
+            #print(f"perm_stat_now = {perm_stat_now}")
          
         
         p_value_proxy = (1 +
