@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/simulation_runs/indep/n_vs_alpha/indep_departure_alpha_trend_n_vs_alpha.py", line 52, in <module>
+    test_result = tester.estimate_power(
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester_new.py", line 325, in estimate_power
+    test_results[rep] = self.permu_test(tst_data_y, tst_data_z, alpha, B)
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester_new.py", line 337, in permu_test
+    tst_data_priv_y, tst_data_priv_z = self.privatize(tst_data_y, tst_data_z, alpha)
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester_new.py", line 433, in privatize
+    tst_data_priv_y = self.LapU(tst_data_y_oneHot, alpha, 4, theta)
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/modules/tester_new.py", line 65, in LapU
+    sigma = c * 2**(1/2) * theta / alpha
+ZeroDivisionError: float division by zero
