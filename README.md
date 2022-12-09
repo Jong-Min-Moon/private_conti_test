@@ -1,7 +1,7 @@
 # private_conti_test
 
 PyTorch implementation and simulation codes (including SLURM job files) for the article
-\textit{Minimax Optimal Permutation Tests under Local Differential Privacy}
+*Minimax Optimal Permutation Tests under Local Differential Privacy*
 by Jongmin Mun, Seungwoo Kwak, and Ilmun Kim
 
 All codes are written by Jongmin Mun.
