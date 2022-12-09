@@ -6,8 +6,8 @@ by Jongmin Mun, Seungwoo Kwak, and Ilmun Kim
 
 All codes are written by Jongmin Mun.
 
-📦private_conti_test
- ┣ 📜tester_new.py : python (pytorch) implementation of the LDP permutation test (this file is for preview)
+📦private_conti_test  
+ ┣ 📜tester_new.py : python (pytorch) implementation of the LDP permutation test (this file is for preview)  
  ┣ 📜test.R : R implementation of the LDP permutation test (this file is for preview)
  ┣ 📂Python_implm
  ┃ ┣ 📂B_trend
