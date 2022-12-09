@@ -32,7 +32,7 @@ torch.cuda.empty_cache()
 
 
 ####CHANGE HERE#####
-n = 500000
+n = 600000
 ####################
 kappa = 3 #number of bins
 alpha = 0.8 #privacy level

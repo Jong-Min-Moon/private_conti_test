@@ -8,13 +8,15 @@ import torch
 import numpy as np
 import random
 
-import scipy.stats as stats
+
 
 import matplotlib.pyplot as plt
+from scipy.optimize import brenth
+from sampling import *
 
-from scipy.linalg import block_diag, sqrtm, inv, svd
 
-
+##################################################
+##################################################
 class tester(object):
     """Abstract class for two sample tests."""
     __metaclass__ = ABCMeta
@@ -48,7 +50,7 @@ class tester(object):
     def privatize(self):
         raise NotImplementedError()
 
-    def LapU(self, data, d, alpha, c):
+    def LapU(self, oneHot, alpha, c, theta):
         ''' Only for continuous data.
         for each dimension, transform the data in [0,1] into the interval index
         first interval = [0, x], the others = (y z]
@@ -62,11 +64,10 @@ class tester(object):
             LDPView: \alpha-LDP view of the input multivariate data
         '''
  
-        sigma = c / alpha
-        oneHot = self.transform_onehot(data, d)
+        sigma = c * 2**(1/2) * theta / alpha
         laplaceSize = oneHot.size()
         laplaceNoise = self.generate_unit_laplace(laplaceSize)
-        LDPView = torch.sqrt(torch.tensor(d)) * oneHot + sigma * laplaceNoise
+        LDPView = torch.tensor(theta) * oneHot + sigma * laplaceNoise
         return(LDPView)
       
     def h_bin(self, data, kappa): 
@@ -110,15 +111,14 @@ class tester(object):
         dataIndices = torch.bucketize(data, breaks, right = False) # ( ] form.
         dataIndices = dataIndices.add(
             dataIndices.eq(0)
-        ) #move 0 values from the bin number 0 to the bin number 1        
+        ) #move 0 values from the bin number 0 to the bin number 1       
         return(dataIndices)    
 
     def TransformMultivariate(self, dataBinIndex, nBin):
         """Only for continuous and multivariate data ."""
         d = self.get_dimension(dataBinIndex)
-        
         if d == 1:
-            return(dataInterval.sub(1))
+            return(dataBinIndex.sub(1).reshape(-1,))
         else:
             exponent = torch.linspace(start = (d-1), end = 0, steps = d, dtype = torch.long)
             vector = torch.tensor(nBin).pow(exponent)
@@ -164,26 +164,10 @@ class tester(object):
         else:
             return True
 
-class data_generator(object):
-    """Abstract class for two sample tests."""
-    __metaclass__ = ABCMeta
 
-    def __init__(self, cuda_device):
-        self.cuda_device = cuda_device
-        self.cdf_calculator = torch.distributions.normal.Normal(loc = 0.0, scale = 1.0)
-    
-   # @abstractmethod   
-    #def generate_y(self):
-        #raise NotImplementedError("implement generate_y")
-        
-    @abstractmethod   
-    def generate_z(self):
-        raise NotImplementedError("implement generate_z")
-        
-    def calculate_cdf(self, data):
         return self.cdf_calculator.cdf(data)
-    
-
+##################################################
+##################################################    
 class twoSampleContiTester(tester):
     def __init__(self, gamma, cuda_device, seed, kappa):
         super(twoSampleContiTester, self).__init__(gamma, cuda_device, seed)
@@ -289,46 +273,293 @@ class twoSampleContiTester(tester):
         
     def privatize(self, tst_data_y, tst_data_z, alpha):
         d = self.kappa ** tst_data_y.size(dim = 1)
-        c = torch.sqrt(torch.tensor(8 * d))
+        theta = d**(1/2)
+        tst_data_y_multi = self.h_bin(tst_data_y, self.kappa)
+        tst_data_y_oneHot = self.transform_onehot(tst_data_y_multi, d)
+        tst_data_z_multi = self.h_bin(tst_data_z, self.kappa) 
+        tst_data_z_oneHot = self.transform_onehot(tst_data_z_multi, d)
+        dataCombined = torch.cat([tst_data_y_oneHot, tst_data_z_oneHot], dim = 0)
+        tst_data_priv = self.LapU(dataCombined, alpha, 2, theta)
+        return(tst_data_priv)
+##################################################
+##################################################
+class twoSampleDiscTester(twoSampleContiTester):
+    def LapU(self, oneHot, alpha, c, theta):
+        p = torch.exp(torch.tensor(
+            - alpha / (c * theta)
+            )).to(self.cuda_device)
+        laplaceSize = oneHot.size()
+        laplaceNoise = self.generate_disc_laplace(p, laplaceSize)
+        LDPView = torch.tensor(theta) * oneHot + laplaceNoise
+        return(LDPView)
+
+    def generate_disc_laplace(self, p, size):
+        geometric_generator = torch.distributions.geometric.Geometric(1 - p)
+        noise = geometric_generator.sample(sample_shape = size) - geometric_generator.sample(sample_shape = size)
+        return(noise)
+##################################################
+##################################################
+class indepContiTester(tester):
+    
+    def __init__(self, gamma, cuda_device, seed, kappa):
+        super(indepContiTester, self).__init__(gamma, cuda_device, seed)
+        self.kappa = kappa
+    
+    def estimate_power(self, data_generator, alpha, B, n_test):
+        torch.manual_seed(0)
+        random.seed(0)
+        np.random.seed(0)
+        start_time = time.time()
+        print(f"""
+        simulation started at = {datetime.datetime.now()} \n
+        n = {data_generator.n}, \n
+        kappa = {self.kappa}, alpha = {alpha},\n
+        gamma = {self.gamma}, nTests = {n_test},\n
+        B = {B}, d = {data_generator.d}
+        """)
+        
+        test_results = torch.empty(n_test)
+        
+        for rep in range(n_test):
+            print(f"\n{rep+1}th run")
+            tst_data_y = data_generator.generate_y()
+            tst_data_z = data_generator.generate_z()
+            test_results[rep] = self.permu_test(tst_data_y, tst_data_z, alpha, B)
+            print(f"result: {test_results[rep]}")
+            print(f"power_upto_now: { torch.sum(test_results[:(rep+1)])/(rep+1) }")
+  
+        print( f"power estimate : { torch.sum(test_results)/n_test }" )
+        print( f"elapsed time: { time.time() - start_time }" )
+        print( f"simulation ended at {datetime.datetime.now()}" )
+        return(torch.sum(test_results).item())
+
+    #done
+    def permu_test(self, tst_data_y, tst_data_z, alpha, B): 
+        n = tst_data_z.size(dim = 0)
+        tst_data_priv_y, tst_data_priv_z = self.privatize(tst_data_y, tst_data_z, alpha)
+        #original statistic
+        ustatOriginal = self.compute_stat(tst_data_priv_y, tst_data_priv_z)
+        print(f"original u-statistic:{ustatOriginal}")
+        
+        #permutation procedure
+        permStats = torch.empty(B).to(self.cuda_device)
+        
+        for i in range(B):
+            permutation = torch.randperm(n)
+            perm_stat_now = self.compute_stat(
+                tst_data_priv_y,
+                tst_data_priv_z[permutation]
+            ).to(self.cuda_device)
+            permStats[i] = perm_stat_now
+
+               
+        p_value_proxy = (1 +
+                         torch.sum(
+                             torch.gt(input = permStats, other = ustatOriginal)
+                         )
+                        ) / (B + 1)
+      
+        print(f"p value proxy: {p_value_proxy}")
+        return(p_value_proxy < self.gamma)#test result: TRUE = 1 = reject the null, FALSE = 0 = retain the null.    
+
+    #done
+    def compute_stat(self, tst_data_y_priv, tst_data_z_priv):
+        #scalars
+        n = tst_data_y_priv.size(dim = 0)
+        
+        log_n_four = (
+        torch.log(torch.tensor(n))
+        +  
+        torch.log(torch.tensor(n-1))
+        +
+        torch.log(torch.tensor(n-2))
+        +
+        torch.log(torch.tensor(n-3))
+        )
+
+        #preliminary calculations
+        y_row_sum = torch.sum(tst_data_y_priv, axis = 0)
+        z_row_sum = torch.sum(tst_data_z_priv, axis = 0)
+        phi_psi = torch.einsum('ji,jk->ik', tst_data_y_priv, tst_data_z_priv)
+        diag_Phi = torch.sum(torch.square(tst_data_y_priv), axis = 1)
+        diag_Psi = torch.sum(torch.square(tst_data_z_priv), axis = 1)
+        rowsum_Phi = torch.einsum('i,ji -> j', y_row_sum, tst_data_y_priv)
+        rowsum_Psi = torch.einsum('ij, j -> i', tst_data_z_priv, z_row_sum)
+
+        #1. one term
+        one_Phi_one = torch.inner(y_row_sum, y_row_sum)
+        one_Psi_one = torch.inner(z_row_sum, z_row_sum)
+
+        tr_Phi = torch.sum(torch.square(tst_data_y_priv))
+        tr_Psi = torch.sum(torch.square(tst_data_z_priv))
+
+        one_Phi_tilde_one = one_Phi_one - tr_Phi
+        one_Psi_tilde_one = one_Psi_one - tr_Psi
+
+        onePhioneonePsione = one_Phi_tilde_one * one_Psi_tilde_one
+
+
+        #2. one one term
+        onePhiPsiOne = torch.matmul(
+            torch.matmul(y_row_sum, phi_psi),
+            z_row_sum)  + torch.inner(diag_Phi, diag_Psi)-torch.inner(rowsum_Phi, diag_Psi)-torch.inner(diag_Phi, rowsum_Psi)
+
+
+        #3. trace term
+        trPhiPsi = torch.sum( torch.square(phi_psi) ) - torch.inner(
+            torch.sum( torch.square(tst_data_y_priv), axis = 1),
+            torch.sum( torch.square(tst_data_z_priv), axis = 1)
+        )
+        
+        sums = (4 * onePhioneonePsione - ( 8 * (n-1) ) * onePhiPsiOne + ( 4 * (n-1) * (n-2) ) * trPhiPsi )
+        
+        Un_sign = torch.sign(sums)
+        abs_Un = torch.exp(torch.log(torch.abs(sums)) - log_n_four)
+        Un = Un_sign * abs_Un
+
+        return(Un)
+    
+      #done  
+    def privatize(self, tst_data_y, tst_data_z, alpha):
+        d1 = self.kappa ** tst_data_y.size(dim = 1)
+        d2 = self.kappa ** tst_data_z.size(dim = 1)
+        theta = (d1*d2)**(1/2)
         tst_data_y_multi = self.h_bin(tst_data_y, self.kappa)
         tst_data_z_multi = self.h_bin(tst_data_z, self.kappa) 
-        dataCombined = torch.cat([tst_data_y_multi, tst_data_z_multi], dim = 0)
-        tst_data_priv = self.LapU(dataCombined, d, alpha, c)
-        return(tst_data_priv)
+        
+        
+        tst_data_y_oneHot = self.transform_onehot(tst_data_y_multi, d1)
+        tst_data_z_oneHot = self.transform_onehot(tst_data_z_multi, d2)
 
+        tst_data_priv_y = self.LapU(tst_data_y_oneHot, alpha, 4, theta)
+        tst_data_priv_z = self.LapU(tst_data_z_oneHot, alpha, 4, theta)
+        return(tst_data_priv_y, tst_data_priv_z)
+##################################################
+##################################################
+class indepSplitDiscTester(twoSampleDiscTester):
+    def estimate_power(self, data_generator, alpha, B, n_test):
+        torch.manual_seed(0)
+        random.seed(0)
+        np.random.seed(0)
+        start_time = time.time()
+        print(f"""
+        simulation started at = {datetime.datetime.now()} \n
+        n = {data_generator.n}, \n
+        kappa = {self.kappa}, alpha = {alpha},\n
+        gamma = {self.gamma}, nTests = {n_test},\n
+        B = {B}, d = {data_generator.d}
+        """)
+        test_results = torch.empty(n_test)
+        
+        for rep in range(n_test):
+            print(f"\n{rep+1}th run")
+            tst_data_y = data_generator.generate_y()
+            tst_data_z = data_generator.generate_z()
+
+
+            nchunk = int((data_generator.n)/3)
+            print(nchunk)
+            data_dep = torch.cat((tst_data_y[: nchunk, :], tst_data_z[: nchunk, :]), 1)
+            data_indep = torch.cat(( tst_data_y[nchunk: 2 * nchunk, : ], tst_data_z[2 * nchunk: , : ] ), 1)
+            test_results[rep] = self.permu_test(data_dep, data_indep, alpha, B)
+            print(f"result: {test_results[rep]}")
+            print(f"power_upto_now: { torch.sum(test_results[:(rep+1)])/(rep+1) }")
+  
+        print( f"power estimate : { torch.sum(test_results)/n_test }" )
+        print( f"elapsed time: { time.time() - start_time }" )
+        print( f"simulation ended at {datetime.datetime.now()}" )
+        return(torch.sum(test_results).item())   
+##################################################
+##################################################
+class indepSplitContiTester(twoSampleContiTester):
     
-class two_sample_generator_mean_departure(data_generator):
+    def estimate_power(self, data_generator, alpha, B, n_test):
+        torch.manual_seed(0)
+        random.seed(0)
+        np.random.seed(0)
+        start_time = time.time()
+        print(f"""
+        simulation started at = {datetime.datetime.now()} \n
+        n = {data_generator.n}, \n
+        kappa = {self.kappa}, alpha = {alpha},\n
+        gamma = {self.gamma}, nTests = {n_test},\n
+        B = {B}, d = {data_generator.d}
+        """)
+        test_results = torch.empty(n_test)
+        
+        for rep in range(n_test):
+            print(f"\n{rep+1}th run")
+            tst_data_y = data_generator.generate_y()
+            tst_data_z = data_generator.generate_z()
+
+
+            nchunk = int((data_generator.n)/3)
+            print(nchunk)
+            data_dep = torch.cat((tst_data_y[: nchunk, :], tst_data_z[: nchunk, :]), 1)
+            data_indep = torch.cat(( tst_data_y[nchunk: 2 * nchunk, : ], tst_data_z[2 * nchunk: , : ] ), 1)
+            test_results[rep] = self.permu_test(data_dep, data_indep, alpha, B)
+            print(f"result: {test_results[rep]}")
+            print(f"power_upto_now: { torch.sum(test_results[:(rep+1)])/(rep+1) }")
+  
+        print( f"power estimate : { torch.sum(test_results)/n_test }" )
+        print( f"elapsed time: { time.time() - start_time }" )
+        print( f"simulation ended at {datetime.datetime.now()}" )
+        return(torch.sum(test_results).item())   
+##################################################
+##################################################
+class data_generator(object):
+    """Abstract class for two sample tests."""
+    __metaclass__ = ABCMeta
+
+    def __init__(self, cuda_device):
+        self.cuda_device = cuda_device
+        self.cdf_calculator = torch.distributions.normal.Normal(loc = 0.0, scale = 1.0)
+        self.set_distribution()
+        self.set_generater()   
+
+    def calculate_cdf(self, data):
+        return self.cdf_calculator.cdf(data)
+
+    @abstractmethod
+    def set_distribution(self):
+        raise NotImplementedError("implement set_distribution")
+
+    @abstractmethod
+    def set_generater(self):  
+        raise NotImplementedError("implement set_generater")  
+
+    @abstractmethod   
+    def generate_y(self):
+        raise NotImplementedError("implement generate_y")
+        
+    @abstractmethod   
+    def generate_z(self):
+        raise NotImplementedError("implement generate_z")
+##################################################
+##################################################
+class two_sample_generator(data_generator):
     def __init__(self, cuda_device, n1, n2, d):
-        super(two_sample_generator_mean_departure, self).__init__(cuda_device)
         self.n1 = n1
         self.n2 = n2
         self.d = d
+        self.copula_mean_y = 0
+        self.copula_mean_z = 0
+        self.sigma_y = 0
+        self.sigma_z = 0
+        super(two_sample_generator, self).__init__(cuda_device)
 
-        copula_mean_y = -1/2 * torch.ones(d).to(self.cuda_device)
-        copula_mean_z =  1/2 * torch.ones(d).to(self.cuda_device)
 
-        sigma = (0.5 * torch.ones(d,d) + 0.5 * torch.eye(d)).to(self.cuda_device)
-
-
-        print("copula_mean_y")
-        print(copula_mean_y)
-
-        print("copula_mean_z")
-        print(copula_mean_z)
-
-        print("sigma")
-        print(sigma)
-
+    def set_generater(self):
         self.generator_y = torch.distributions.multivariate_normal.MultivariateNormal(
-            loc = copula_mean_y, 
-            covariance_matrix = sigma)
+            loc = self.copula_mean_y, 
+            covariance_matrix = self.sigma_y)
         self.generator_z = torch.distributions.multivariate_normal.MultivariateNormal(
-            loc = copula_mean_z,
-            covariance_matrix = sigma)
-        
+            loc = self.copula_mean_z,
+            covariance_matrix = self.sigma_z)
+
     def generate_y(self):
             normalSample = self.generator_y.sample( (self.n1,) )
-            return( self.calculate_cdf(normalSample) )  
+            return( self.calculate_cdf(normalSample) ) 
         
     def generate_z(self):
             return(
@@ -336,3 +567,233 @@ class two_sample_generator_mean_departure(data_generator):
                     self.generator_z.sample( (self.n2,) )
                 )
             )
+##################################################
+class two_sample_generator_uniform_perturb(data_generator):
+    def __init__(self, cuda_device, n1, n2, d):
+        self.n1 = n1
+        self.n2 = n2
+        self.d = d
+        self.seed = 0
+        super(two_sample_generator_uniform_perturb, self).__init__(cuda_device)
+
+    def set_distribution(self):
+        return self
+
+    def set_generater(self):
+        self.generator_z = torch.distributions.uniform.Uniform(torch.tensor([0.0]), torch.tensor([1.0]))
+
+    def generate_y(self):
+        self.seed = self.seed + 1
+        return( 
+            torch.tensor(f_theta_sampler(self.seed, self.seed, self.n1, self.d, 1, 7.3, 2))
+            .to(self.cuda_device) ) 
+        
+    def generate_z(self):
+            return(
+                    self.generator_z.sample( (self.n2*self.d,) ).reshape(self.n2,-1).to(self.cuda_device)
+                )
+            
+##################################################                
+class two_sample_generator_mean_departure(two_sample_generator):
+    def set_distribution(self):
+        self.copula_mean_y = -1/2 * torch.ones(self.d).to(self.cuda_device)
+        self.copula_mean_z =  1/2 * torch.ones(self.d).to(self.cuda_device)
+        self.sigma_y = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+        self.sigma_z = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+
+        print("copula_mean_y")
+        print(self.copula_mean_y)
+
+        print("copula_mean_z")
+        print(self.copula_mean_z)
+
+        print("sigma")
+        print(self.sigma_y)
+##################################################
+################################################## 
+class two_sample_generator_var_departure(two_sample_generator):
+    def set_distribution(self):
+        self.copula_mean_y = torch.zeros(self.d).to(self.cuda_device)
+        self.copula_mean_z = torch.zeros(self.d).to(self.cuda_device)
+        self.sigma_y = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+        self.sigma_z = (2.5 * torch.ones(self.d, self.d) + 2.5 * torch.eye(self.d)).to(self.cuda_device)
+
+        print("copula_mean")
+        print(self.copula_mean_y)
+
+        print("sigma_y")
+        print(self.sigma_y)
+
+        print("sigma_z")
+        print(self.sigma_z)
+######################################################################
+class two_sample_generator_var_departure(two_sample_generator):
+    def set_distribution(self):
+        self.copula_mean_y = torch.zeros(self.d).to(self.cuda_device)
+        self.copula_mean_z = torch.zeros(self.d).to(self.cuda_device)
+        self.sigma_y = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+        self.sigma_z = (2.5 * torch.ones(self.d, self.d) + 2.5 * torch.eye(self.d)).to(self.cuda_device)
+
+        print("copula_mean")
+        print(self.copula_mean_y)
+
+        print("sigma_y")
+        print(self.sigma_y)
+
+        print("sigma_z")
+        print(self.sigma_z)
+######################################################################
+######################################################################
+class two_sample_generator_var_departure(two_sample_generator):
+    def set_distribution(self):
+        return self
+    f_theta_sampler(0, 0, 10000, 2, 1, 7.3, 2)
+######################################################################
+######################################################################
+
+class indep_generator(data_generator):
+    def __init__(self, cuda_device, n, d1, d2):
+        self.n = n
+        self.d1 = d1
+        self.d2 = d2
+        self.normalsample = 0
+        self.copula_mean = 0
+        self.sigma = 0
+        super(indep_generator_trivial, self).__init__(cuda_device)
+
+    def set_distribution(self):    
+        self.copula_mean = -1/2 * torch.ones(self.d).to(self.cuda_device)
+        self.sigma = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+
+        print("copula_mean")
+        print(self.copula_mean)
+
+        print("sigma")
+        print(self.sigma)
+
+    def set_generater(self):
+        self.generator_y = torch.distributions.multivariate_normal.MultivariateNormal(
+            loc = self.copula_mean, 
+            covariance_matrix = self.sigma)
+
+        
+    def generate_y(self):
+        self.normalSample = self.generator_y.sample( (self.n,) )
+        return( self.calculate_cdf(self.normalSample) )  
+        
+    def generate_z(self):
+        return(
+            self.calculate_cdf(
+                -self.normalSample
+                )
+            )
+######################################################################
+######################################################################
+class indep_generator_trivial(data_generator):
+    def __init__(self, cuda_device, n, d1, d2):
+        self.n = n
+        self.d1 = d1
+        self.d2 = d2
+        self.normalsample = 0
+        super(indep_generator_trivial, self).__init__(cuda_device)
+
+
+        copula_mean = -1/2 * torch.ones(d).to(self.cuda_device)
+
+        sigma = (0.5 * torch.ones(d,d) + 0.5 * torch.eye(d)).to(self.cuda_device)
+
+
+        print("copula_mean")
+        print(copula_mean)
+
+
+        print("sigma")
+        print(sigma)
+
+        self.generator_y = torch.distributions.multivariate_normal.MultivariateNormal(
+            loc = copula_mean, 
+            covariance_matrix = sigma)
+
+        
+    def generate_y(self):
+        self.normalSample = self.generator_y.sample( (self.n,) )
+        return( self.calculate_cdf(self.normalSample) )  
+        
+    def generate_z(self):
+        return(
+            self.calculate_cdf(
+                -self.normalSample
+                )
+            )
+######################################################################
+
+######################################################################
+class indep_generator_nontrivial(data_generator):
+    def __init__(self, cuda_device, n, d, epsilon):
+        self.n = n
+        self.d = d
+        self.normalsample = 0
+        self.epsilon = epsilon
+        super(indep_generator_nontrivial, self).__init__(cuda_device)
+
+    def set_distribution(self):
+        self.copula_mean = -1/2 * torch.ones(self.d).to(self.cuda_device)
+        self.sigma = (0.5 * torch.ones(self.d,self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+
+
+        print("copula_mean")
+        print(self.copula_mean)
+
+
+        print("sigma")
+        print(self.sigma)
+
+    def set_generater(self):
+        self.generator_y = torch.distributions.multivariate_normal.MultivariateNormal(
+            loc = self.copula_mean, 
+            covariance_matrix = self.sigma)
+
+        
+    def generate_y(self):
+        self.normalSample = self.generator_y.sample( (self.n,) )
+        return( self.calculate_cdf(self.normalSample) )  
+        
+    def generate_z(self):
+        return(
+            self.calculate_cdf(
+                torch.sin(self.normalSample.sum(1).div(self.d)).add(self.epsilon).reshape((-1,1))
+                )
+            )
+######################################################################
+######################################################################
+class indep_generator_gsign(data_generator):
+
+    def __init__(self, cuda_device, n, d):
+        self.n = n
+        self.z = torch.zeros(n).reshape((-1,1))
+        self.d = d
+        super(indep_generator_gsign, self).__init__(cuda_device)
+
+ 
+    def set_distribution(self):
+        return
+
+
+    def set_generater(self):  
+        self.generator_y = torch.distributions.multivariate_normal.MultivariateNormal(
+            torch.zeros(self.d), torch.eye(self.d)
+        )
+ 
+    def generate_y(self):
+        self.normalSample = self.generator_y.sample( (self.n,) )
+        y = self.calculate_cdf(self.normalSample)
+        return( y.to(self.cuda_device) )  
+         
+    def generate_z(self):
+        noise = torch.abs(torch.normal(mean=0, std = 1, size = (self.n,1)).reshape(-1))
+        prodsign = torch.prod(torch.sign(self.normalSample), 1)
+        z = (self.calculate_cdf(noise * prodsign)).reshape((-1,1))
+        return(z.to(self.cuda_device))
+
+######################################################################
+######################################################################

@@ -1,0 +1,247 @@
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /mnt/nas/users/mjm/.conda/envs/testEnvGPU
+
+  added / updated specs:
+    - python=3.8.13
+
+
+The following NEW packages will be INSTALLED:
+
+  _libgcc_mutex      anaconda/linux-64::_libgcc_mutex-0.1-main
+  _openmp_mutex      anaconda/linux-64::_openmp_mutex-5.1-1_gnu
+  ca-certificates    anaconda/linux-64::ca-certificates-2022.07.19-h06a4308_0
+  certifi            anaconda/linux-64::certifi-2022.6.15-py38h06a4308_0
+  ld_impl_linux-64   anaconda/linux-64::ld_impl_linux-64-2.38-h1181459_1
+  libffi             anaconda/linux-64::libffi-3.3-he6710b0_2
+  libgcc-ng          anaconda/linux-64::libgcc-ng-11.2.0-h1234567_1
+  libgomp            anaconda/linux-64::libgomp-11.2.0-h1234567_1
+  libstdcxx-ng       anaconda/linux-64::libstdcxx-ng-11.2.0-h1234567_1
+  ncurses            anaconda/linux-64::ncurses-6.3-h5eee18b_3
+  openssl            anaconda/linux-64::openssl-1.1.1q-h7f8727e_0
+  pip                anaconda/linux-64::pip-22.1.2-py38h06a4308_0
+  python             anaconda/linux-64::python-3.8.13-h12debd9_0
+  readline           anaconda/linux-64::readline-8.1.2-h7f8727e_1
+  setuptools         anaconda/linux-64::setuptools-61.2.0-py38h06a4308_0
+  sqlite             anaconda/linux-64::sqlite-3.39.2-h5082296_0
+  tk                 anaconda/linux-64::tk-8.6.12-h1ccaba5_0
+  wheel              anaconda/noarch::wheel-0.37.1-pyhd3eb1b0_0
+  xz                 anaconda/linux-64::xz-5.2.5-h7f8727e_1
+  zlib               anaconda/linux-64::zlib-1.2.12-h7f8727e_2
+
+
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+#
+# To activate this environment, use
+#
+#     $ conda activate /mnt/nas/users/mjm/.conda/envs/testEnvGPU
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Collecting package metadata (current_repodata.json): ...working... done
+Solving environment: ...working... failed with initial frozen solve. Retrying with flexible solve.
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /mnt/nas/users/mjm/.conda/envs/testEnvGPU
+
+  added / updated specs:
+    - cudatoolkit=10.1
+    - pytorch==1.7.1
+    - tensorflow=2.3.0
+    - torchaudio==0.7.2
+    - torchvision==0.8.2
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _tflow_select-2.3.0        |            eigen           2 KB  anaconda
+    aiohttp-3.8.1              |   py38h7f8727e_1         573 KB  anaconda
+    astor-0.8.1                |   py38h06a4308_0          45 KB  anaconda
+    blinker-1.4                |   py38h06a4308_0          23 KB  anaconda
+    brotlipy-0.7.0             |py38h27cfd23_1003         349 KB  anaconda
+    cffi-1.15.1                |   py38h74dc2b5_0         230 KB  anaconda
+    click-8.0.4                |   py38h06a4308_0         150 KB  anaconda
+    cryptography-37.0.1        |   py38h9ce1e76_0         1.5 MB  anaconda
+    frozenlist-1.2.0           |   py38h7f8727e_0          82 KB  anaconda
+    grpcio-1.42.0              |   py38hce63b2e_0         2.3 MB  anaconda
+    h5py-2.10.0                |   py38hd6299e0_1         1.1 MB  anaconda
+    importlib-metadata-4.11.3  |   py38h06a4308_0          40 KB  anaconda
+    markdown-3.3.4             |   py38h06a4308_0         125 KB  anaconda
+    mkl-service-2.4.0          |   py38h7f8727e_0          62 KB  anaconda
+    mkl_fft-1.3.1              |   py38hd3c417c_0         200 KB  anaconda
+    mkl_random-1.2.2           |   py38h51133e4_0         341 KB  anaconda
+    multidict-5.2.0            |   py38h7f8727e_2          67 KB  anaconda
+    numpy-1.23.1               |   py38h6c91a56_0          10 KB  anaconda
+    numpy-base-1.23.1          |   py38ha15fc14_0         7.1 MB  anaconda
+    pillow-9.2.0               |   py38hace64e9_1         716 KB  anaconda
+    protobuf-3.20.1            |   py38h295c915_0         328 KB  anaconda
+    pyjwt-2.4.0                |   py38h06a4308_0          34 KB  anaconda
+    pysocks-1.7.1              |   py38h06a4308_0          31 KB  anaconda
+    pytorch-1.7.1              |py3.8_cuda10.1.243_cudnn7.6.3_0       553.1 MB  pytorch
+    requests-2.28.1            |   py38h06a4308_0          92 KB  anaconda
+    scipy-1.7.3                |   py38hc147768_0        21.4 MB  anaconda
+    tensorboard-2.8.0          |   py38h06a4308_0         5.7 MB  anaconda
+    tensorboard-data-server-0.6.0|   py38hca6d32c_0         3.2 MB  anaconda
+    tensorboard-plugin-wit-1.8.1|   py38h06a4308_0         706 KB  anaconda
+    tensorflow-2.3.0           |eigen_py38h71ff20e_0           3 KB  anaconda
+    tensorflow-base-2.3.0      |eigen_py38hb57a387_0       108.1 MB  anaconda
+    termcolor-1.1.0            |   py38h06a4308_1           9 KB  anaconda
+    torchaudio-0.7.2           |             py38         9.8 MB  pytorch
+    torchvision-0.8.2          |       py38_cu101        17.8 MB  pytorch
+    typing-extensions-4.3.0    |   py38h06a4308_0           9 KB  anaconda
+    typing_extensions-4.3.0    |   py38h06a4308_0          44 KB  anaconda
+    urllib3-1.26.11            |   py38h06a4308_0         179 KB  anaconda
+    wrapt-1.14.1               |   py38h5eee18b_0          51 KB  anaconda
+    yarl-1.6.3                 |   py38h27cfd23_0         142 KB  anaconda
+    zipp-3.8.0                 |   py38h06a4308_0          15 KB  anaconda
+    ------------------------------------------------------------
+                                           Total:       735.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  _tflow_select      anaconda/linux-64::_tflow_select-2.3.0-eigen
+  absl-py            anaconda/noarch::absl-py-0.15.0-pyhd3eb1b0_0
+  aiohttp            anaconda/linux-64::aiohttp-3.8.1-py38h7f8727e_1
+  aiosignal          anaconda/noarch::aiosignal-1.2.0-pyhd3eb1b0_0
+  astor              anaconda/linux-64::astor-0.8.1-py38h06a4308_0
+  astunparse         anaconda/noarch::astunparse-1.6.3-py_0
+  async-timeout      anaconda/noarch::async-timeout-4.0.1-pyhd3eb1b0_0
+  attrs              anaconda/noarch::attrs-21.4.0-pyhd3eb1b0_0
+  blas               anaconda/linux-64::blas-1.0-mkl
+  blinker            anaconda/linux-64::blinker-1.4-py38h06a4308_0
+  brotlipy           anaconda/linux-64::brotlipy-0.7.0-py38h27cfd23_1003
+  c-ares             anaconda/linux-64::c-ares-1.18.1-h7f8727e_0
+  cachetools         anaconda/noarch::cachetools-4.2.2-pyhd3eb1b0_0
+  cffi               anaconda/linux-64::cffi-1.15.1-py38h74dc2b5_0
+  charset-normalizer anaconda/noarch::charset-normalizer-2.0.4-pyhd3eb1b0_0
+  click              anaconda/linux-64::click-8.0.4-py38h06a4308_0
+  cryptography       anaconda/linux-64::cryptography-37.0.1-py38h9ce1e76_0
+  cudatoolkit        anaconda/linux-64::cudatoolkit-10.1.243-h6bb024c_0
+  dataclasses        anaconda/noarch::dataclasses-0.8-pyh6d0b6a4_7
+  freetype           anaconda/linux-64::freetype-2.11.0-h70c0345_0
+  frozenlist         anaconda/linux-64::frozenlist-1.2.0-py38h7f8727e_0
+  gast               anaconda/noarch::gast-0.3.3-py_0
+  giflib             anaconda/linux-64::giflib-5.2.1-h7b6447c_0
+  google-auth        anaconda/noarch::google-auth-2.6.0-pyhd3eb1b0_0
+  google-auth-oauth~ anaconda/noarch::google-auth-oauthlib-0.4.4-pyhd3eb1b0_0
+  google-pasta       anaconda/noarch::google-pasta-0.2.0-pyhd3eb1b0_0
+  grpcio             anaconda/linux-64::grpcio-1.42.0-py38hce63b2e_0
+  h5py               anaconda/linux-64::h5py-2.10.0-py38hd6299e0_1
+  hdf5               anaconda/linux-64::hdf5-1.10.6-hb1b8bf9_0
+  idna               anaconda/noarch::idna-3.3-pyhd3eb1b0_0
+  importlib-metadata anaconda/linux-64::importlib-metadata-4.11.3-py38h06a4308_0
+  intel-openmp       anaconda/linux-64::intel-openmp-2021.4.0-h06a4308_3561
+  jpeg               anaconda/linux-64::jpeg-9b-habf39ab_1
+  keras-preprocessi~ anaconda/noarch::keras-preprocessing-1.1.2-pyhd3eb1b0_0
+  lcms2              anaconda/linux-64::lcms2-2.12-h3be6417_0
+  libgfortran-ng     anaconda/linux-64::libgfortran-ng-7.5.0-ha8ba4b0_17
+  libgfortran4       anaconda/linux-64::libgfortran4-7.5.0-ha8ba4b0_17
+  libpng             anaconda/linux-64::libpng-1.6.37-hbc83047_0
+  libprotobuf        anaconda/linux-64::libprotobuf-3.20.1-h4ff587b_0
+  libtiff            anaconda/linux-64::libtiff-4.2.0-h85742a9_0
+  libuv              anaconda/linux-64::libuv-1.40.0-h7b6447c_0
+  libwebp            anaconda/linux-64::libwebp-1.2.0-h89dd481_0
+  libwebp-base       anaconda/linux-64::libwebp-base-1.2.0-h27cfd23_0
+  lz4-c              anaconda/linux-64::lz4-c-1.9.3-h295c915_1
+  markdown           anaconda/linux-64::markdown-3.3.4-py38h06a4308_0
+  mkl                anaconda/linux-64::mkl-2021.4.0-h06a4308_640
+  mkl-service        anaconda/linux-64::mkl-service-2.4.0-py38h7f8727e_0
+  mkl_fft            anaconda/linux-64::mkl_fft-1.3.1-py38hd3c417c_0
+  mkl_random         anaconda/linux-64::mkl_random-1.2.2-py38h51133e4_0
+  multidict          anaconda/linux-64::multidict-5.2.0-py38h7f8727e_2
+  ninja              anaconda/linux-64::ninja-1.10.2-h06a4308_5
+  ninja-base         anaconda/linux-64::ninja-base-1.10.2-hd09550d_5
+  numpy              anaconda/linux-64::numpy-1.23.1-py38h6c91a56_0
+  numpy-base         anaconda/linux-64::numpy-base-1.23.1-py38ha15fc14_0
+  oauthlib           anaconda/noarch::oauthlib-3.1.0-py_0
+  opt_einsum         anaconda/noarch::opt_einsum-3.3.0-pyhd3eb1b0_1
+  pillow             anaconda/linux-64::pillow-9.2.0-py38hace64e9_1
+  protobuf           anaconda/linux-64::protobuf-3.20.1-py38h295c915_0
+  pyasn1             anaconda/noarch::pyasn1-0.4.8-pyhd3eb1b0_0
+  pyasn1-modules     anaconda/noarch::pyasn1-modules-0.2.8-py_0
+  pycparser          anaconda/noarch::pycparser-2.21-pyhd3eb1b0_0
+  pyjwt              anaconda/linux-64::pyjwt-2.4.0-py38h06a4308_0
+  pyopenssl          anaconda/noarch::pyopenssl-22.0.0-pyhd3eb1b0_0
+  pysocks            anaconda/linux-64::pysocks-1.7.1-py38h06a4308_0
+  pytorch            pytorch/linux-64::pytorch-1.7.1-py3.8_cuda10.1.243_cudnn7.6.3_0
+  requests           anaconda/linux-64::requests-2.28.1-py38h06a4308_0
+  requests-oauthlib  anaconda/noarch::requests-oauthlib-1.3.0-py_0
+  rsa                anaconda/noarch::rsa-4.7.2-pyhd3eb1b0_1
+  scipy              anaconda/linux-64::scipy-1.7.3-py38hc147768_0
+  six                anaconda/noarch::six-1.16.0-pyhd3eb1b0_1
+  tensorboard        anaconda/linux-64::tensorboard-2.8.0-py38h06a4308_0
+  tensorboard-data-~ anaconda/linux-64::tensorboard-data-server-0.6.0-py38hca6d32c_0
+  tensorboard-plugi~ anaconda/linux-64::tensorboard-plugin-wit-1.8.1-py38h06a4308_0
+  tensorflow         anaconda/linux-64::tensorflow-2.3.0-eigen_py38h71ff20e_0
+  tensorflow-base    anaconda/linux-64::tensorflow-base-2.3.0-eigen_py38hb57a387_0
+  tensorflow-estima~ anaconda/noarch::tensorflow-estimator-2.6.0-pyh7b7c402_0
+  termcolor          anaconda/linux-64::termcolor-1.1.0-py38h06a4308_1
+  torchaudio         pytorch/linux-64::torchaudio-0.7.2-py38
+  torchvision        pytorch/linux-64::torchvision-0.8.2-py38_cu101
+  typing-extensions  anaconda/linux-64::typing-extensions-4.3.0-py38h06a4308_0
+  typing_extensions  anaconda/linux-64::typing_extensions-4.3.0-py38h06a4308_0
+  urllib3            anaconda/linux-64::urllib3-1.26.11-py38h06a4308_0
+  werkzeug           anaconda/noarch::werkzeug-2.0.3-pyhd3eb1b0_0
+  wrapt              anaconda/linux-64::wrapt-1.14.1-py38h5eee18b_0
+  yarl               anaconda/linux-64::yarl-1.6.3-py38h27cfd23_0
+  zipp               anaconda/linux-64::zipp-3.8.0-py38h06a4308_0
+  zstd               anaconda/linux-64::zstd-1.4.5-h9ceee32_0
+
+
+
+Downloading and Extracting Packages
+pillow-9.2.0         | 716 KB    |            |   0% pillow-9.2.0         | 716 KB    | ########## | 100% pillow-9.2.0         | 716 KB    | ########## | 100% 
+h5py-2.10.0          | 1.1 MB    |            |   0% h5py-2.10.0          | 1.1 MB    | ########## | 100% h5py-2.10.0          | 1.1 MB    | ########## | 100% 
+tensorflow-2.3.0     | 3 KB      |            |   0% tensorflow-2.3.0     | 3 KB      | ########## | 100% tensorflow-2.3.0     | 3 KB      | ########## | 100% 
+cffi-1.15.1          | 230 KB    |            |   0% cffi-1.15.1          | 230 KB    | ########## | 100% cffi-1.15.1          | 230 KB    | ########## | 100% 
+frozenlist-1.2.0     | 82 KB     |            |   0% frozenlist-1.2.0     | 82 KB     | ########## | 100% frozenlist-1.2.0     | 82 KB     | ########## | 100% 
+torchaudio-0.7.2     | 9.8 MB    |            |   0% torchaudio-0.7.2     | 9.8 MB    | ####4      |  44% torchaudio-0.7.2     | 9.8 MB    | ########## | 100% torchaudio-0.7.2     | 9.8 MB    | ########## | 100% 
+brotlipy-0.7.0       | 349 KB    |            |   0% brotlipy-0.7.0       | 349 KB    | ########## | 100% brotlipy-0.7.0       | 349 KB    | ########## | 100% 
+wrapt-1.14.1         | 51 KB     |            |   0% wrapt-1.14.1         | 51 KB     | ########## | 100% wrapt-1.14.1         | 51 KB     | ########## | 100% 
+click-8.0.4          | 150 KB    |            |   0% click-8.0.4          | 150 KB    | ########## | 100% click-8.0.4          | 150 KB    | ########## | 100% 
+astor-0.8.1          | 45 KB     |            |   0% astor-0.8.1          | 45 KB     | ########## | 100% astor-0.8.1          | 45 KB     | ########## | 100% 
+pyjwt-2.4.0          | 34 KB     |            |   0% pyjwt-2.4.0          | 34 KB     | ########## | 100% pyjwt-2.4.0          | 34 KB     | ########## | 100% 
+tensorboard-data-ser | 3.2 MB    |            |   0% tensorboard-data-ser | 3.2 MB    | ########## | 100% tensorboard-data-ser | 3.2 MB    | ########## | 100% 
+_tflow_select-2.3.0  | 2 KB      |            |   0% _tflow_select-2.3.0  | 2 KB      | ########## | 100% _tflow_select-2.3.0  | 2 KB      | ########## | 100% 
+numpy-base-1.23.1    | 7.1 MB    |            |   0% numpy-base-1.23.1    | 7.1 MB    | ######2    |  62% numpy-base-1.23.1    | 7.1 MB    | ########## | 100% 
+requests-2.28.1      | 92 KB     |            |   0% requests-2.28.1      | 92 KB     | ########## | 100% requests-2.28.1      | 92 KB     | ########## | 100% 
+cryptography-37.0.1  | 1.5 MB    |            |   0% cryptography-37.0.1  | 1.5 MB    | ########## | 100% cryptography-37.0.1  | 1.5 MB    | ########## | 100% 
+importlib-metadata-4 | 40 KB     |            |   0% importlib-metadata-4 | 40 KB     | ########## | 100% importlib-metadata-4 | 40 KB     | ########## | 100% 
+yarl-1.6.3           | 142 KB    |            |   0% yarl-1.6.3           | 142 KB    | ########## | 100% yarl-1.6.3           | 142 KB    | ########## | 100% 
+typing_extensions-4. | 44 KB     |            |   0% typing_extensions-4. | 44 KB     | ########## | 100% typing_extensions-4. | 44 KB     | ########## | 100% 
+zipp-3.8.0           | 15 KB     |            |   0% zipp-3.8.0           | 15 KB     | ########## | 100% zipp-3.8.0           | 15 KB     | ########## | 100% 
+tensorflow-base-2.3. | 108.1 MB  |            |   0% tensorflow-base-2.3. | 108.1 MB  | 3          |   4% tensorflow-base-2.3. | 108.1 MB  | 9          |  10% tensorflow-base-2.3. | 108.1 MB  | #5         |  16% tensorflow-base-2.3. | 108.1 MB  | ##1        |  21% tensorflow-base-2.3. | 108.1 MB  | ##7        |  27% tensorflow-base-2.3. | 108.1 MB  | ###3       |  33% tensorflow-base-2.3. | 108.1 MB  | ###9       |  40% tensorflow-base-2.3. | 108.1 MB  | ####6      |  46% tensorflow-base-2.3. | 108.1 MB  | #####2     |  53% tensorflow-base-2.3. | 108.1 MB  | #####9     |  59% tensorflow-base-2.3. | 108.1 MB  | ######5    |  66% tensorflow-base-2.3. | 108.1 MB  | #######2   |  72% tensorflow-base-2.3. | 108.1 MB  | #######8   |  79% tensorflow-base-2.3. | 108.1 MB  | ########5  |  85% tensorflow-base-2.3. | 108.1 MB  | #########1 |  92% tensorflow-base-2.3. | 108.1 MB  | #########8 |  98% tensorflow-base-2.3. | 108.1 MB  | ########## | 100% 
+urllib3-1.26.11      | 179 KB    |            |   0% urllib3-1.26.11      | 179 KB    | ########## | 100% urllib3-1.26.11      | 179 KB    | ########## | 100% 
+grpcio-1.42.0        | 2.3 MB    |            |   0% grpcio-1.42.0        | 2.3 MB    | ########## | 100% grpcio-1.42.0        | 2.3 MB    | ########## | 100% 
+aiohttp-3.8.1        | 573 KB    |            |   0% aiohttp-3.8.1        | 573 KB    | ########## | 100% aiohttp-3.8.1        | 573 KB    | ########## | 100% 
+mkl_random-1.2.2     | 341 KB    |            |   0% mkl_random-1.2.2     | 341 KB    | ########## | 100% mkl_random-1.2.2     | 341 KB    | ########## | 100% 
+torchvision-0.8.2    | 17.8 MB   |            |   0% torchvision-0.8.2    | 17.8 MB   | ##5        |  25% torchvision-0.8.2    | 17.8 MB   | #####9     |  60% torchvision-0.8.2    | 17.8 MB   | #########2 |  92% torchvision-0.8.2    | 17.8 MB   | ########## | 100% 
+scipy-1.7.3          | 21.4 MB   |            |   0% scipy-1.7.3          | 21.4 MB   | #7         |  17% scipy-1.7.3          | 21.4 MB   | ####3      |  43% scipy-1.7.3          | 21.4 MB   | #######    |  71% scipy-1.7.3          | 21.4 MB   | #########7 |  98% scipy-1.7.3          | 21.4 MB   | ########## | 100% 
+termcolor-1.1.0      | 9 KB      |            |   0% termcolor-1.1.0      | 9 KB      | ########## | 100% termcolor-1.1.0      | 9 KB      | ########## | 100% 
+typing-extensions-4. | 9 KB      |            |   0% typing-extensions-4. | 9 KB      | ########## | 100% typing-extensions-4. | 9 KB      | ########## | 100% 
+tensorboard-plugin-w | 706 KB    |            |   0% tensorboard-plugin-w | 706 KB    | ########## | 100% tensorboard-plugin-w | 706 KB    | ########## | 100% 
+pysocks-1.7.1        | 31 KB     |            |   0% pysocks-1.7.1        | 31 KB     | ########## | 100% pysocks-1.7.1        | 31 KB     | ########## | 100% 
+protobuf-3.20.1      | 328 KB    |            |   0% protobuf-3.20.1      | 328 KB    | ########## | 100% protobuf-3.20.1      | 328 KB    | ########## | 100% 
+numpy-1.23.1         | 10 KB     |            |   0% numpy-1.23.1         | 10 KB     | ########## | 100% numpy-1.23.1         | 10 KB     | ########## | 100% 
+markdown-3.3.4       | 125 KB    |            |   0% markdown-3.3.4       | 125 KB    | ########## | 100% markdown-3.3.4       | 125 KB    | ########## | 100% 
+mkl-service-2.4.0    | 62 KB     |            |   0% mkl-service-2.4.0    | 62 KB     | ########## | 100% mkl-service-2.4.0    | 62 KB     | ########## | 100% 
+tensorboard-2.8.0    | 5.7 MB    |            |   0% tensorboard-2.8.0    | 5.7 MB    | #######9   |  80% tensorboard-2.8.0    | 5.7 MB    | ########## | 100% 
+blinker-1.4          | 23 KB     |            |   0% blinker-1.4          | 23 KB     | ########## | 100% blinker-1.4          | 23 KB     | ########## | 100% 
+mkl_fft-1.3.1        | 200 KB    |            |   0% mkl_fft-1.3.1        | 200 KB    | ########## | 100% mkl_fft-1.3.1        | 200 KB    | ########## | 100% 
+multidict-5.2.0      | 67 KB     |            |   0% multidict-5.2.0      | 67 KB     | ########## | 100% multidict-5.2.0      | 67 KB     | ########## | 100% 
+pytorch-1.7.1        | 553.1 MB  |            |   0% pytorch-1.7.1        | 553.1 MB  |            |   1% pytorch-1.7.1        | 553.1 MB  | 1          |   2% pytorch-1.7.1        | 553.1 MB  | 2          |   3% pytorch-1.7.1        | 553.1 MB  | 3          |   4% pytorch-1.7.1        | 553.1 MB  | 5          |   5% pytorch-1.7.1        | 553.1 MB  | 6          |   6% pytorch-1.7.1        | 553.1 MB  | 7          |   7% pytorch-1.7.1        | 553.1 MB  | 8          |   8% pytorch-1.7.1        | 553.1 MB  | 9          |  10% pytorch-1.7.1        | 553.1 MB  | #          |  11% pytorch-1.7.1        | 553.1 MB  | #2         |  12% pytorch-1.7.1        | 553.1 MB  | #3         |  14% pytorch-1.7.1        | 553.1 MB  | #4         |  15% pytorch-1.7.1        | 553.1 MB  | #6         |  16% pytorch-1.7.1        | 553.1 MB  | #7         |  17% pytorch-1.7.1        | 553.1 MB  | #8         |  19% pytorch-1.7.1        | 553.1 MB  | #9         |  20% pytorch-1.7.1        | 553.1 MB  | ##1        |  21% pytorch-1.7.1        | 553.1 MB  | ##2        |  22% pytorch-1.7.1        | 553.1 MB  | ##3        |  24% pytorch-1.7.1        | 553.1 MB  | ##5        |  25% pytorch-1.7.1        | 553.1 MB  | ##6        |  26% pytorch-1.7.1        | 553.1 MB  | ##7        |  28% pytorch-1.7.1        | 553.1 MB  | ##8        |  29% pytorch-1.7.1        | 553.1 MB  | ###        |  30% pytorch-1.7.1        | 553.1 MB  | ###1       |  32% pytorch-1.7.1        | 553.1 MB  | ###2       |  33% pytorch-1.7.1        | 553.1 MB  | ###4       |  34% pytorch-1.7.1        | 553.1 MB  | ###5       |  35% pytorch-1.7.1        | 553.1 MB  | ###6       |  37% pytorch-1.7.1        | 553.1 MB  | ###7       |  38% pytorch-1.7.1        | 553.1 MB  | ###9       |  39% pytorch-1.7.1        | 553.1 MB  | ####       |  41% pytorch-1.7.1        | 553.1 MB  | ####1      |  42% pytorch-1.7.1        | 553.1 MB  | ####3      |  43% pytorch-1.7.1        | 553.1 MB  | ####4      |  44% pytorch-1.7.1        | 553.1 MB  | ####5      |  46% pytorch-1.7.1        | 553.1 MB  | ####7      |  47% pytorch-1.7.1        | 553.1 MB  | ####8      |  49% pytorch-1.7.1        | 553.1 MB  | ####9      |  50% pytorch-1.7.1        | 553.1 MB  | #####1     |  51% pytorch-1.7.1        | 553.1 MB  | #####2     |  52% pytorch-1.7.1        | 553.1 MB  | #####3     |  54% pytorch-1.7.1        | 553.1 MB  | #####5     |  55% pytorch-1.7.1        | 553.1 MB  | #####6     |  56% pytorch-1.7.1        | 553.1 MB  | #####7     |  58% pytorch-1.7.1        | 553.1 MB  | #####8     |  59% pytorch-1.7.1        | 553.1 MB  | ######     |  60% pytorch-1.7.1        | 553.1 MB  | ######1    |  62% pytorch-1.7.1        | 553.1 MB  | ######2    |  63% pytorch-1.7.1        | 553.1 MB  | ######4    |  64% pytorch-1.7.1        | 553.1 MB  | ######5    |  65% pytorch-1.7.1        | 553.1 MB  | ######6    |  67% pytorch-1.7.1        | 553.1 MB  | ######8    |  68% pytorch-1.7.1        | 553.1 MB  | ######9    |  69% pytorch-1.7.1        | 553.1 MB  | #######    |  71% pytorch-1.7.1        | 553.1 MB  | #######2   |  72% pytorch-1.7.1        | 553.1 MB  | #######3   |  73% pytorch-1.7.1        | 553.1 MB  | #######4   |  75% pytorch-1.7.1        | 553.1 MB  | #######6   |  76% pytorch-1.7.1        | 553.1 MB  | #######7   |  77% pytorch-1.7.1        | 553.1 MB  | #######8   |  79% pytorch-1.7.1        | 553.1 MB  | #######9   |  80% pytorch-1.7.1        | 553.1 MB  | ########1  |  81% pytorch-1.7.1        | 553.1 MB  | ########2  |  83% pytorch-1.7.1        | 553.1 MB  | ########3  |  84% pytorch-1.7.1        | 553.1 MB  | ########5  |  85% pytorch-1.7.1        | 553.1 MB  | ########6  |  86% pytorch-1.7.1        | 553.1 MB  | ########7  |  88% pytorch-1.7.1        | 553.1 MB  | ########9  |  89% pytorch-1.7.1        | 553.1 MB  | #########  |  90% pytorch-1.7.1        | 553.1 MB  | #########1 |  92% pytorch-1.7.1        | 553.1 MB  | #########2 |  93% pytorch-1.7.1        | 553.1 MB  | #########4 |  94% pytorch-1.7.1        | 553.1 MB  | #########5 |  95% pytorch-1.7.1        | 553.1 MB  | #########6 |  97% pytorch-1.7.1        | 553.1 MB  | #########7 |  98% pytorch-1.7.1        | 553.1 MB  | #########9 |  99% pytorch-1.7.1        | 553.1 MB  | ########## | 100% 
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done

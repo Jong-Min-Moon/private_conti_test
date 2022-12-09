@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "/mnt/nas/users/mjm/GitHub/private_conti_test/Python_implm/simulation_runs/indep/indep_45000.py", line 40, in <module>
+    n_trend.loc[i,"power"] = (1/500)*tester.estimate_power(
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/indexing.py", line 716, in __setitem__
+    iloc._setitem_with_indexer(indexer, value, self.name)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/indexing.py", line 1688, in _setitem_with_indexer
+    self._setitem_with_indexer_split_path(indexer, value, name)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/indexing.py", line 1779, in _setitem_with_indexer_split_path
+    self._setitem_single_column(loc, value, pi)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/indexing.py", line 1885, in _setitem_single_column
+    ser._mgr = ser._mgr.setitem((pi,), value)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 337, in setitem
+    return self.apply("setitem", indexer=indexer, value=value)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/internals/managers.py", line 304, in apply
+    applied = getattr(b, f)(**kwargs)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 928, in setitem
+    if not self._can_hold_element(value):
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/internals/blocks.py", line 610, in _can_hold_element
+    return can_hold_element(self.values, element)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/dtypes/cast.py", line 2179, in can_hold_element
+    np_can_hold_element(dtype, element)
+  File "/mnt/nas/users/mjm/.conda/envs/mjm_env_gpu/lib/python3.8/site-packages/pandas/core/dtypes/cast.py", line 2259, in np_can_hold_element
+    if tipo.kind not in ["f", "i", "u"]:
+AttributeError: 'torch.dtype' object has no attribute 'kind'
