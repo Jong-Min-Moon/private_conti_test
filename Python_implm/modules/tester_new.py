@@ -12,9 +12,8 @@ import random
 
 import matplotlib.pyplot as plt
 from scipy.optimize import brenth
+from sampling import *
 
-class simulator:
-    
 
 ##################################################
 ##################################################
@@ -560,7 +559,7 @@ class two_sample_generator(data_generator):
 
     def generate_y(self):
             normalSample = self.generator_y.sample( (self.n1,) )
-            return( self.calculate_cdf(normalSample) )  
+            return( self.calculate_cdf(normalSample) ) 
         
     def generate_z(self):
             return(
@@ -569,6 +568,31 @@ class two_sample_generator(data_generator):
                 )
             )
 ##################################################
+class two_sample_generator_uniform_perturb(data_generator):
+    def __init__(self, cuda_device, n1, n2, d):
+        self.n1 = n1
+        self.n2 = n2
+        self.d = d
+        self.seed = 0
+        super(two_sample_generator_uniform_perturb, self).__init__(cuda_device)
+
+    def set_distribution(self):
+        return self
+
+    def set_generater(self):
+        self.generator_z = torch.distributions.uniform.Uniform(torch.tensor([0.0]), torch.tensor([1.0]))
+
+    def generate_y(self):
+        self.seed = self.seed + 1
+        return( 
+            torch.tensor(f_theta_sampler(self.seed, self.seed, self.n1, self.d, 1, 7.3, 2))
+            .to(self.cuda_device) ) 
+        
+    def generate_z(self):
+            return(
+                    self.generator_z.sample( (self.n2*self.d,) ).reshape(self.n2,-1).to(self.cuda_device)
+                )
+            
 ##################################################                
 class two_sample_generator_mean_departure(two_sample_generator):
     def set_distribution(self):
@@ -585,13 +609,30 @@ class two_sample_generator_mean_departure(two_sample_generator):
 
         print("sigma")
         print(self.sigma_y)
-
+##################################################
+################################################## 
 class two_sample_generator_var_departure(two_sample_generator):
-    def set_distribution(self, scale):
+    def set_distribution(self):
         self.copula_mean_y = torch.zeros(self.d).to(self.cuda_device)
         self.copula_mean_z = torch.zeros(self.d).to(self.cuda_device)
         self.sigma_y = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
-        self.sigma_z = (scale * torch.ones(self.d, self.d) + scale * torch.eye(self.d)).to(self.cuda_device)
+        self.sigma_z = (2.5 * torch.ones(self.d, self.d) + 2.5 * torch.eye(self.d)).to(self.cuda_device)
+
+        print("copula_mean")
+        print(self.copula_mean_y)
+
+        print("sigma_y")
+        print(self.sigma_y)
+
+        print("sigma_z")
+        print(self.sigma_z)
+######################################################################
+class two_sample_generator_var_departure(two_sample_generator):
+    def set_distribution(self):
+        self.copula_mean_y = torch.zeros(self.d).to(self.cuda_device)
+        self.copula_mean_z = torch.zeros(self.d).to(self.cuda_device)
+        self.sigma_y = (0.5 * torch.ones(self.d, self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
+        self.sigma_z = (2.5 * torch.ones(self.d, self.d) + 2.5 * torch.eye(self.d)).to(self.cuda_device)
 
         print("copula_mean")
         print(self.copula_mean_y)
@@ -603,10 +644,13 @@ class two_sample_generator_var_departure(two_sample_generator):
         print(self.sigma_z)
 ######################################################################
 ######################################################################
-#class two_sample_generator_var_departure(two_sample_generator):
+class two_sample_generator_var_departure(two_sample_generator):
+    def set_distribution(self):
+        return self
+    f_theta_sampler(0, 0, 10000, 2, 1, 7.3, 2)
+######################################################################
+######################################################################
 
-######################################################################
-######################################################################
 class indep_generator(data_generator):
     def __init__(self, cuda_device, n, d1, d2):
         self.n = n
@@ -643,7 +687,8 @@ class indep_generator(data_generator):
                 -self.normalSample
                 )
             )
-
+######################################################################
+######################################################################
 class indep_generator_trivial(data_generator):
     def __init__(self, cuda_device, n, d1, d2):
         self.n = n
@@ -680,7 +725,9 @@ class indep_generator_trivial(data_generator):
                 -self.normalSample
                 )
             )
+######################################################################
 
+######################################################################
 class indep_generator_nontrivial(data_generator):
     def __init__(self, cuda_device, n, d, epsilon):
         self.n = n
@@ -691,7 +738,6 @@ class indep_generator_nontrivial(data_generator):
 
     def set_distribution(self):
         self.copula_mean = -1/2 * torch.ones(self.d).to(self.cuda_device)
-
         self.sigma = (0.5 * torch.ones(self.d,self.d) + 0.5 * torch.eye(self.d)).to(self.cuda_device)
 
 
@@ -718,38 +764,36 @@ class indep_generator_nontrivial(data_generator):
                 torch.sin(self.normalSample.sum(1).div(self.d)).add(self.epsilon).reshape((-1,1))
                 )
             )
+######################################################################
+######################################################################
+class indep_generator_gsign(data_generator):
 
-##########################################
-class indep_generator_sinusoidal(data_generator):
-
-    def __init__(self, cuda_device, n):
+    def __init__(self, cuda_device, n, d):
         self.n = n
         self.z = torch.zeros(n).reshape((-1,1))
-        self.d = 2
-        super(indep_generator_sinusoidal, self).__init__(cuda_device)
+        self.d = d
+        super(indep_generator_gsign, self).__init__(cuda_device)
 
-    @staticmethod
-    def cdf(y,z,u):
-        return (z - np.sin(y * 2 * np.pi) * (1 / (2 * np.pi)) *( np.cos(2 * np.pi * z)-1) - u)
-    
-
+ 
     def set_distribution(self):
         return
 
 
     def set_generater(self):  
-        self.generator_y = torch.distributions.uniform.Uniform(torch.tensor(0.),torch.tensor(1.))
+        self.generator_y = torch.distributions.multivariate_normal.MultivariateNormal(
+            torch.zeros(self.d), torch.eye(self.d)
+        )
  
     def generate_y(self):
-        self.y = self.generator_y.sample( (self.n,) ).reshape((-1,1))
-        self.u = self.generator_y.sample( (self.n,) )
-        return( self.y.to(self.cuda_device)) 
+        self.normalSample = self.generator_y.sample( (self.n,) )
+        y = self.calculate_cdf(self.normalSample)
+        return( y.to(self.cuda_device) )  
          
     def generate_z(self):
-        for i in range(self.n):
-            y_now = self.y[i]
-            u_now = self.u[i]
-            conditional = lambda z : self.cdf(y = y_now, z = z, u = u_now)
-            root = brenth(conditional, 0, 1)
-            self.z[i] = root
-        return(self.z.to(self.cuda_device))
+        noise = torch.abs(torch.normal(mean=0, std = 1, size = (self.n,1)).reshape(-1))
+        prodsign = torch.prod(torch.sign(self.normalSample), 1)
+        z = (self.calculate_cdf(noise * prodsign)).reshape((-1,1))
+        return(z.to(self.cuda_device))
+
+######################################################################
+######################################################################
